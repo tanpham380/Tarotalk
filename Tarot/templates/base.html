@@ -1,0 +1,25 @@
+<!DOCTYPE html> 
+{% load static %}
+<html lang="en,vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <title>Document</title>
+    <div class="header">
+        <h1>TAROTALK</h1>
+        <h2>REARER</h2>
+        <h2>Sự Kiện</h2>
+        <h2>Bài Viết</h2>
+        <h2>Hướng Dẫn</h2>
+        <h2>Tài Khoản</h2>
+      </div>
+</head> 
+<body>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+    <div class="footer"></div>
+</body>
+</html>
