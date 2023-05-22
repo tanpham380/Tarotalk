@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 {% load static %}
 <html lang="en,vi">
 <head>
@@ -7,17 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     <title>Document</title>
-
-</head> 
+</head>
 <body>
-    <div class="header">
-        <h1>TAROTALK</h1>
-        <h2>REARER</h2>
-        <h2>Sự Kiện</h2>
-        <h2>Bài Viết</h2>
-        <h2>Hướng Dẫn</h2>
-        <h2>Tài Khoản</h2>
-      </div>
+    <div class="head">
+        <img src="{% static 'img/Head_Bar.png'%}" alt="Head_bar" class="responsive-image">
+        <span class="">TAROTALK</span>
+        <span class="">READERS</span>
+        <span class="">SỰ KIỆN</span>
+        <span class="">BÀI VIẾT</span>
+        <span class="">HƯỚNG DẪN</span>
+    </div>
     <div class="content">
         {% block content %}{% endblock %}
     </div>
