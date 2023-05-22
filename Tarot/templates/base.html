@@ -3,24 +3,27 @@
 <html lang="en,vi">
 <head>
     <meta charset="UTF-8">
-
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     <title>Document</title>
 </head>
+
 <body>
-    <div class="head">
-        <div class="image-wrapper">
-            <img src="{% static 'img/Head_Bar.png'%}" alt="Head_bar" class="responsive-image">
-            <span class="overlay-text tarotalk">TAROTALK</span>
-        </div>
-        <span class="overlay-text">READERS</span>
-        <span class="overlay-text">SỰ KIỆN</span>
-        <span class="overlay-text">BÀI VIẾT</span>
-        <span class="overlay-text">HƯỚNG DẪN</span>
-    </div>     
+    <header>
+        <nav>
+          <ul>
+            <li><a href="#">TAROTALK</a></li>
+            <li><a href="#">READERS</a></li>
+            <li><a href="#">SỰ KIỆN</a></li>
+            <li><a href="#">BÀI VIẾT</a></li>
+            <li><a href="#">HƯỚNG DẪN</a></li>
+            <li><a href="#">TÀI KHOẢN</a></li>
+          </ul>
+        </nav>
+      </header>
     <div class="content">
         {% block content %}{% endblock %}
     </div>
     <div class="footer"></div>
 </body>
+
 </html>

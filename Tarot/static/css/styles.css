@@ -1,36 +1,45 @@
+/* styles.css */
 body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
     background-color: #391250;
-}
-
-.head {
+  }
+  
+  header {
+    background-color: #FDEDBB;
+    color: #391250;
+    padding: 20px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  nav li {
+    margin-right: 10px;
+    margin-right: 10px;
     position: relative;
-}
-
-.image-wrapper {
+    top: 10px;
+  }
+  nav li:first-child a {
+    font-size: xx-large;
     position: relative;
-    display: inline-block;
-}
-
-.overlay-text {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    top: -10px;
+  }
+  nav li a {
+    color: #391250;
+    text-decoration: none;
     padding: 10px;
-    text-shadow: none; /* Xóa bóng của chữ */
-}
-
-.overlay-text.tarotalk {
-    left: 0; /* Đặt nó sát bên trái */
-}
-
-.overlay-text:not(.tarotalk) {
-    left: 50%; /* Các chữ khác căn giữa theo chiều ngang */
-    transform: translateX(-50%) translateY(-50%); /* Căn giữa theo cả chiều ngang và chiều dọc */
-}
-
-.head span {
-    margin: 0 5px; /* Khoảng cách ngang giữa các chữ */
-}
-
+    font-weight: bold;
+  }
+  
+  nav li a:hover {
+    color: red;
+  }
+  
