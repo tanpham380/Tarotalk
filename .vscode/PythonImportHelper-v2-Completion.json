@@ -164,6 +164,14 @@
         "documentation": {}
     },
     {
+        "label": "serve",
+        "importPath": "django.views.static",
+        "description": "django.views.static",
+        "isExtraImport": true,
+        "detail": "django.views.static",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -255,7 +263,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class TarotView(View):\n    def get(self, request):\n        return render(request, 'testpage.html')",
+        "peekOfCode": "class TarotView(View):\n    def get(self, request):\n        return render(request, 'testpage.html')\n    def serve_static_file(request):\n        response = serve(request, 'css/styles.css')\n        response['Cache-Control'] = 'no-cache, no-store, must-revalidate'\n        return response",
         "detail": "Tarot.views",
         "documentation": {}
     },

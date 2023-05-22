@@ -3,20 +3,21 @@
 <html lang="en,vi">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     <title>Document</title>
 </head>
 <body>
     <div class="head">
-        <img src="{% static 'img/Head_Bar.png'%}" alt="Head_bar" class="responsive-image">
-        <span class="">TAROTALK</span>
-        <span class="">READERS</span>
-        <span class="">SỰ KIỆN</span>
-        <span class="">BÀI VIẾT</span>
-        <span class="">HƯỚNG DẪN</span>
-    </div>
+        <div class="image-wrapper">
+            <img src="{% static 'img/Head_Bar.png'%}" alt="Head_bar" class="responsive-image">
+            <span class="overlay-text tarotalk">TAROTALK</span>
+        </div>
+        <span class="overlay-text">READERS</span>
+        <span class="overlay-text">SỰ KIỆN</span>
+        <span class="overlay-text">BÀI VIẾT</span>
+        <span class="overlay-text">HƯỚNG DẪN</span>
+    </div>     
     <div class="content">
         {% block content %}{% endblock %}
     </div>

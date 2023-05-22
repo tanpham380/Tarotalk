@@ -2,9 +2,35 @@ body {
     background-color: #391250;
 }
 
-.responsive-image {
-    display: block; 
-    max-width: 100%; 
-    height: auto; 
+.head {
+    position: relative;
+}
+
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    text-shadow: none; /* Xóa bóng của chữ */
+}
+
+.overlay-text.tarotalk {
+    left: 0; /* Đặt nó sát bên trái */
+}
+
+.overlay-text:not(.tarotalk) {
+    left: 50%; /* Các chữ khác căn giữa theo chiều ngang */
+    transform: translateX(-50%) translateY(-50%); /* Căn giữa theo cả chiều ngang và chiều dọc */
+}
+
+.head span {
+    margin: 0 5px; /* Khoảng cách ngang giữa các chữ */
 }
 
