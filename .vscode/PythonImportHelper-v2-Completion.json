@@ -272,7 +272,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class TarotView(View):\n    def get(self, request):\n        return render(request, 'login_page.html')\n    def serve_static_file(request):\n        response = serve(request, 'css/styles.css')\n        response['Cache-Control'] = 'no-cache, no-store, must-revalidate'\n        return response",
+        "peekOfCode": "class TarotView(View):\n    def get(self, request):\n        return render(request, 'register_page.html')",
         "detail": "Tarot.views",
         "documentation": {}
     },

@@ -11,7 +11,7 @@ class User(AbstractUser):
     start_vote = models.IntegerField()
     birth_date = models.DateField()
     email = models.EmailField()
-    phone = models.CharField(max_length=10,  )
+    phone_number = models.CharField(max_length=10,  )
     groups = models.ManyToManyField(Group, related_name='tarot_users')
     user_permissions = models.ManyToManyField(Permission, related_name='tarot_users')
 class dich_vu (models.Model ):
