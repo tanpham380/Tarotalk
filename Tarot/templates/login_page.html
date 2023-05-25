@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+{% block content %}
+    <div class="container">
+        <div class="login-box">
+            <h2 class="login-title">Đăng nhập</h2>
+            <form>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <button class="login-button">Đăng nhập</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

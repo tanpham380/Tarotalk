@@ -7,7 +7,7 @@ from django.views.static import serve
 
 class TarotView(View):
     def get(self, request):
-        return render(request, 'HomePage.html')
+        return render(request, 'login_page.html')
     def serve_static_file(request):
         response = serve(request, 'css/styles.css')
         response['Cache-Control'] = 'no-cache, no-store, must-revalidate'
