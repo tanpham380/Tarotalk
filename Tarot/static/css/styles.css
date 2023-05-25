@@ -1,9 +1,11 @@
 /* styles.css */
+/* Base Page Css*/
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: #391250;
+    overflow: hidden;
   }
   
   header {
@@ -47,16 +49,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;  
-    border-radius: 10px; /* Rounded corners for the container */
-    
+    height: 100vh;
+    border-radius: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
   }
   
+  
   .login-box {
-    width : 30%;
+    width: 30%;
     height: auto;
     padding: 10px;
-    border-radius: 10px; /* Rounded corners for the login box */
+    border-radius: 10px;
     text-align: center;
     position: relative;
   }
@@ -64,10 +68,10 @@ body {
   .login-box::before {
     content: "";
     display: block;
-    background-color: #FFF5CC; 
+    background-color: #FFF5CC;
     border-radius: 10px;
-    width: 700px;
-    height: 396px;
+    width: 600px;
+    height: 296px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -78,36 +82,36 @@ body {
   .form-group {
     margin-bottom: 15px;
     text-align: left;
-    
   }
+  
   .login-title {
     background-color: #D9B8FF;
-    /* or 54px */
     text-align: center;
     letter-spacing: -0.022em;
     color: #391250;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 5px 0;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
+  
   .form-group label {
     display: block;
     font-family: Montserrat, sans-serif;
-    margin-bottom: 5px; 
-    
+    margin-bottom: 5px;
   }
   
   .form-group input {
-    width: 100%;
+    width: calc(100% - 20px); /* Trừ đi 20px để làm cho input ngắn hơn 20px để tránh che phủ biên của .login-title */
     padding: 5px;
-    border-radius: 4px; /* Rounded corners for the input fields */
+    border-radius: 4px;
     color: #E3CFFF;
-
+    background-color: #D9B8FF;
   }
   
+  
   .login-button {
-    background-color: #D9B8FF;  
+    background-color: #D9B8FF;
     color: #391250;
     font-family: Montserrat, sans-serif;
     font-size: 18px;
@@ -116,4 +120,5 @@ body {
     border-radius: 5px;
     cursor: pointer;
   }
+  
   
