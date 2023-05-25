@@ -236,7 +236,16 @@
         "kind": 6,
         "importPath": "Tarot.models",
         "description": "Tarot.models",
-        "peekOfCode": "class User(AbstractUser):\n    avatar = models.ImageField(upload_to='avatars/', null=True, blank=True)\n    name = models.CharField(max_length=255,  )\n    tarot_role = models.CharField(max_length=255, default= \"Tarot Reading and AStrology\")\n    status = models.CharField(max_length=255, default= \"Active\")\n    start_vote = models.IntegerField(default=0,  MaxValueValidator = 5, MinValueValidator = 0)\n    birth_date = models.DateField()\n    groups = models.ManyToManyField(Group, related_name='tarot_users')\n    user_permissions = models.ManyToManyField(Permission, related_name='tarot_users')",
+        "peekOfCode": "class User(AbstractUser):\n    avatar = models.ImageField(upload_to='static/avatars/', null=True, blank=True)\n    cover_page = models.ImageField(upload_to='static/cover_pages/', null=True, blank=True)\n    name = models.CharField(max_length=255,  )\n    tarot_role = models.CharField(max_length=50, default= \"Tarot Reading and AStrology\")\n    introduction = models.TextField()\n    status = models.CharField(max_length=255)\n    start_vote = models.IntegerField()\n    birth_date = models.DateField()\n    email = models.EmailField()",
+        "detail": "Tarot.models",
+        "documentation": {}
+    },
+    {
+        "label": "dich_v",
+        "kind": 6,
+        "importPath": "Tarot.models",
+        "description": "Tarot.models",
+        "peekOfCode": "class dich_vu (models.Model ):\n    id = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)\n    name = models.CharField(max_length=255,  )\n    price = models.IntegerField()\n    content = models.TextField()\n    date  = models.DateField()",
         "detail": "Tarot.models",
         "documentation": {}
     },
