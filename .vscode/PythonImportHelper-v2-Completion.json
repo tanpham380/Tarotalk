@@ -236,7 +236,7 @@
         "kind": 6,
         "importPath": "Tarot.models",
         "description": "Tarot.models",
-        "peekOfCode": "class User(AbstractUser):\n    avatar = models.ImageField(upload_to='avatars/', null=True, blank=True)\n    groups = models.ManyToManyField(Group, related_name='tarot_users')\n    user_permissions = models.ManyToManyField(Permission, related_name='tarot_users')",
+        "peekOfCode": "class User(AbstractUser):\n    avatar = models.ImageField(upload_to='avatars/', null=True, blank=True)\n    name = models.CharField(max_length=255,  )\n    groups = models.ManyToManyField(Group, related_name='tarot_users')\n    user_permissions = models.ManyToManyField(Permission, related_name='tarot_users')",
         "detail": "Tarot.models",
         "documentation": {}
     },
