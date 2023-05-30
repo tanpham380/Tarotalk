@@ -5,7 +5,7 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: #391250;
-    overflow: hidden;
+    
   }
   
   header {
@@ -191,4 +191,25 @@ body {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+}
+/*css cho page đăng kí thành công*/
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-button {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.back-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
 }
