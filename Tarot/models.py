@@ -8,7 +8,7 @@ class User(AbstractUser):
     introduction = models.TextField(null=True)
     status = models.CharField(max_length=255, null=True)
     start_vote = models.IntegerField(null=True)
-    birth_date = models.DateField(null=True)
+    birth_date = models.CharField(null=True, max_length=255)
     email = models.EmailField(null=True)
     phone_number = models.CharField(max_length=10,null=True  )
 class dich_vu (models.Model ):

@@ -6,5 +6,6 @@ app_name = 'Tarot'
 urlpatterns = [
     path('', views.ViewUser.as_view(), name='HomePage'),
     path('login/', views.LoginPageView.as_view(), name='login'),
+    path('register/', views.Register.as_view(), name='register'),
     path('logout/', views.LogoutView, name='logout'),
 ]
