@@ -18,11 +18,10 @@ class LoginPageView(View):
         if check_login is None :
             return render(request, 'login_page.html', {'error': 'Tên đăng nhập hoặc mật khẩu không đúng'})
         login(request, check_login)
-        return render(request, 'HomePage.html')
+        return render(request, 'homepage.html')
 class ViewUser(LoginRequiredMixin, View):
-    login_url = '/login/'
     def get(self, request):
-        return render(request, 'home_page.html')
+        return render(request, 'homepage.html')
 def LogoutView(request):
     logout(request)
     return HttpResponseRedirect('/login/')
