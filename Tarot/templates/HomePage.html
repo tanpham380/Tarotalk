@@ -2,5 +2,9 @@
 {% load static %}
 {% block title %}Trang Chủ{% endblock %}
 {% block content %}
-
+<h1> đăng nhập thành công</h1>
+<form id="logout-form" method="post" action="{% url 'Tarot:logout' %}">
+    {% csrf_token %}
+    <button type="submit">Log out</button>
+</form>
 {% endblock %}

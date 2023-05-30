@@ -4,5 +4,7 @@ from . import views
 from django.views.generic.base import RedirectView
 app_name = 'Tarot'
 urlpatterns = [
-    path('', views.TarotView.as_view(), name='home'),
+    path('', views.ViewUser.as_view(), name='HomePage'),
+    path('login/', views.LoginPageView.as_view(), name='login'),
+    path('logout/', views.LogoutView, name='logout'),
 ]
