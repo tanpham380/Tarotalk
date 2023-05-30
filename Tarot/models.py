@@ -4,7 +4,6 @@ from django.contrib.auth.models import AbstractUser,Group, Permission
 class User(AbstractUser):
     avatar = models.ImageField(upload_to='static/avatars/', null=True, blank=True)
     cover_page = models.ImageField(upload_to='static/cover_pages/', null=True, blank=True)
-    name = models.CharField(max_length=255,null=True  )
     tarot_role = models.CharField(max_length=50, default= "Tarot Reading and AStrology")
     introduction = models.TextField(null=True)
     status = models.CharField(max_length=255, null=True)
@@ -12,8 +11,6 @@ class User(AbstractUser):
     birth_date = models.DateField(null=True)
     email = models.EmailField(null=True)
     phone_number = models.CharField(max_length=10,null=True  )
-    groups = models.ManyToManyField(Group, related_name='tarot_users')
-    user_permissions = models.ManyToManyField(Permission, related_name='tarot_users')
 class dich_vu (models.Model ):
     id = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     name = models.CharField(max_length=255,  )
