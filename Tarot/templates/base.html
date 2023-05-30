@@ -1,28 +1,26 @@
-    <!DOCTYPE html>
-    {% load static %}
-    <html lang="en,vi">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-        <title>Document</title>
-    </head>
-    <body>
-        <header>
-            <nav>
-            <ul>
-                
-                <li><a href="{% url 'Tarot:home' %}">TAROTALK</a></li>
-                <li><a href="#">READERS</a></li>
-                <li><a href="#">SỰ KIỆN</a></li>
-                <li><a href="#">BÀI VIẾT</a></li>
-                <li><a href="#">HƯỚNG DẪN</a></li>
-                <li><a href="#">TÀI KHOẢN</a></li> 
-            </ul>
-            </nav>
-        </header>
-        <div class="content">
-            {% block content %}{% endblock %}
-        </div>
-    </body>
-
-    </html>
+<!DOCTYPE html>
+{% load static %}
+<html lang="en,vi">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <title>{% block title %}Document{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <nav>
+        <ul>
+            <li><a href="{% url 'Tarot:HomePage' %}">TAROTALK</a></li>
+            <li><a href="#">READERS</a></li>
+            <li><a href="#">SỰ KIỆN</a></li>
+            <li><a href="#">BÀI VIẾT</a></li>
+            <li><a href="#">HƯỚNG DẪN</a></li>
+            <li><a href="#">TÀI KHOẢN</a></li> 
+        </ul>
+        </nav>
+    </header>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

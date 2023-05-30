@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-
+{% block title %}Trang Chủ{% endblock %}
 {% block content %}
-<h1>Thừa kế page</h1>
+<h1> đăng nhập thành công</h1>
+<form id="logout-form" method="post" action="{% url 'Tarot:logout' %}">
+    {% csrf_token %}
+    <button type="submit">Log out</button>
+</form>
 {% endblock %}
