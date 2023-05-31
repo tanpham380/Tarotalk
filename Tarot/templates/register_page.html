@@ -7,6 +7,15 @@
             <h2 class="register-title">Đăng kí</h2>
             <form method="POST" novalidate>
                 {% csrf_token %}
+                {% if form.errors %}
+                <ul class="errorlist">
+                    {% for field in form %}
+                        {% if field.errors %}
+                            {{ field.errors.0 }}
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                {% endif %}
                 <div class="form-group-register">
                     <label for="{{ form.name.id_for_label }}">Họ Và Tên:</label>
                     {{ form.last_name }}
