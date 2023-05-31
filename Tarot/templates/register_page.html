@@ -1,4 +1,3 @@
-
 {% extends "base.html" %}
 {% load static %}
 {% block title %}Đăng kí{% endblock %}
@@ -6,9 +5,32 @@
     <div class="container-register">
         <div class="register-box">
             <h2 class="register-title">Đăng kí</h2>
-            <form method="POST">
+            <form method="POST" novalidate>
                 {% csrf_token %}
-                {{ form.as_p }}
+                <div class="form-group-register">
+                    <label for="{{ form.name.id_for_label }}">Họ Và Tên:</label>
+                    {{ form.last_name }}
+                </div>
+                <div class="form-group-register">
+                    <label for="{{ form.birth_date.id_for_label }}">Ngày / Tháng / Năm Sinh:</label>
+                    {{ form.birth_date }}
+                </div>
+                <div class="form-group-register">
+                    <label for="{{ form.phone_number.id_for_label }}">Số Điện Thoại:</label>
+                    {{ form.phone_number }}
+                </div>
+                <div class="form-group-register">
+                    <label for="{{ form.email.id_for_label }}">Email:</label>
+                    {{ form.email }}
+                </div>
+                <div class="form-group-register">
+                    <label for="{{ form.password1.id_for_label }}">Password:</label>
+                    {{ form.password1 }}
+                </div>
+                <div class="form-group-register">
+                    <label for="{{ form.password2.id_for_label }}">Re-Password:</label>
+                    {{ form.password2 }}
+                </div>
                 <button class="register-button" type="submit">Đăng kí</button>
             </form>
         </div>

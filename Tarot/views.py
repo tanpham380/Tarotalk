@@ -2,9 +2,9 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
 from django.views import View
 from django.contrib.auth import authenticate, login , logout
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+from Tarot.models import User
+from .forms import RegisterForm
 
 # Create your views here.
 
@@ -25,11 +25,22 @@ class LoginPageView(View):
 class ViewUser(LoginRequiredMixin, View):
     def get(self, request):
         return render(request, 'homepage.html')
-    
+
 class RegisterView(View):
-    pass 
-    
-    
+    def get (self, request):
+        form = RegisterForm()
+        return render(request, 'register_page.html', { 'form': form})
+    def post (self , request ):
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.username = user.email.lower()
+            user.save()
+            check_login = authenticate(username= user.username, password = user.password)
+            login(request, check_login)
+            return render(request, 'register_sucessfully.html')
+        return render(request, 'register_page.html', {'form': form})
+ 
     
 def LogoutView(request):
     logout(request)
