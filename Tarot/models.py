@@ -8,9 +8,9 @@ class User(AbstractUser):
     introduction = models.TextField(null=True)
     status = models.CharField(max_length=255, null=True)
     start_vote = models.IntegerField(null=True)
-    birth_date = models.CharField(null=True, max_length=255)
+    birth_date = models.DateField(null=True)
     email = models.EmailField(null=True)
-    phone_number = models.CharField(max_length=10,null=True  )
+    phone_number = models.CharField(max_length=10,null=True)
 class dich_vu (models.Model ):
     id = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     name = models.CharField(max_length=255,  )

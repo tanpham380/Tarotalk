@@ -1,7 +1,8 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views import View
 from django.contrib.auth import authenticate, login , logout
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
@@ -25,9 +26,20 @@ class ViewUser(LoginRequiredMixin, View):
     def get(self, request):
         return render(request, 'homepage.html')
     
-class Register(View):
+class RegisterView(View):
+    template_name = 'register_page.html'
+    form_class = UserCreationForm
+
     def get(self, request):
-        return render(request, 'register_page.html')
+        form = self.form_class()
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('HomePage')  # Replace 'home' with the name of your home page URL pattern
+        return render(request, self.template_name, {'form': form})
     
     
     
