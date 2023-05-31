@@ -25,6 +25,7 @@ class LoginPageView(View):
 
 
 class ViewUser(LoginRequiredMixin, View):
+    login_url = '/login/'
     def get(self, request):
         return render(request, 'homepage.html')
 
@@ -37,17 +38,25 @@ class RegisterView(View):
         form = RegisterForm(request.POST)
         if form.is_valid():
             email = form.cleaned_data.get('email')
-            if User.objects.filter(username=email).exists():
+            if User.objects.get(username=email):
                 form.add_error('email', 'Tên đăng nhập đã tồn tại')
                 return render(request, 'register_page.html', {'form': form})
             user = form.save(commit=False)
             user.username = email.lower()
             user.save()
-            check_login = authenticate(username=user.username, password=user.password)
-            login(request, check_login)
-            return render(request, 'register_sucessfully.html')
+            password = form.cleaned_data.get('password1')  # Get the password from cleaned_data
+            check_login = authenticate(username=user.username, password=password)
+            if check_login is not None:
+                login(request, check_login)
+                return render(request, 'register_sucessfully.html')
+            else:
+                # Handle authentication error
+                # Example: display error message to the user
+                form.add_error(None, 'Lỗi xác thực người dùng')
+                return render(request, 'register_page.html', {'form': form})
         else:
             return render(request, 'register_page.html', {'form': form})
+
 
 
 

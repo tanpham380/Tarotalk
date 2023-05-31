@@ -8,7 +8,7 @@
             <form method="POST">
                 {% csrf_token %}
                 {% if error %}
-                <p class="error-message">{{ error }}</p>
+                <p class="error-message-login">{{ error }}</p>
                 {% endif %}
                 <div class="form-grouplogin">
                     <label for="email">Email:</label>
