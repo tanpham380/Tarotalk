@@ -27,19 +27,7 @@ class ViewUser(LoginRequiredMixin, View):
         return render(request, 'homepage.html')
     
 class RegisterView(View):
-    template_name = 'register_page.html'
-    form_class = UserCreationForm
-
-    def get(self, request):
-        form = self.form_class()
-        return render(request, self.template_name, {'form': form})
-
-    def post(self, request):
-        form = self.form_class(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('HomePage')  # Replace 'home' with the name of your home page URL pattern
-        return render(request, self.template_name, {'form': form})
+    pass 
     
     
     
