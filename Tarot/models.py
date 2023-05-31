@@ -11,6 +11,7 @@ class User(AbstractUser):
     birth_date = models.DateField(null=True)
     email = models.EmailField(null=True)
     phone_number = models.CharField(max_length=10,null=True)
+    istarot = models.BooleanField(default=False)
     
 
 class dich_vu (models.Model ):

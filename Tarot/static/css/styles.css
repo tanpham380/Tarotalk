@@ -52,6 +52,7 @@ body {
     height: 100vh;
     border-radius: 10px;
   }
+  
   .register-box {
     width: 30%;
     height: auto;
@@ -59,6 +60,7 @@ body {
     border-radius: 10px;
     text-align: center;
     position: relative;
+    margin-top: 20px; /* Add margin to the top to prevent overlapping with the pseudo-element */
   }
   
   .register-box::before {
@@ -78,6 +80,7 @@ body {
   .form-group-register {
     margin-bottom: 15px;
     text-align: left;
+    position: relative; /* Add position relative to the form group */
   }
   
   .register-title {
@@ -98,14 +101,12 @@ body {
   }
   
   .form-group-register input {
-    width: calc(100% - 20px); /* Trừ đi 20px để làm cho input ngắn hơn 20px để tránh che phủ biên của .login-title */
+    width: calc(100% - 20px);
     padding: 5px;
     border-radius: 4px;
     color: #E3CFFF;
     background-color: #D9B8FF;
-  }
-  
-  
+  } 
   .register-button {
     background-color: #D9B8FF;
     color: #391250;
@@ -116,6 +117,24 @@ body {
     border-radius: 5px;
     cursor: pointer;
   }
+  
+
+  
+  /* Show error message within input field */
+  .form-group-register input:invalid + .error-message {
+    display: block;
+  }
+  
+  .error-message {
+    display: none;
+    color: red;
+    font-size: 8px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 5px;
+  }
+  
   
   /* Login Page  CSS*/
  .containerlogin {

@@ -36,19 +36,19 @@ class RegisterView(View):
     def post(self, request):
         form = RegisterForm(request.POST)
         if form.is_valid():
-            username = form.cleaned_data.get('username')
-            if User.objects.filter(username=username).exists():
-                form.add_error('username', 'Tên đăng nhập đã tồn tại')
+            email = form.cleaned_data.get('email')
+            if User.objects.filter(username=email).exists():
+                form.add_error('email', 'Tên đăng nhập đã tồn tại')
                 return render(request, 'register_page.html', {'form': form})
-
             user = form.save(commit=False)
-            user.username = user.email.lower()
+            user.username = email.lower()
             user.save()
             check_login = authenticate(username=user.username, password=user.password)
             login(request, check_login)
             return render(request, 'register_sucessfully.html')
         else:
             return render(request, 'register_page.html', {'form': form})
+
 
 
 
