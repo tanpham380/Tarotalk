@@ -2,9 +2,26 @@
 {% load static %}
 {% block title %}Trang Chủ{% endblock %}
 {% block content %}
-<h1> đăng nhập thành công</h1>
-<form id="logout-form" method="post" action="{% url 'Tarot:logout' %}">
-    {% csrf_token %}
-    <button type="submit">Log out</button>
-</form>
+  <img src="{% static 'img/homepage_bar.png' %}" data-node-id="b2839220-5e8c-477e-8a29-1d3ed038f78c" data-type="image" class="">
+
+  <div class="user-list">
+    {% for user in istarot_users %}
+      {% if forloop.counter <= 4 %}
+        <div class="homepage-user-container">
+          <div class="background">
+            <img src="{{ user.avatar.url }}" alt="{{ user.username }}'s avatar" >
+            <p class="user-info user-name">{{ user.last_name }}</p>
+            <p class="user-info tarot-role">{{ user.tarot_role }}</p>
+            <p class="user-info status">{{ user.status }}</p>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="load-more-wrapper">
+    <a href="#" class="load-more-link" id="load-more-link">Xem Thêm ></a>
+  </div>
+
+
 {% endblock %}

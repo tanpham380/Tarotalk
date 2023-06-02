@@ -211,40 +211,166 @@ body {
   cursor: pointer;
 }
 /*css cho page đăng kí thành công*/
-.button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.close-button {
-  background-color: red;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.back-link {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-}
-/* trang đăng kí thành công */
-.containerlogin {
+.sucessfully-register-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   border-radius: 10px;
-
 }
-.sucessfully-register-container{
-  width: 30%;
-  height: auto;
+
+.sucessfully-register-container div {
+  background-color: #FFF5CC;
+  width: 50%;
+  height: 200px;
   padding: 10px;
-  border-radius: 10px;
   text-align: center;
+  border-radius: 15px;
+  position: relative; /* Add this line to enable positioning */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h2.Successfully-register-title {
+  margin-top: 30px;
+  background-color: #D9B8FF;
+  text-align: center;
+  letter-spacing: -0.022em;
+  color: #391250;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 0;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 80%;
+  margin: 0 auto;
+}
+
+.Successfully-register-close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px; /* Updated right value to move the close button to the right */
+  font-size: 18px;
+  color: #391250;
+  text-decoration: none;
+}
+
+.Successfully-register-close-button:hover {
+  color: #D9B8FF;
+}
+
+/*css cho page đăng nhập thành công*/
+img[data-node-id='b2839220-5e8c-477e-8a29-1d3ed038f78c'] {
+  width: 1440px;
+  height: 250px;
+  top: 162px;
+  left: 0px;
+  margin-top: 50px;
+}
+.user-list-container {
+  max-height: 4 * (250px + 50px + 20px); /* Chiều cao của 4 user, bao gồm cả margin */
+  overflow: hidden;
+}
+
+.user-list-container .homepage-user-container:nth-child(n+5) {
+  display: none;
+}
+
+.user-list {
+  overflow-x: hidden;
+  white-space: nowrap;
+  overflow-y: hidden;
+}
+
+.homepage-user-container {
   position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  width: 250px;
+  margin-right: 20px;
+  margin-top: 50px;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.homepage-user-container img {
+  width: auto;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.user-info {
+  margin-top: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.load-more-wrapper {
+  position: relative; /* Định vị tương đối để thẻ a có thể được định vị tuyệt đối */
+  width: 100%; /* Đảm bảo chiều rộng đầy đủ */
+}
+.load-more-link {
+  position: absolute; /* Đặt vị trí tuyệt đối */
+  bottom: 0; /* Đặt ở phía dưới cùng */
+  right: 10px; /* Khoảng cách từ phía phải */
+  text-decoration: underline;
+  border-bottom: 1px solid black;
+  color: #FDEDBB;
+}
+
+.homepage-user-container .background {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #E3CFFF;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.homepage-user-container .background p {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.homepage-user-container .background .user-info {
+  white-space: normal;  /* Mở rộng chiều cao của user-info theo nội dung */
+}
+
+.user-info.user-name {
+  color: #391250;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.user-info.tarot-role {
+  color: #391250;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  margin-bottom: 100px;
+}
+
+.user-info.status {
+  color: #391250;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  margin-bottom: 100px;
+  max-height: calc(100 * 1.2em); /* Limit the height to 4 lines (assuming line-height of 1.2em) */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Limit the content to 4 lines */
+  -webkit-box-orient: vertical;
 }
