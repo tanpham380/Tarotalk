@@ -260,3 +260,109 @@ h2.Successfully-register-title {
   color: #D9B8FF;
 }
 
+/*css cho page đăng nhập thành công*/
+img[data-node-id='b2839220-5e8c-477e-8a29-1d3ed038f78c'] {
+  width: 1440px;
+  height: 250px;
+  top: 162px;
+  left: 0px;
+  margin-top: 50px;
+}
+
+.user-list {
+  overflow-x: hidden;
+  white-space: nowrap;
+  overflow-y: hidden;
+}
+
+.homepage-user-container {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  width: 250px;
+  margin-right: 20px;
+  margin-top: 50px;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.homepage-user-container img {
+  width: auto;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.user-info {
+  margin-top: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.load-more-wrapper {
+  position: relative; /* Định vị tương đối để thẻ a có thể được định vị tuyệt đối */
+  width: 100%; /* Đảm bảo chiều rộng đầy đủ */
+}
+.load-more-link {
+  position: absolute; /* Đặt vị trí tuyệt đối */
+  bottom: 0; /* Đặt ở phía dưới cùng */
+  right: 10px; /* Khoảng cách từ phía phải */
+  text-decoration: underline;
+  border-bottom: 1px solid black;
+  color: #FDEDBB;
+}
+
+.homepage-user-container .background {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #E3CFFF;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.homepage-user-container .background p {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.homepage-user-container .background .user-info {
+  white-space: normal;  /* Mở rộng chiều cao của user-info theo nội dung */
+}
+
+.user-info.user-name {
+  color: #391250;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.user-info.tarot-role {
+  color: #391250;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  margin-bottom: 100px;
+}
+
+.user-info.status {
+  color: #391250;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  margin-bottom: 100px;
+  max-height: calc(100 * 1.2em); /* Limit the height to 4 lines (assuming line-height of 1.2em) */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Limit the content to 4 lines */
+  -webkit-box-orient: vertical;
+}

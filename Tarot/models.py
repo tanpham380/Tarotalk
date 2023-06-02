@@ -12,7 +12,6 @@ class User(AbstractUser):
     email = models.EmailField(null=True)
     phone_number = models.CharField(max_length=10,null=True)
     istarot = models.BooleanField(default=False)
-    #test 
     
 
 class dich_vu (models.Model ):

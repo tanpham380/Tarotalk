@@ -32,3 +32,17 @@ class RegisterForm(UserCreationForm):
     class Meta:
         model=User
         fields = ['last_name','email','birth_date','email','phone_number','password1','password2']
+        
+class UpgradeUser(UserCreationForm):
+    introduction = forms.CharField(
+        label='Giới thiệu',
+        widget=forms.Textarea(attrs={'class': 'form-control','required': 'required',}),
+    )
+    status = forms.CharField(
+        label='Trạng thái',
+        widget=forms.TextInput(attrs={'class': 'form-control','required': 'required',}),
+    )    
+    
+    class Meta:
+        model=User
+        fields = ['introduction','status']

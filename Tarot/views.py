@@ -24,10 +24,12 @@ class LoginPageView(View):
         return render(request, 'homepage.html')
 
 
-class ViewUser(LoginRequiredMixin, View):
+class ViewUser( View):
     login_url = '/login/'
     def get(self, request):
-        return render(request, 'homepage.html')
+            istarot_users = User.objects.filter(istarot=True)
+            context = {'istarot_users': istarot_users}
+            return render(request, 'homepage.html', context)
 
 class RegisterView(View):
     def get(self, request):
