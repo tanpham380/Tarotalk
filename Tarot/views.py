@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login , logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from Tarot.models import User
 from .forms import RegisterForm
+import random
 
 # Create your views here.
 
@@ -27,9 +28,10 @@ class LoginPageView(View):
 class ViewUser( View):
     login_url = '/login/'
     def get(self, request):
-            istarot_users = User.objects.filter(istarot=True)
-            context = {'istarot_users': istarot_users}
-            return render(request, 'homepage.html', context)
+        istarot_users = User.objects.filter(istarot=True)
+        random_users = random.sample(list(istarot_users), 4)
+        context = {'istarot_users': random_users}
+        return render(request, 'homepage.html', context)
 
 class RegisterView(View):
     def get(self, request):
@@ -40,7 +42,7 @@ class RegisterView(View):
         form = RegisterForm(request.POST)
         if form.is_valid():
             email = form.cleaned_data.get('email')
-            if User.objects.get(username=email):
+            if User.objects.filter(username=email):
                 form.add_error('email', 'Tên đăng nhập đã tồn tại')
                 return render(request, 'register_page.html', {'form': form})
             user = form.save(commit=False)

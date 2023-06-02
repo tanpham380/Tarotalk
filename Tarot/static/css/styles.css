@@ -268,6 +268,14 @@ img[data-node-id='b2839220-5e8c-477e-8a29-1d3ed038f78c'] {
   left: 0px;
   margin-top: 50px;
 }
+.user-list-container {
+  max-height: 4 * (250px + 50px + 20px); /* Chiều cao của 4 user, bao gồm cả margin */
+  overflow: hidden;
+}
+
+.user-list-container .homepage-user-container:nth-child(n+5) {
+  display: none;
+}
 
 .user-list {
   overflow-x: hidden;
