@@ -58,7 +58,9 @@ class RegisterView(View):
             return render(request, 'register_page.html', {'form': form})
 
 
-
+class TestPageView(View) :
+    def get(self, request):
+        return render(request, 'register_sucessfully.html')
 
 
     
