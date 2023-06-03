@@ -65,8 +65,13 @@ class RegisterView(View):
 
 class TestPageView(View) :
     def get(self, request):
-        return render(request, 'register_sucessfully.html')
+        istarot_users = User.objects.filter(istarot=True)
+        return render(request, 'more_reader.html', {'istarot_users': istarot_users })
 
+class MoreReaderView(View):
+    def get(self, request):
+        istarot_users = User.objects.filter(istarot=True)
+        return render(request, 'more_reader.html', {'istarot_users': istarot_users })
 
     
 def LogoutView(request):
