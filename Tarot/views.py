@@ -29,7 +29,8 @@ class ViewUser( View):
     login_url = '/login/'
     def get(self, request):
         istarot_users = User.objects.filter(istarot=True)
-        random_users = random.sample(list(istarot_users), 4)
+        
+        random_users = random.sample(list(istarot_users), 5)
         context = {'istarot_users': random_users}
         return render(request, 'homepage.html', context)
 
