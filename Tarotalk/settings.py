@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Tarot',
     'channels' ,
-    
+    'chat'
 ]
 
 MIDDLEWARE = [
@@ -71,8 +71,9 @@ TEMPLATES = [
         },
     },
 ]
-
+ASGI_APPLICATION = 'Tarotalk.asgi.application'
 WSGI_APPLICATION = 'Tarotalk.wsgi.application'
+
 
 
 # Database
