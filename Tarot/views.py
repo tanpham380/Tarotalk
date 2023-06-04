@@ -65,8 +65,7 @@ class RegisterView(View):
 
 class TestPageView(View) :
     def get(self, request):
-        istarot_users = User.objects.filter(istarot=True)
-        return render(request, 'more_reader.html', {'istarot_users': istarot_users })
+        return render(request, 'upgrade_User.html')
 
 class MoreReaderView(View):
     def get(self, request):

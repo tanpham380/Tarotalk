@@ -45,4 +45,4 @@ class UpgradeUser(UserCreationForm):
     
     class Meta:
         model=User
-        fields = ['introduction','status']
+        fields = ['introduction','status','cover_page']
