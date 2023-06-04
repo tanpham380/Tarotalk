@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Tarot',
     'channels' ,
-    'chat'
 ]
 
 MIDDLEWARE = [
@@ -134,3 +133,5 @@ STATICFILES_DIRS = [
 
 
 ]
+MEDIA_ROOT = os.path.join(BASE_DIR, '/Tarot/static/img/media')
+MEDIA_URL = '/media/'
