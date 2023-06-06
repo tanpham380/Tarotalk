@@ -1,0 +1,68 @@
+{% extends "base.html" %} {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+
+
+{% block content %}
+<!--Banner-->
+<section class="banner">
+  <img src="../static/img/banner.jpg" alt="Banner Image" />
+</section>
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <!-- Profile -->
+    <div class="col-md-4 position-fixed bottom-0 start-0 profile">
+      <div class="card h-100 card-profile">
+        <div class="card-body row">
+          <div class="col-md-5 avatar position-relative">
+            <img
+              src="../static/img/ThaiAvatar.png"
+              alt="avatar"
+              class="avatar-image"
+            />
+          </div>
+          <div class="col-md-6">
+            <h5 class="card-title" style="font-weight: bold;">Nguyễn Duy Thái</h5>
+            <p class="card-text">Tarot Reading & Astrologist</p>
+            <div class="rating">
+              <!-- Add your rating component here -->
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+            </div>
+            <div class="d-flex align-items-center">
+              <button class="btn btn-chat btn-outline-light"><a href="{%url 'Tarot:chatbot' %}" style="text-decoration: none; color:black;"> Chat Now</a></button>
+              <button class="btn btn-like">
+                <i class="fas fa-heart fa-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row col-md-4 position-fixed bottom-0 start-0 profile-content">
+        <p class="profile-description">
+          Mình tới đây để gửi thông điệp từ những lá bài Tarot tới bạn 🌠🌙🃏
+          Hãy bắt đầu cuộc hành trình đầy niềm vui và chữa lành cùng với mình
+          nha! Mong bạn sẽ gửi niềm tin cho mình để trở người đồng hành cùng bạn
+          trên con đường tâm linh nhé!!! ☪️
+        </p>
+        <p class="list-service">Danh sách dịch vụ</p>
+
+        <div
+          class="service-buttons row col-md-4 position-fixed bottom-0 start-0"
+        >
+          <button class="btn btn-service"><a href="{% url 'Tarot:hour' %}" style="text-decoration: none; color: #391250;"> Xem theo giờ </a></button>
+          <button class="btn btn-service"><a href="{% url 'Tarot:questions' %}" style="text-decoration: none; color: #391250;" > Xem theo số lượng câu hỏi</a></button>
+          <button class="btn btn-service"><a href="{% url 'Tarot:package' %}"style="text-decoration: none; color: #391250;"> Xem theo gói</a></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+</div>
+
+
+{% endblock %}

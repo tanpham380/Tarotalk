@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="container-fluid d-flex justify-content-center">
+  <div class="col-md-6 card package-zone text-center">
+    <div class="card-header text-center package-zone-header">
+      Xác nhận thông tin
+    </div>
+    <div class="row card-body">
+      <div class="card-title">Dịch vụ đã chọn:</div>
+    </div>
+    <div class="row card-body card-content">
+      <div class="col-md-7">Trải bài tổng quan</div>
+      <div class="col-md-5 align-right">250.000 VNĐ</div>
+    </div>
+    <div class="row card-body card-content">
+      <div class="col-md-7">TỔNG</div>
+      <div class="col-md-5 align-right">250.000 VNĐ</div>
+    </div>
+    <div class="row card-body card-content line text-center">
+      <div class="col-md-12">--------------------------------------------</div>
+    </div>
+    <div class="row card-body card-content payment">
+      <div class="col-md-12">Thanh toán qua ví MoMo</div>
+    </div>
+    <div class="row card-body card-content payment">
+      <div class="col-md-12">Thanh toán qua ngân hàng</div>
+    </div>
+    <div class="row card-body card-content payment">
+      <div class="col-md-12">
+        <label>
+          <input type="checkbox" />
+          Tôi đã đọc và đồng ý với
+          <span class="underline">điều khoản và điều kiện</span> của TAROTALK.
+        </label>
+      </div>
+    </div>
+    <div class="row card-body card-content">
+      <div class="col-md-12">
+        <button type="button" class="btn btn-checkout">Xác nhận</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
