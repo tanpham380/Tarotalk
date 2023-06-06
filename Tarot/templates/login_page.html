@@ -2,24 +2,24 @@
 {% load static %}
 {% block title %}Đăng nhập{% endblock %}
 {% block content %}
-    <div class="containerlogin">
-        <div class="login-box">
-            <h2 class="login-title">Đăng nhập</h2>
-            <form method="POST">
-                {% csrf_token %}
-                {% if error %}
-                <p class="error-message-login">{{ error }}</p>
-                {% endif %}
-                <div class="form-grouplogin">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email">
-                </div>
-                <div class="form-grouplogin">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password">
-                </div>
-                <button type="submit" class="login-button">Đăng nhập</button>
-            </form>
+<div class="container-login">
+    <div class="login-box">
+      <h2 class="login-title">Đăng nhập</h2>
+      <form method="POST">
+        {% csrf_token %}
+        {% if error %}
+          <p class="error-message-login">{{ error }}</p>
+        {% endif %}
+        <div class="form-group-login">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
         </div>
+        <div class="form-group-login">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit" class="login-button">Đăng nhập</button>
+      </form>
     </div>
+  </div>
 {% endblock %}

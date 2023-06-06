@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Tarot',
-    
+    'channels' ,
 ]
 
 MIDDLEWARE = [
@@ -70,8 +70,9 @@ TEMPLATES = [
         },
     },
 ]
-
+ASGI_APPLICATION = 'Tarotalk.asgi.application'
 WSGI_APPLICATION = 'Tarotalk.wsgi.application'
+
 
 
 # Database
@@ -132,3 +133,5 @@ STATICFILES_DIRS = [
 
 
 ]
+MEDIA_ROOT = os.path.join(BASE_DIR, '/Tarot/static/img/media')
+MEDIA_URL = '/media/'

@@ -4,7 +4,7 @@ from django.views import View
 from django.contrib.auth import authenticate, login , logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from Tarot.models import User
-from .forms import RegisterForm
+from .forms import *
 import random
 
 # Create your views here.
@@ -25,11 +25,11 @@ class LoginPageView(View):
         return render(request, 'homepage.html')
 
 
-class ViewUser( View):
+class ViewUser(LoginRequiredMixin ,View):
     login_url = '/login/'
     def get(self, request):
         istarot_users = User.objects.filter(istarot=True)
-        random_users = random.sample(list(istarot_users), 4)
+        random_users = random.sample(list(istarot_users), 5)
         context = {'istarot_users': random_users}
         return render(request, 'homepage.html', context)
 
@@ -62,10 +62,30 @@ class RegisterView(View):
             return render(request, 'register_page.html', {'form': form})
 
 
-class TestPageView(View) :
+class TestPageView(LoginRequiredMixin,View) :
+    login_url = '/login/'
     def get(self, request):
-        return render(request, 'register_sucessfully.html')
+        form = UpgradeUserForm()
+        return render(request, 'upgrade_User.html', {'form': form})
+    def post(self, request):
+        form = UpgradeUserForm(request.POST, request.FILES)
+        if form.is_valid():
+            user = request.user
+            user.introduction = form.cleaned_data.get('introduction')
+            user.status = form.cleaned_data.get('status')
+            user.cover_page = form.cleaned_data.get('cover_page')
+            user.avatar = form.cleaned_data.get('avatar')
+            user.save()
+            return render(request, 'update_user_succesfull.html')
+        else:
+            return render(request, 'upgrade_User.html', {'form': form})
+    
+        
 
+class MoreReaderView(View):
+    def get(self, request):
+        istarot_users = User.objects.filter(istarot=True)
+        return render(request, 'more_reader.html', {'istarot_users': istarot_users })
 
     
 def LogoutView(request):
