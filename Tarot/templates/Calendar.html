@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="container-fluid d-flex justify-content-center">
+  <div class="col-md-5 card profile-zone text-center">
+    <div
+      class="row card-body card-content profile-img"
+      style="text-align: center"
+    >
+      <div class="col-md-12 avatar-zone">
+        <img class="avatar" src="../static/img/ThaiAvatar.png" alt="avatar" />
+      </div>
+      <div class="col-md-12 profile-infor mt-3">
+        <h5 class="card-title" style="text-align: center">Nguyễn Duy Thái</h5>
+        <p class="card-text">Tarot Reading & Astrologist</p>
+        <div class="rating">
+          <!-- Add your rating component here -->
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="calendar calendar-first" id="calendar_first">
+        <div class="calendar_header">
+          <button class="switch-month switch-left">
+            <i class="fa fa-chevron-left"></i>
+          </button>
+          <h2 class="month">June 2023</h2>
+          <button class="switch-month switch-right">
+            <i class="fa fa-chevron-right"></i>
+          </button>
+        </div>
+        <div class="calendar_weekdays"></div>
+        <div class="calendar_content"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../static/libs/bootstrap-5.3.0-dist/js/bootstrap.min.js"></script>
+
+<script src="../static/libs/calendar-01/js/jquery.min.js"></script>
+
+<script src="../static/libs/calendar-01/js/popper.js"></script>
+
+<script src="../static/libs/calendar-01/js/main.js"></script>
+{% endblock %}

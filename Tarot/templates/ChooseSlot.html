@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<!--Banner-->
+
+</div>
+
+<div class="container-fluid d-flex justify-content-center">
+    <div class="col-md-6 card package-zone text-center">
+        <div class="card-header text-center package-zone-header">
+            Vui lòng chọn khung giờ
+        </div>
+        <div class="card-body package-zone-body", style="padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);;">
+            <a href="#" class="btn btn-package-item">9:00</a>
+            <a href="#" class="btn btn-package-item">10:00</a>
+            <a href="#" class="btn btn-package-item">11:00</a>
+            <a href="#" class="btn btn-package-item">12:00</a>
+        </div>
+        <div class="card-body package-zone-body">
+            <a href="#" class="btn btn-package-item">14:00</a>
+            <a href="#" class="btn btn-package-item">15:00</a>
+            <a href="#" class="btn btn-package-item">16:00</a>
+            <a href="#" class="btn btn-package-item">17:00</a>
+        </div>
+        <div class="card-body package-zone-body">
+            <a href="#" class="btn btn-package-item">18:00</a>
+            <a href="#" class="btn btn-package-item">20:00</a>
+            <a href="#" class="btn btn-package-item">21:00</a>
+            <a href="#" class="btn btn-package-item">22:00</a>
+        </div>
+    </div>
+</div>
+<script src="../static/libs/bootstrap-5.3.0-dist/js/bootstrap.min.js"></script>
+<script src="{% static 'libs/js/choose-slot.js' %}"></script>
+{% endblock %}
