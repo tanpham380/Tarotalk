@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en,vi">
-  <head>
-    <meta charset="UTF-8" />
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
     <link
@@ -18,22 +17,30 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
-
-    <title>Document</title>
-  </head>
-  <body>
+    <title>{% block title %}TaroTalk{% endblock %}</title>
+</head>
+<body>
     <header>
-      <nav>
-        <ul>
-          <li><a href="#">TAROTALK</a></li>
-          <li><a href="{% url 'Tarot:profile' %}">READERS</a></li>
-          <li><a href="#">SỰ KIỆN</a></li>
-          <li><a href="#">BÀI VIẾT</a></li>
-          <li><a href="#">HƯỚNG DẪN</a></li>
-          <li><a href="#">TÀI KHOẢN</a></li>
-        </ul>
-      </nav>
+        <nav>
+            <ul>
+                <li>
+                    <a href="{% url 'Tarot:login' %}">
+                        <img src="{% static 'img\TAROTALK_LOGO.png' %}" alt="Logo TAROTALK" class="logo-image">
+                        TAROTALK
+                    </a>
+                </li>
+                <li class="move-down"><a href="#">READERS</a></li>
+                <li class="move-down"><a href="#">SỰ KIỆN</a></li>
+                <li class="move-down"><a href="#">BÀI VIẾT</a></li>
+                <li class="move-down"><a href="#">HƯỚNG DẪN</a></li>
+                <li class="move-down"><a href="#">TÀI KHOẢN</a></li>
+                
+            </ul>
+        </nav>
+        
     </header>
-    <div class="content">{% block content %}{% endblock %}</div>
-  </body>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
 </html>

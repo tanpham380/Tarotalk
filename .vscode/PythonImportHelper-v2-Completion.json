@@ -236,7 +236,16 @@
         "kind": 6,
         "importPath": "Tarot.models",
         "description": "Tarot.models",
-        "peekOfCode": "class User(AbstractUser):\n    avatar = models.ImageField(upload_to='avatars/', null=True, blank=True)\n    groups = models.ManyToManyField(Group, related_name='tarot_users')\n    user_permissions = models.ManyToManyField(Permission, related_name='tarot_users')",
+        "peekOfCode": "class User(AbstractUser):\n    avatar = models.ImageField(upload_to='static/avatars/', null=True, blank=True)\n    cover_page = models.ImageField(upload_to='static/cover_pages/', null=True, blank=True)\n    name = models.CharField(max_length=255,  )\n    tarot_role = models.CharField(max_length=50, default= \"Tarot Reading and AStrology\")\n    introduction = models.TextField()\n    status = models.CharField(max_length=255)\n    start_vote = models.IntegerField()\n    birth_date = models.DateField()\n    email = models.EmailField()",
+        "detail": "Tarot.models",
+        "documentation": {}
+    },
+    {
+        "label": "dich_v",
+        "kind": 6,
+        "importPath": "Tarot.models",
+        "description": "Tarot.models",
+        "peekOfCode": "class dich_vu (models.Model ):\n    id = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)\n    name = models.CharField(max_length=255,  )\n    price = models.IntegerField()\n    content = models.TextField()\n    date  = models.DateField()",
         "detail": "Tarot.models",
         "documentation": {}
     },
@@ -263,7 +272,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class TarotView(View):\n    def get(self, request):\n        return render(request, 'HomePage.html')\n    def serve_static_file(request):\n        response = serve(request, 'css/styles.css')\n        response['Cache-Control'] = 'no-cache, no-store, must-revalidate'\n        return response",
+        "peekOfCode": "class TarotView(View):\n    def get(self, request):\n        return render(request, 'register_page.html')",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -389,7 +398,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "TIME_ZONE = 'Asia/Ho_Chi_Minh'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "TIME_ZONE = 'Asia/Ho_Chi_Minh'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDATE_INPUT_FORMATS = ['%d-%m-%Y']",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -398,7 +407,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDATE_INPUT_FORMATS = ['%d-%m-%Y']\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -407,7 +416,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDATE_INPUT_FORMATS = ['%d-%m-%Y']\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -416,7 +425,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n]",
+        "peekOfCode": "STATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDATE_INPUT_FORMATS = ['%d-%m-%Y']\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n]",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -425,7 +434,16 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n]",
+        "peekOfCode": "#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDATE_INPUT_FORMATS = ['%d-%m-%Y']\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n]",
+        "detail": "Tarotalk.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DATE_INPUT_FORMATS",
+        "kind": 5,
+        "importPath": "Tarotalk.settings",
+        "description": "Tarotalk.settings",
+        "peekOfCode": "DATE_INPUT_FORMATS = ['%d-%m-%Y']\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n]",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },

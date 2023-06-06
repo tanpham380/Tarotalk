@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Đăng kí{% endblock %}
+{% block content %}
+<div class="container-register">
+    <div class="register-box">
+        <h2 class="register-title">Đăng kí</h2>
+        <form method="POST" novalidate>
+            {% csrf_token %}
+            <div class="form-group-register">
+                <label for="{{ form.last_name.id_for_label }}">Họ Và Tên:</label>
+                {{ form.last_name }}
+                {% if form.last_name.errors %}
+                {% for error in form.last_name.errors %}
+                <p class="error-message-register">{{ error }}</p>
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div class="form-group-register">
+                <label for="{{ form.birth_date.id_for_label }}">Ngày / Tháng / Năm Sinh:</label>
+                {{ form.birth_date }}
+                {% if form.birth_date.errors %}
+                {% for error in form.birth_date.errors %}
+                <p class="error-message-register">{{ error }}</p>
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div class="form-group-register">
+                <label for="{{ form.phone_number.id_for_label }}">Số Điện Thoại:</label>
+                {{ form.phone_number }}
+                {% if form.phone_number.errors %}
+                {% for error in form.phone_number.errors %}
+                <p class="error-message-register">{{ error }}</p>
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div class="form-group-register">
+                <label for="{{ form.email.id_for_label }}">Email:</label>
+                {{ form.email }}
+                {% if form.email.errors %}
+                {% for error in form.email.errors %}
+                <p class="error-message-register">{{ error }}</p>
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div class="form-group-register">
+                <label for="{{ form.password1.id_for_label }}">Password:</label>
+                {{ form.password1 }}
+                {% if form.password1.errors %}
+                {% for error in form.password1.errors %}
+                <p class="error-message-register">{{ error }}</p>
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div class="form-group-register">
+                <label for="{{ form.password2.id_for_label }} ">Re-Password:</label>
+                {{ form.password2 }}
+                {% if form.password2.errors %}
+                {% for error in form.password2.errors %}
+                <p class="error-message-register">{{ error }}</p>
+                {% endfor %}
+                {% endif %}
+            </div>
+            <button class="register-button" type="submit">Đăng kí</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

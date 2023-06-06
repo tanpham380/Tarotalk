@@ -6,7 +6,12 @@ from django.views.generic.base import RedirectView
 
 app_name = "Tarot"
 urlpatterns = [
-    path("", views.TarotView.as_view(), name="home"),
+
+    path('', views.ViewUser.as_view(), name='HomePage'),
+    path('login/', views.LoginPageView.as_view(), name='login'),
+    path('register/', views.RegisterView.as_view(), name='register'),
+    path('logout/', views.LogoutView, name='logout'),
+    path('testpage/',  views.TestPageView.as_view(), name='HomePage'),
     path("chatbot/", views.TarotView.chatbot, name="chatbot"),
     path("list/", views.TarotView.listReader, name="list"),
     path("profile/", views.TarotView.profile, name="profile"),
