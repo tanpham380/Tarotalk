@@ -172,5 +172,30 @@
     padding: 0;
 }
 
+/* checkout */
+.card-title {
+    color: #FFF5CC;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align:left;
+}
 
-  
+.card-body {
+    color: #FFF5CC;
+}
+
+/* .payment{
+    padding-left: 100px;
+}
+   */
+
+   .btn-checkout {
+    width: 100%;
+    background-color: #E3CFFF;
+    color: #391250;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
