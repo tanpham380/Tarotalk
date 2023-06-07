@@ -301,6 +301,14 @@
         "documentation": {}
     },
     {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "redirect",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -314,6 +322,15 @@
         "description": "django.shortcuts",
         "isExtraImport": true,
         "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "calendar",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "calendar",
+        "description": "calendar",
+        "detail": "calendar",
         "documentation": {}
     },
     {
@@ -555,7 +572,7 @@
         "kind": 5,
         "importPath": "Tarot.urls",
         "description": "Tarot.urls",
-        "peekOfCode": "app_name = 'Tarot'\nurlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.ViewUser.as_view(), name='HomePage'),\n]",
+        "peekOfCode": "app_name = \"Tarot\"\nurlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.TestPageView.as_view(), name='HomePage'),\n    path(\"chatbot/\", views.TarotView.chatbot, name=\"chatbot\"),\n    path(\"list/\", views.TarotView.listReader, name=\"list\"),\n    path(\"profile/\", views.TarotView.profile, name=\"profile\"),",
         "detail": "Tarot.urls",
         "documentation": {}
     },
@@ -564,7 +581,7 @@
         "kind": 5,
         "importPath": "Tarot.urls",
         "description": "Tarot.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.ViewUser.as_view(), name='HomePage'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.TestPageView.as_view(), name='HomePage'),\n    path(\"chatbot/\", views.TarotView.chatbot, name=\"chatbot\"),\n    path(\"list/\", views.TarotView.listReader, name=\"list\"),\n    path(\"profile/\", views.TarotView.profile, name=\"profile\"),\n    path(\"questions/\", views.TarotView.question, name=\"questions\"),",
         "detail": "Tarot.urls",
         "documentation": {}
     },
@@ -573,7 +590,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class LoginPageView(View):\n    def get(self, request):\n        return render(request, 'login_page.html')\n    def post(self, request):\n        user_name = request.POST.get('email')\n        password = request.POST.get('password')\n        print(user_name, password)\n        check_login = authenticate(username=user_name, password=password)\n        if check_login is None:\n            return render(request, 'login_page.html', {'error': 'Tên đăng nhập hoặc mật khẩu không đúng'})",
+        "peekOfCode": "class LoginPageView(View):\n    def get(self, request):\n        return render(request, \"HomePage.html\")\n    def serve_static_file(request):\n        response = serve(request, \"css/styles.css\")\n        response[\"Cache-Control\"] = \"no-cache, no-store, must-revalidate\"\n        return response\n    def chatbot(request):\n        return render(request, \"Chatbox.html\")\n    def listReader(request):",
         "detail": "Tarot.views",
         "documentation": {}
     },
