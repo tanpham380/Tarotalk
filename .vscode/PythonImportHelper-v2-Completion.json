@@ -1,5 +1,21 @@
 [
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
         "label": "django.contrib.auth.models",
         "kind": 6,
         "isExtraImport": true,
@@ -58,11 +74,124 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
         "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
         "documentation": {}
     },
     {
@@ -72,6 +201,22 @@
         "importPath": "django.utils.timezone",
         "description": "django.utils.timezone",
         "detail": "django.utils.timezone",
+        "documentation": {}
+    },
+    {
+        "label": "template",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
         "documentation": {}
     },
     {
@@ -99,6 +244,14 @@
         "documentation": {}
     },
     {
+        "label": "UserCreationForm",
+        "importPath": "django.contrib.auth.forms",
+        "description": "django.contrib.auth.forms",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.forms",
+        "documentation": {}
+    },
+    {
         "label": "TestCase",
         "importPath": "django.test",
         "description": "django.test",
@@ -112,6 +265,14 @@
         "isExtraImport": true,
         "importPath": "django.http",
         "description": "django.http",
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponseRedirect",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
         "detail": "django.http",
         "documentation": {}
     },
@@ -148,6 +309,14 @@
         "documentation": {}
     },
     {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -164,11 +333,52 @@
         "documentation": {}
     },
     {
-        "label": "serve",
-        "importPath": "django.views.static",
-        "description": "django.views.static",
+        "label": "authenticate",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
         "isExtraImport": true,
-        "detail": "django.views.static",
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "logout",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "LoginRequiredMixin",
+        "importPath": "django.contrib.auth.mixins",
+        "description": "django.contrib.auth.mixins",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.mixins",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "Tarot.models",
+        "description": "Tarot.models",
+        "isExtraImport": true,
+        "detail": "Tarot.models",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
         "documentation": {}
     },
     {
@@ -194,6 +404,14 @@
         "description": "pathlib",
         "isExtraImport": true,
         "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "static",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "isExtraImport": true,
+        "detail": "django.conf.urls.static",
         "documentation": {}
     },
     {
@@ -223,6 +441,87 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0002_alter_user_birth_date",
+        "description": "Tarot.migrations.0002_alter_user_birth_date",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='user',\n            name='birth_date',\n            field=models.CharField(max_length=255, null=True),\n        ),",
+        "detail": "Tarot.migrations.0002_alter_user_birth_date",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0003_alter_user_birth_date",
+        "description": "Tarot.migrations.0003_alter_user_birth_date",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0002_alter_user_birth_date'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='user',\n            name='birth_date',\n            field=models.CharField(max_length=50, null=True),\n        ),",
+        "detail": "Tarot.migrations.0003_alter_user_birth_date",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0004_alter_user_birth_date",
+        "description": "Tarot.migrations.0004_alter_user_birth_date",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0003_alter_user_birth_date'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='user',\n            name='birth_date',\n            field=models.DateField(null=True),\n        ),",
+        "detail": "Tarot.migrations.0004_alter_user_birth_date",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0005_alter_user_avatar",
+        "description": "Tarot.migrations.0005_alter_user_avatar",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0004_alter_user_birth_date'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='user',\n            name='avatar',\n            field=models.ImageField(blank=True, default='static/img/avatars/default_avatar.jpg', null=True, upload_to='static/avatars/'),\n        ),",
+        "detail": "Tarot.migrations.0005_alter_user_avatar",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0006_user_istarot",
+        "description": "Tarot.migrations.0006_user_istarot",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0005_alter_user_avatar'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='user',\n            name='istarot',\n            field=models.BooleanField(default=False),\n        ),",
+        "detail": "Tarot.migrations.0006_user_istarot",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0007_rename_start_vote_user_star_vote",
+        "description": "Tarot.migrations.0007_rename_start_vote_user_star_vote",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0006_user_istarot'),\n    ]\n    operations = [\n        migrations.RenameField(\n            model_name='user',\n            old_name='start_vote',\n            new_name='star_vote',\n        ),",
+        "detail": "Tarot.migrations.0007_rename_start_vote_user_star_vote",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0008_alter_user_avatar_alter_user_cover_page",
+        "description": "Tarot.migrations.0008_alter_user_avatar_alter_user_cover_page",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0007_rename_start_vote_user_star_vote'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='user',\n            name='avatar',\n            field=models.ImageField(blank=True, default='avatars/default_avatar.jpg', null=True, upload_to='avatars/'),\n        ),",
+        "detail": "Tarot.migrations.0008_alter_user_avatar_alter_user_cover_page",
+        "documentation": {}
+    },
+    {
+        "label": "get_star_range",
+        "kind": 2,
+        "importPath": "Tarot.templatetags.custom_tags",
+        "description": "Tarot.templatetags.custom_tags",
+        "peekOfCode": "def get_star_range(value):\n    return range(value)",
+        "detail": "Tarot.templatetags.custom_tags",
+        "documentation": {}
+    },
+    {
+        "label": "register",
+        "kind": 5,
+        "importPath": "Tarot.templatetags.custom_tags",
+        "description": "Tarot.templatetags.custom_tags",
+        "peekOfCode": "register = template.Library()\n@register.filter\ndef get_star_range(value):\n    return range(value)",
+        "detail": "Tarot.templatetags.custom_tags",
+        "documentation": {}
+    },
+    {
         "label": "TarotConfig",
         "kind": 6,
         "importPath": "Tarot.apps",
@@ -232,11 +531,29 @@
         "documentation": {}
     },
     {
+        "label": "RegisterForm",
+        "kind": 6,
+        "importPath": "Tarot.forms",
+        "description": "Tarot.forms",
+        "peekOfCode": "class RegisterForm(UserCreationForm):\n    last_name = forms.CharField(\n        label='Họ và tên',\n        widget=forms.TextInput(attrs={'class': 'form-control','required': 'required',}),\n    )\n    birth_date = forms.DateField(\n        label='Ngày / Tháng / Năm Sinh',\n        widget=forms.DateInput(attrs={'type': 'date','class': 'form-control','required': 'required'})\n    )\n    email = forms.EmailField(",
+        "detail": "Tarot.forms",
+        "documentation": {}
+    },
+    {
+        "label": "UpgradeUserForm",
+        "kind": 6,
+        "importPath": "Tarot.forms",
+        "description": "Tarot.forms",
+        "peekOfCode": "class UpgradeUserForm(UserCreationForm):\n    introduction = forms.CharField(\n        label='Giới thiệu',\n        widget=forms.Textarea(attrs={'class': 'Upgradeform-control','required': 'required',}),\n    )\n    status = forms.CharField(\n        label='Trạng thái',\n        widget=forms.TextInput(attrs={'class': 'Upgradeform-control','required': 'required',}),\n    )   \n    cover_page = forms.ImageField(",
+        "detail": "Tarot.forms",
+        "documentation": {}
+    },
+    {
         "label": "User",
         "kind": 6,
         "importPath": "Tarot.models",
         "description": "Tarot.models",
-        "peekOfCode": "class User(AbstractUser):\n    avatar = models.ImageField(upload_to='static/avatars/', null=True, blank=True)\n    cover_page = models.ImageField(upload_to='static/cover_pages/', null=True, blank=True)\n    name = models.CharField(max_length=255,  )\n    tarot_role = models.CharField(max_length=50, default= \"Tarot Reading and AStrology\")\n    introduction = models.TextField()\n    status = models.CharField(max_length=255)\n    start_vote = models.IntegerField()\n    birth_date = models.DateField()\n    email = models.EmailField()",
+        "peekOfCode": "class User(AbstractUser):\n    avatar = models.ImageField(upload_to='avatars/', null=True, blank=True, default='avatars/default_avatar.jpg')\n    cover_page = models.ImageField(upload_to='cover_pages/', null=True, blank=True)\n    tarot_role = models.CharField(max_length=50, default= \"Tarot Reading and AStrology\")\n    introduction = models.TextField(null=True)\n    status = models.CharField(max_length=255, null=True)\n    star_vote = models.IntegerField(null=True)\n    birth_date = models.DateField(null=True)\n    email = models.EmailField(null=True)\n    phone_number = models.CharField(max_length=10,null=True)",
         "detail": "Tarot.models",
         "documentation": {}
     },
@@ -254,7 +571,7 @@
         "kind": 5,
         "importPath": "Tarot.urls",
         "description": "Tarot.urls",
-        "peekOfCode": "app_name = 'Tarot'\nurlpatterns = [\n    path('', views.TarotView.as_view(), name='home'),\n]",
+        "peekOfCode": "app_name = 'Tarot'\nurlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.TestPageView.as_view(), name='HomePage'),\n    path(\"chatbot/\", chatbot, name=\"chatbot\"),\n    path(\"list/\", listReader, name=\"list\"),\n    path(\"profile/\", profile, name=\"profile\"),",
         "detail": "Tarot.urls",
         "documentation": {}
     },
@@ -263,16 +580,142 @@
         "kind": 5,
         "importPath": "Tarot.urls",
         "description": "Tarot.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.TarotView.as_view(), name='home'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.TestPageView.as_view(), name='HomePage'),\n    path(\"chatbot/\", chatbot, name=\"chatbot\"),\n    path(\"list/\", listReader, name=\"list\"),\n    path(\"profile/\", profile, name=\"profile\"),\n    path(\"questions/\", question, name=\"questions\"),",
         "detail": "Tarot.urls",
         "documentation": {}
     },
     {
-        "label": "TarotView",
+        "label": "LoginPageView",
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class TarotView(View):\n    def get(self, request):\n        return render(request, 'register_page.html')",
+        "peekOfCode": "class LoginPageView(View):\n    def get(self, request):\n        return render(request, 'login_page.html')\n    def post(self, request):\n        user_name = request.POST.get('email')\n        password = request.POST.get('password')\n        print(user_name, password)\n        check_login = authenticate(username=user_name, password=password)\n        if check_login is None:\n            return render(request, 'login_page.html', {'error': 'Tên đăng nhập hoặc mật khẩu không đúng'})",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "ViewUser",
+        "kind": 6,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "class ViewUser(LoginRequiredMixin ,View):\n    login_url = '/login/'\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        random_users = random.sample(list(istarot_users), 5)\n        context = {'istarot_users': random_users}\n        return render(request, 'homepage.html', context)\nclass RegisterView(View):\n    def get(self, request):\n        form = RegisterForm()",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "RegisterView",
+        "kind": 6,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "class RegisterView(View):\n    def get(self, request):\n        form = RegisterForm()\n        return render(request, 'register_page.html', {'form': form})\n    def post(self, request):\n        form = RegisterForm(request.POST)\n        if form.is_valid():\n            email = form.cleaned_data.get('email')\n            if User.objects.filter(username=email):\n                form.add_error('email', 'Tên đăng nhập đã tồn tại')",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "TestPageView",
+        "kind": 6,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "class TestPageView(LoginRequiredMixin,View) :\n    login_url = '/login/'\n    def get(self, request):\n        form = UpgradeUserForm()\n        return render(request, 'upgrade_User.html', {'form': form})\n    def post(self, request):\n        form = UpgradeUserForm(request.POST, request.FILES)\n        if form.is_valid():\n            user = request.user\n            user.introduction = form.cleaned_data.get('introduction')",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "MoreReaderView",
+        "kind": 6,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "class MoreReaderView(View):\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        return render(request, 'more_reader.html', {'istarot_users': istarot_users })\ndef LogoutView(request):\n    logout(request)\n    return HttpResponseRedirect('/login/')",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "chatbot",
+        "kind": 2,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "def chatbot(request):\n    return render(request, \"Chatbox.html\")\ndef listReader(request):\n    return render(request, \"ListReader.html\")\ndef profile(request):\n    return render(request, \"profile.html\")\ndef question(request):\n    return render(request, \"Questions.html\")\ndef package(request):\n    return render(request, \"Package.html\")",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "listReader",
+        "kind": 2,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "def listReader(request):\n    return render(request, \"ListReader.html\")\ndef profile(request):\n    return render(request, \"profile.html\")\ndef question(request):\n    return render(request, \"Questions.html\")\ndef package(request):\n    return render(request, \"Package.html\")\ndef hour(request):\n    return render(request, \"Hour.html\")",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "profile",
+        "kind": 2,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "def profile(request):\n    return render(request, \"profile.html\")\ndef question(request):\n    return render(request, \"Questions.html\")\ndef package(request):\n    return render(request, \"Package.html\")\ndef hour(request):\n    return render(request, \"Hour.html\")\ndef chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "question",
+        "kind": 2,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "def question(request):\n    return render(request, \"Questions.html\")\ndef package(request):\n    return render(request, \"Package.html\")\ndef hour(request):\n    return render(request, \"Hour.html\")\ndef chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "package",
+        "kind": 2,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "def package(request):\n    return render(request, \"Package.html\")\ndef hour(request):\n    return render(request, \"Hour.html\")\ndef chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")  ",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "hour",
+        "kind": 2,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "def hour(request):\n    return render(request, \"Hour.html\")\ndef chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")  \nclass LoginPageView(View):\n    def get(self, request):",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "chooseSlot",
+        "kind": 2,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "def chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")  \nclass LoginPageView(View):\n    def get(self, request):\n        return render(request, 'login_page.html')\n    def post(self, request):",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "checkout",
+        "kind": 2,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "def checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")  \nclass LoginPageView(View):\n    def get(self, request):\n        return render(request, 'login_page.html')\n    def post(self, request):\n        user_name = request.POST.get('email')\n        password = request.POST.get('password')",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "calendar",
+        "kind": 2,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "def calendar(request):\n    return render(request, \"Calendar.html\")  \nclass LoginPageView(View):\n    def get(self, request):\n        return render(request, 'login_page.html')\n    def post(self, request):\n        user_name = request.POST.get('email')\n        password = request.POST.get('password')\n        print(user_name, password)\n        check_login = authenticate(username=user_name, password=password)",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "LogoutView",
+        "kind": 2,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "def LogoutView(request):\n    logout(request)\n    return HttpResponseRedirect('/login/')",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -317,7 +760,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "ALLOWED_HOSTS = ['*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'Tarot.apps.TarotConfig',",
+        "peekOfCode": "ALLOWED_HOSTS = ['*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'Tarot',",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -326,7 +769,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'Tarot.apps.TarotConfig',\n]\nMIDDLEWARE = [",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'Tarot',\n]\nMIDDLEWARE = [",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -354,6 +797,15 @@
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
         "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
+        "detail": "Tarotalk.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#ASGI_APPLICATION",
+        "kind": 5,
+        "importPath": "Tarotalk.settings",
+        "description": "Tarotalk.settings",
+        "peekOfCode": "#ASGI_APPLICATION = 'chat.asgi.application'\nWSGI_APPLICATION = 'Tarotalk.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/4.2/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -398,7 +850,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "TIME_ZONE = 'Asia/Ho_Chi_Minh'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDATE_INPUT_FORMATS = ['%d-%m-%Y']",
+        "peekOfCode": "TIME_ZONE = 'Asia/Ho_Chi_Minh'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -407,7 +859,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDATE_INPUT_FORMATS = ['%d-%m-%Y']\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -416,7 +868,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDATE_INPUT_FORMATS = ['%d-%m-%Y']\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -425,7 +877,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDATE_INPUT_FORMATS = ['%d-%m-%Y']\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n]",
+        "peekOfCode": "STATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n]\nMEDIA_ROOT = os.path.join(BASE_DIR, '/Tarot/static/img/media')",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -434,16 +886,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDATE_INPUT_FORMATS = ['%d-%m-%Y']\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n]",
-        "detail": "Tarotalk.settings",
-        "documentation": {}
-    },
-    {
-        "label": "DATE_INPUT_FORMATS",
-        "kind": 5,
-        "importPath": "Tarotalk.settings",
-        "description": "Tarotalk.settings",
-        "peekOfCode": "DATE_INPUT_FORMATS = ['%d-%m-%Y']\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n]",
+        "peekOfCode": "#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n]\nMEDIA_ROOT = os.path.join(BASE_DIR, '/Tarot/static/img/media')\nMEDIA_URL = '/media/'",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -452,7 +895,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n]",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n]\nMEDIA_ROOT = os.path.join(BASE_DIR, '/Tarot/static/img/media')\nMEDIA_URL = '/media/'",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -461,7 +904,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "AUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n]",
+        "peekOfCode": "AUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n]\nMEDIA_ROOT = os.path.join(BASE_DIR, '/Tarot/static/img/media')\nMEDIA_URL = '/media/'",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -470,7 +913,25 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "STATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n]",
+        "peekOfCode": "STATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n]\nMEDIA_ROOT = os.path.join(BASE_DIR, '/Tarot/static/img/media')\nMEDIA_URL = '/media/'",
+        "detail": "Tarotalk.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_ROOT",
+        "kind": 5,
+        "importPath": "Tarotalk.settings",
+        "description": "Tarotalk.settings",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, '/Tarot/static/img/media')\nMEDIA_URL = '/media/'",
+        "detail": "Tarotalk.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_URL",
+        "kind": 5,
+        "importPath": "Tarotalk.settings",
+        "description": "Tarotalk.settings",
+        "peekOfCode": "MEDIA_URL = '/media/'",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -479,7 +940,7 @@
         "kind": 5,
         "importPath": "Tarotalk.urls",
         "description": "Tarotalk.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('Tarot.urls')),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n   # path('chatchanel/', include('chat.urls')),\n    path('', include('Tarot.urls')),\n]\nurlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
         "detail": "Tarotalk.urls",
         "documentation": {}
     },

@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en,vi">
+
 <head>
     <meta charset="UTF-8">
+    {% block extra_css %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    {% endblock %}
     <title>{% block title %}TaroTalk{% endblock %}</title>
 </head>
+
 <body>
     <header>
         <nav>
@@ -16,18 +20,19 @@
                         TAROTALK
                     </a>
                 </li>
-                <li class="move-down"><a href="#">READERS</a></li>
+                <li class="move-down"><a href="{% url 'Tarot:HomePage' %}">READERS</a></li>
                 <li class="move-down"><a href="#">SỰ KIỆN</a></li>
                 <li class="move-down"><a href="#">BÀI VIẾT</a></li>
                 <li class="move-down"><a href="#">HƯỚNG DẪN</a></li>
                 <li class="move-down"><a href="#">TÀI KHOẢN</a></li>
-                
+
             </ul>
         </nav>
-        
+
     </header>
     <div class="content">
         {% block content %}{% endblock %}
     </div>
 </body>
+
 </html>
