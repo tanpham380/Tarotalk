@@ -541,11 +541,11 @@
         "documentation": {}
     },
     {
-        "label": "UpgradeUser",
+        "label": "UpgradeUserForm",
         "kind": 6,
         "importPath": "Tarot.forms",
         "description": "Tarot.forms",
-        "peekOfCode": "class UpgradeUser(UserCreationForm):\n    introduction = forms.CharField(\n        label='Giới thiệu',\n        widget=forms.Textarea(attrs={'class': 'form-control','required': 'required',}),\n    )\n    status = forms.CharField(\n        label='Trạng thái',\n        widget=forms.TextInput(attrs={'class': 'form-control','required': 'required',}),\n    )    \n    class Meta:",
+        "peekOfCode": "class UpgradeUserForm(UserCreationForm):\n    introduction = forms.CharField(\n        label='Giới thiệu',\n        widget=forms.Textarea(attrs={'class': 'Upgradeform-control','required': 'required',}),\n    )\n    status = forms.CharField(\n        label='Trạng thái',\n        widget=forms.TextInput(attrs={'class': 'Upgradeform-control','required': 'required',}),\n    )   \n    cover_page = forms.ImageField(",
         "detail": "Tarot.forms",
         "documentation": {}
     },
@@ -590,7 +590,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class LoginPageView(View):\n    def get(self, request):\n        return render(request, \"HomePage.html\")\n    def post(self, request):\n        user_name = request.POST.get('email')\n        password = request.POST.get('password')\n        print(user_name, password)\n        check_login = authenticate(username=user_name, password=password)\n        if check_login is None:\n            return render(request, 'login_page.html', {'error': 'Tên đăng nhập hoặc mật khẩu không đúng'})",
+        "peekOfCode": "class LoginPageView(View):\n    def get(self, request):\n        return render(request, 'login_page.html')\n    def post(self, request):\n        user_name = request.POST.get('email')\n        password = request.POST.get('password')\n        print(user_name, password)\n        check_login = authenticate(username=user_name, password=password)\n        if check_login is None:\n            return render(request, 'login_page.html', {'error': 'Tên đăng nhập hoặc mật khẩu không đúng'})",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -599,7 +599,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class ViewUser( View):\n    login_url = '/login/'\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        random_users = random.sample(list(istarot_users), 4)\n        context = {'istarot_users': random_users}\n        return render(request, 'homepage.html', context)\nclass RegisterView(View):\n    def get(self, request):\n        form = RegisterForm()",
+        "peekOfCode": "class ViewUser(LoginRequiredMixin ,View):\n    login_url = '/login/'\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        random_users = random.sample(list(istarot_users), 5)\n        context = {'istarot_users': random_users}\n        return render(request, 'homepage.html', context)\nclass RegisterView(View):\n    def get(self, request):\n        form = RegisterForm()",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -617,7 +617,16 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class TestPageView(View) :\n    def get(self, request):\n        return render(request, 'register_sucessfully.html')\ndef LogoutView(request):\n    logout(request)\n    return HttpResponseRedirect('/login/')",
+        "peekOfCode": "class TestPageView(LoginRequiredMixin,View) :\n    login_url = '/login/'\n    def get(self, request):\n        form = UpgradeUserForm()\n        return render(request, 'upgrade_User.html', {'form': form})\n    def post(self, request):\n        form = UpgradeUserForm(request.POST, request.FILES)\n        if form.is_valid():\n            user = request.user\n            user.introduction = form.cleaned_data.get('introduction')",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "MoreReaderView",
+        "kind": 6,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "class MoreReaderView(View):\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        return render(request, 'more_reader.html', {'istarot_users': istarot_users })\ndef LogoutView(request):\n    logout(request)\n    return HttpResponseRedirect('/login/')",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -680,7 +689,7 @@
         "kind": 2,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "def chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")\nclass LoginPageView(View):\n    def get(self, request):\n        return render(request, \"HomePage.html\")\n    def post(self, request):",
+        "peekOfCode": "def chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")\nclass LoginPageView(View):\n    def get(self, request):\n        return render(request, 'login_page.html')\n    def post(self, request):",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -689,7 +698,7 @@
         "kind": 2,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "def checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")\nclass LoginPageView(View):\n    def get(self, request):\n        return render(request, \"HomePage.html\")\n    def post(self, request):\n        user_name = request.POST.get('email')\n        password = request.POST.get('password')",
+        "peekOfCode": "def checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")\nclass LoginPageView(View):\n    def get(self, request):\n        return render(request, 'login_page.html')\n    def post(self, request):\n        user_name = request.POST.get('email')\n        password = request.POST.get('password')",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -698,7 +707,7 @@
         "kind": 2,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "def calendar(request):\n    return render(request, \"Calendar.html\")\nclass LoginPageView(View):\n    def get(self, request):\n        return render(request, \"HomePage.html\")\n    def post(self, request):\n        user_name = request.POST.get('email')\n        password = request.POST.get('password')\n        print(user_name, password)\n        check_login = authenticate(username=user_name, password=password)",
+        "peekOfCode": "def calendar(request):\n    return render(request, \"Calendar.html\")\nclass LoginPageView(View):\n    def get(self, request):\n        return render(request, 'login_page.html')\n    def post(self, request):\n        user_name = request.POST.get('email')\n        password = request.POST.get('password')\n        print(user_name, password)\n        check_login = authenticate(username=user_name, password=password)",
         "detail": "Tarot.views",
         "documentation": {}
     },
