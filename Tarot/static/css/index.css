@@ -1,0 +1,201 @@
+
+
+.logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+.banner {
+    height: 300px;
+}
+
+.banner img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+.profile{
+    padding: 0;
+    height: 80vh;
+}
+
+.avatar {
+    top: -12%;
+}
+
+.avatar img {
+    width: 90%;
+}
+
+.card-profile {
+    height: 900px;
+    border-radius: 0 20px 0 0;
+    background-color: #512968 !important;
+    color: #FDEDBB;
+}
+
+.rating {
+    font-size: 24px;
+    color: yellow;
+}
+
+.btn-chat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FDEDBB;
+    color: #000000;
+    font-weight: bold;
+    border-radius: 20px;
+    width: 100px;
+    height: 30px;
+    
+}
+
+.card-text {
+    margin-bottom: 3px;
+}
+
+.profile-description {
+    color: #FDEDBB;
+    height: fit-content;
+}
+
+.profile-content {
+    padding-left: 15px;
+    top: 45%;
+    font-style: italic;
+}
+
+.list-service {
+    font-size: 30px;
+    font-style: normal;
+    color: #FFF5CC;
+    font-weight: bold;
+    margin-bottom: 50%;
+}
+
+.service-buttons {
+    margin-bottom: 3%;
+}
+
+.btn-service {
+    height: fit-content;
+    background-color: #E3CFFF;
+    color: #391250;
+    margin-bottom: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+    border-radius: 20px;
+}
+
+.btn-service:hover {
+    background-color: #992ece;
+}
+
+.package-zone {
+    margin-top: 20px;
+    padding: 0;
+    border-radius: 15px;
+    height: auto;
+    background-color: #FDEDBB;
+}
+
+.package-zone-header {
+    background-color: #512968;
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+.btn-package-item {
+    background-color: #E3CFFF;
+    color: #391250;
+    margin-bottom: 7px;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+/*calendar*/
+.custome-calendar {
+    width: 100%;
+}
+
+.custome-calendar-header {
+    background-color: #E3CFFF;
+    color: #391250;
+    font-weight: bold;
+    height: 30px;
+    width: 70%;
+}
+
+
+.month {
+    background-color: #E3CFFF;
+    border-radius: 30px;
+    color: #391250 !important;
+    font-weight: bold !important;   
+}
+
+.calendar_weekdays {
+    background-color: #E3CFFF;
+    color: #391250 !important;
+    font-weight: bold !important;
+    font-size: 15px;
+}
+
+.calendar_content {
+    background: transparent !important;
+}
+
+.calendar_content div {
+    color: #FFF5CC;
+}
+
+.past-date {
+    color: #706A6A !important;
+}
+
+.calendar_weekdays  div {
+    padding: 0;
+}
+
+/* checkout */
+.card-title {
+    color: #FFF5CC;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align:left;
+}
+
+.card-body {
+    color: #FFF5CC;
+}
+
+/* .payment{
+    padding-left: 100px;
+}
+   */
+
+   .btn-checkout {
+    width: 100%;
+    background-color: #E3CFFF;
+    color: #391250;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}

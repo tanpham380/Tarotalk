@@ -1,0 +1,118 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="container-fluid d-flex justify-content-center">
+  <div
+    class="col-md-6 card package-zone text-center"
+    style="background-color: #512968"
+  >
+    <div
+      class="card-header text-center package-zone-header"
+      style="background-color: #e3cfff; color: #512968"
+    >
+      Xác nhận thông tin
+    </div>
+    <div class="row card-body">
+      <div
+        class="card-title"
+        style="margin-top: -10px; margin-bottom: -10px; padding-left: 10%"
+      >
+        Dịch vụ đã chọn:
+      </div>
+    </div>
+    <div
+      class="row card-body card-content"
+      style="
+        padding-left: 10%;
+        text-align: left;
+
+        margin-top: -10px;
+        margin-bottom: -10px;
+      "
+    >
+      <div class="col-md-7">Trải bài tổng quan</div>
+      <div
+        class="col-md-5 align-right"
+        style="padding-right: 10%; padding-left: 10%"
+      >
+        250.000 VNĐ
+      </div>
+    </div>
+    <div
+      class="row card-body card-content"
+      style="
+        padding-left: 10%;
+        text-align: left;
+        padding-right: 10%;
+        margin-top: -10px;
+        margin-bottom: -10px;
+      "
+    >
+      <div class="col-md-7">TỔNG</div>
+      <div
+        class="col-md-5 align-right"
+        style="padding-right: 10%; padding-left: 16%"
+      >
+        250.000 VNĐ
+      </div>
+    </div>
+    <div
+      class="row card-body card-content line text-center"
+      style="color: #fff5cc"
+    >
+      <div class="col-md-12">--------------------------------------------</div>
+    </div>
+    <div
+      class="row card-body card-content payment"
+      style="
+        padding-left: 10%;
+        text-align: left;
+        padding-right: 10%;
+        margin-top: -10px;
+        margin-bottom: -10px;
+      "
+    >
+      <div class="col-md-12">Thanh toán qua ví MoMo</div>
+    </div>
+    <div
+      class="row card-body card-content payment"
+      style="
+        padding-left: 10%;
+        text-align: left;
+        padding-right: 10%;
+        margin-top: -10px;
+        margin-bottom: -10px;
+      "
+    >
+      <div class="col-md-12">Thanh toán qua ngân hàng</div>
+    </div>
+    <div
+      class="row card-body card-content payment"
+      style="
+        padding-left: 10%;
+        text-align: left;
+        padding-right: 10%;
+        margin-top: -10px;
+        margin-bottom: -10px;
+      "
+    >
+      <div class="col-md-12">
+        <label>
+          <input type="checkbox" />
+          Tôi đã đọc và đồng ý với
+          <span class="underline">điều khoản và điều kiện</span> của TAROTALK.
+        </label>
+      </div>
+    </div>
+    <div class="row card-body card-content">
+      <div class="col-md-12">
+        <button
+          type="button"
+          class="btn btn-checkout"
+          style="background-color: #e3cfff"
+        >
+          Xác nhận
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
