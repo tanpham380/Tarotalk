@@ -170,22 +170,6 @@
         "documentation": {}
     },
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -521,15 +505,6 @@
         "documentation": {}
     },
     {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "Tarot.migrations.0009_rename_star_vote_user_start_vote_alter_user_avatar_and_more",
-        "description": "Tarot.migrations.0009_rename_star_vote_user_start_vote_alter_user_avatar_and_more",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0008_alter_user_avatar_alter_user_cover_page'),\n    ]\n    operations = [\n        migrations.RenameField(\n            model_name='user',\n            old_name='star_vote',\n            new_name='start_vote',\n        ),",
-        "detail": "Tarot.migrations.0009_rename_star_vote_user_start_vote_alter_user_avatar_and_more",
-        "documentation": {}
-    },
-    {
         "label": "get_star_range",
         "kind": 2,
         "importPath": "Tarot.templatetags.custom_tags",
@@ -643,15 +618,6 @@
         "importPath": "Tarot.views",
         "description": "Tarot.views",
         "peekOfCode": "class TestPageView(View) :\n    def get(self, request):\n        return render(request, 'register_sucessfully.html')\ndef LogoutView(request):\n    logout(request)\n    return HttpResponseRedirect('/login/')",
-        "detail": "Tarot.views",
-        "documentation": {}
-    },
-    {
-        "label": "serve_static_file",
-        "kind": 2,
-        "importPath": "Tarot.views",
-        "description": "Tarot.views",
-        "peekOfCode": "def serve_static_file(request):\n    response = serve(request, \"css/styles.css\")\n    response[\"Cache-Control\"] = \"no-cache, no-store, must-revalidate\"\n    return response\ndef chatbot(request):\n    return render(request, \"Chatbox.html\")\ndef listReader(request):\n    return render(request, \"ListReader.html\")\ndef profile(request):\n    return render(request, \"profile.html\")",
         "detail": "Tarot.views",
         "documentation": {}
     },
