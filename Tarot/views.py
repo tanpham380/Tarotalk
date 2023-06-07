@@ -4,37 +4,12 @@ from django.views import View
 from django.contrib.auth import authenticate, login , logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from Tarot.models import User
-from .forms import *
+from .forms import RegisterForm
 import random
 
 # Create your views here.
 
-def chatbot(request):
-    return render(request, "Chatbox.html")
 
-def listReader(request):
-    return render(request, "ListReader.html")
-
-def profile(request):
-    return render(request, "profile.html")
-
-def question(request):
-    return render(request, "Questions.html")
-
-def package(request):
-    return render(request, "Package.html")
-
-def hour(request):
-    return render(request, "Hour.html")
-
-def chooseSlot(request):
-    return render(request, "ChooseSlot.html")
-
-def checkout(request):
-    return render(request, "CheckOut.html")
-
-def calendar(request):
-    return render(request, "Calendar.html")  
 class LoginPageView(View):
     def get(self, request):
         return render(request, 'login_page.html')
@@ -50,11 +25,11 @@ class LoginPageView(View):
         return render(request, 'homepage.html')
 
 
-class ViewUser(LoginRequiredMixin ,View):
+class ViewUser( View):
     login_url = '/login/'
     def get(self, request):
         istarot_users = User.objects.filter(istarot=True)
-        random_users = random.sample(list(istarot_users), 5)
+        random_users = random.sample(list(istarot_users), 4)
         context = {'istarot_users': random_users}
         return render(request, 'homepage.html', context)
 
@@ -87,30 +62,10 @@ class RegisterView(View):
             return render(request, 'register_page.html', {'form': form})
 
 
-class TestPageView(LoginRequiredMixin,View) :
-    login_url = '/login/'
+class TestPageView(View) :
     def get(self, request):
-        form = UpgradeUserForm()
-        return render(request, 'upgrade_User.html', {'form': form})
-    def post(self, request):
-        form = UpgradeUserForm(request.POST, request.FILES)
-        if form.is_valid():
-            user = request.user
-            user.introduction = form.cleaned_data.get('introduction')
-            user.status = form.cleaned_data.get('status')
-            user.cover_page = form.cleaned_data.get('cover_page')
-            user.avatar = form.cleaned_data.get('avatar')
-            user.save()
-            return render(request, 'update_user_succesfull.html')
-        else:
-            return render(request, 'upgrade_User.html', {'form': form})
-    
-        
+        return render(request, 'register_sucessfully.html')
 
-class MoreReaderView(View):
-    def get(self, request):
-        istarot_users = User.objects.filter(istarot=True)
-        return render(request, 'more_reader.html', {'istarot_users': istarot_users })
 
     
 def LogoutView(request):
