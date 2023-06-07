@@ -1,7 +1,11 @@
-
+<!DOCTYPE html>
+{% load static %}
+<html lang="en,vi">
 <head>
     <meta charset="UTF-8">
+    {% block extra_css %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    {% endblock %}
     <title>{% block title %}Document{% endblock %}</title>
 </head>
 <body>
