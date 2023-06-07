@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Đăng kí{% endblock %}
+{% block content %}
+<div class="container-update">
+    <div class="update-box">
+        <h2 class="update-title">Đăng kí</h2>
+        <form method="POST" novalidate>
+            {% csrf_token %}
+            <div class="form-group-update">
+                <label for="{{ form.avatar.id_for_label }}">Ảnh đại diện:</label>
+                {{ form.avatar }}
+
+            </div>
+            
+            <div class="form-group-update">
+                <label for="{{ form.cover_page.id_for_label }}">Ảnh bìa bạn muốn:</label>
+                {{ form.cover_page }}
+            </div>
+            <div class="form-group-update">
+                <label for="{{ form.introduction.id_for_label }}">Giới thiện bản thân:</label>
+                {{ form.introduction }}
+            </div>
+            <div class="form-group-update">
+                <label for="{{ form.status.id_for_label }}">Status bạn muốn hiển thị trên web:</label>
+                {{ form.status }}
+            </div>
+            <button class="update-button" type="submit">Đăng kí</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

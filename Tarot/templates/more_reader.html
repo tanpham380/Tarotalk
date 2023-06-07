@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static custom_tags %} {# Load the custom_tags file #}
+{% block title %}TaroTalk{% endblock %}
+{% block content %}
+<div class="card-reader-container">
+  {% for user in istarot_users %}
+    <div class="more_card_reader">
+      <img src="{{ user.avatar.url }}">
+      <h3>{{ user.last_name }}</h3>
+      <p>{{ user.tarot_role }}</p>
+      <div class="vote">
+        {% for _ in user.star_vote|get_star_range %} {# Apply the custom filter #}
+          <img src="{% static 'img/star.png' %}" alt="Star Icon" class="star-icon">
+        {% endfor %}
+      </div>      
+      <div class="status">{{ user.status }}</div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
