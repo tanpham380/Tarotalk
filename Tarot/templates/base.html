@@ -6,20 +6,28 @@
     {% block extra_css %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     {% endblock %}
-    <title>{% block title %}Document{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <title>{% block title %}TaroTalk{% endblock %}</title>
 </head>
 <body>
     <header>
         <nav>
-        <ul>
-            <li><a href="{% url 'Tarot:login' %}">TAROTALK</a></li>
-            <li><a href="#">READERS</a></li>
-            <li><a href="#">SỰ KIỆN</a></li>
-            <li><a href="#">BÀI VIẾT</a></li>
-            <li><a href="#">HƯỚNG DẪN</a></li>
-            <li><a href="#">TÀI KHOẢN</a></li> 
-        </ul>
+            <ul>
+                <li>
+                    <a href="{% url 'Tarot:login' %}">
+                        <img src="{% static 'img\TAROTALK_LOGO.png' %}" alt="Logo TAROTALK" class="logo-image">
+                        TAROTALK
+                    </a>
+                </li>
+                <li class="move-down"><a href="{% url 'Tarot:HomePage' %}">READERS</a></li>
+                <li class="move-down"><a href="#">SỰ KIỆN</a></li>
+                <li class="move-down"><a href="#">BÀI VIẾT</a></li>
+                <li class="move-down"><a href="#">HƯỚNG DẪN</a></li>
+                <li class="move-down"><a href="#">TÀI KHOẢN</a></li>
+                
+            </ul>
         </nav>
+        
     </header>
     <div class="content">
         {% block content %}{% endblock %}
