@@ -170,6 +170,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -505,6 +521,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0009_rename_star_vote_user_start_vote_alter_user_avatar_and_more",
+        "description": "Tarot.migrations.0009_rename_star_vote_user_start_vote_alter_user_avatar_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0008_alter_user_avatar_alter_user_cover_page'),\n    ]\n    operations = [\n        migrations.RenameField(\n            model_name='user',\n            old_name='star_vote',\n            new_name='start_vote',\n        ),",
+        "detail": "Tarot.migrations.0009_rename_star_vote_user_start_vote_alter_user_avatar_and_more",
+        "documentation": {}
+    },
+    {
         "label": "get_star_range",
         "kind": 2,
         "importPath": "Tarot.templatetags.custom_tags",
@@ -572,7 +597,7 @@
         "kind": 5,
         "importPath": "Tarot.urls",
         "description": "Tarot.urls",
-        "peekOfCode": "app_name = \"Tarot\"\nurlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.TestPageView.as_view(), name='HomePage'),\n    path(\"chatbot/\", views.TarotView.chatbot, name=\"chatbot\"),\n    path(\"list/\", views.TarotView.listReader, name=\"list\"),\n    path(\"profile/\", views.TarotView.profile, name=\"profile\"),",
+        "peekOfCode": "app_name = \"Tarot\"\nurlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.TestPageView.as_view(), name='HomePage'),\n    path(\"list/\", listReader, name=\"list\"),\n    path(\"profile/\", profile, name=\"profile\"),\n    path(\"questions/\", question, name=\"questions\"),",
         "detail": "Tarot.urls",
         "documentation": {}
     },
@@ -581,7 +606,7 @@
         "kind": 5,
         "importPath": "Tarot.urls",
         "description": "Tarot.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.TestPageView.as_view(), name='HomePage'),\n    path(\"chatbot/\", views.TarotView.chatbot, name=\"chatbot\"),\n    path(\"list/\", views.TarotView.listReader, name=\"list\"),\n    path(\"profile/\", views.TarotView.profile, name=\"profile\"),\n    path(\"questions/\", views.TarotView.question, name=\"questions\"),",
+        "peekOfCode": "urlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.TestPageView.as_view(), name='HomePage'),\n    path(\"list/\", listReader, name=\"list\"),\n    path(\"profile/\", profile, name=\"profile\"),\n    path(\"questions/\", question, name=\"questions\"),\n    path(\"chatbot/\", chatbot, name=\"chatbot\"),",
         "detail": "Tarot.urls",
         "documentation": {}
     },
@@ -590,7 +615,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class LoginPageView(View):\n    def get(self, request):\n        return render(request, \"HomePage.html\")\n    def serve_static_file(request):\n        response = serve(request, \"css/styles.css\")\n        response[\"Cache-Control\"] = \"no-cache, no-store, must-revalidate\"\n        return response\n    def chatbot(request):\n        return render(request, \"Chatbox.html\")\n    def listReader(request):",
+        "peekOfCode": "class LoginPageView(View):\n    def get(self, request):\n        return render(request, \"HomePage.html\")\n    def post(self, request):\n        user_name = request.POST.get('email')\n        password = request.POST.get('password')\n        print(user_name, password)\n        check_login = authenticate(username=user_name, password=password)\n        if check_login is None:\n            return render(request, 'login_page.html', {'error': 'Tên đăng nhập hoặc mật khẩu không đúng'})",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -618,6 +643,96 @@
         "importPath": "Tarot.views",
         "description": "Tarot.views",
         "peekOfCode": "class TestPageView(View) :\n    def get(self, request):\n        return render(request, 'register_sucessfully.html')\ndef LogoutView(request):\n    logout(request)\n    return HttpResponseRedirect('/login/')",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "serve_static_file",
+        "kind": 2,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "def serve_static_file(request):\n    response = serve(request, \"css/styles.css\")\n    response[\"Cache-Control\"] = \"no-cache, no-store, must-revalidate\"\n    return response\ndef chatbot(request):\n    return render(request, \"Chatbox.html\")\ndef listReader(request):\n    return render(request, \"ListReader.html\")\ndef profile(request):\n    return render(request, \"profile.html\")",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "chatbot",
+        "kind": 2,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "def chatbot(request):\n    return render(request, \"Chatbox.html\")\ndef listReader(request):\n    return render(request, \"ListReader.html\")\ndef profile(request):\n    return render(request, \"profile.html\")\ndef question(request):\n    return render(request, \"Questions.html\")\ndef package(request):\n    return render(request, \"Package.html\")",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "listReader",
+        "kind": 2,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "def listReader(request):\n    return render(request, \"ListReader.html\")\ndef profile(request):\n    return render(request, \"profile.html\")\ndef question(request):\n    return render(request, \"Questions.html\")\ndef package(request):\n    return render(request, \"Package.html\")\ndef hour(request):\n    return render(request, \"Hour.html\")",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "profile",
+        "kind": 2,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "def profile(request):\n    return render(request, \"profile.html\")\ndef question(request):\n    return render(request, \"Questions.html\")\ndef package(request):\n    return render(request, \"Package.html\")\ndef hour(request):\n    return render(request, \"Hour.html\")\ndef chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "question",
+        "kind": 2,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "def question(request):\n    return render(request, \"Questions.html\")\ndef package(request):\n    return render(request, \"Package.html\")\ndef hour(request):\n    return render(request, \"Hour.html\")\ndef chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "package",
+        "kind": 2,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "def package(request):\n    return render(request, \"Package.html\")\ndef hour(request):\n    return render(request, \"Hour.html\")\ndef chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "hour",
+        "kind": 2,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "def hour(request):\n    return render(request, \"Hour.html\")\ndef chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")\nclass LoginPageView(View):\n    def get(self, request):",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "chooseSlot",
+        "kind": 2,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "def chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")\nclass LoginPageView(View):\n    def get(self, request):\n        return render(request, \"HomePage.html\")\n    def post(self, request):",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "checkout",
+        "kind": 2,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "def checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")\nclass LoginPageView(View):\n    def get(self, request):\n        return render(request, \"HomePage.html\")\n    def post(self, request):\n        user_name = request.POST.get('email')\n        password = request.POST.get('password')",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "calendar",
+        "kind": 2,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "def calendar(request):\n    return render(request, \"Calendar.html\")\nclass LoginPageView(View):\n    def get(self, request):\n        return render(request, \"HomePage.html\")\n    def post(self, request):\n        user_name = request.POST.get('email')\n        password = request.POST.get('password')\n        print(user_name, password)\n        check_login = authenticate(username=user_name, password=password)",
         "detail": "Tarot.views",
         "documentation": {}
     },
