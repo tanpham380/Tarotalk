@@ -170,6 +170,38 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -318,6 +350,22 @@
     },
     {
         "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -505,11 +553,29 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0009_alter_user_avatar_alter_user_cover_page",
+        "description": "Tarot.migrations.0009_alter_user_avatar_alter_user_cover_page",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0008_alter_user_avatar_alter_user_cover_page'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='user',\n            name='avatar',\n            field=models.ImageField(blank=True, default='static/img/avatars/default_avatar.jpg', null=True, upload_to='static/avatars/'),\n        ),",
+        "detail": "Tarot.migrations.0009_alter_user_avatar_alter_user_cover_page",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0010_alter_user_star_vote",
+        "description": "Tarot.migrations.0010_alter_user_star_vote",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0009_alter_user_avatar_alter_user_cover_page'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='user',\n            name='star_vote',\n            field=models.IntegerField(default=0, null=True),\n        ),",
+        "detail": "Tarot.migrations.0010_alter_user_star_vote",
+        "documentation": {}
+    },
+    {
         "label": "get_star_range",
         "kind": 2,
         "importPath": "Tarot.templatetags.custom_tags",
         "description": "Tarot.templatetags.custom_tags",
-        "peekOfCode": "def get_star_range(value):\n    return range(value)",
+        "peekOfCode": "def get_star_range(value):\n    try:\n        num_votes = int(value)\n        return range(num_votes)\n    except ValueError:\n        return []",
         "detail": "Tarot.templatetags.custom_tags",
         "documentation": {}
     },
@@ -518,7 +584,7 @@
         "kind": 5,
         "importPath": "Tarot.templatetags.custom_tags",
         "description": "Tarot.templatetags.custom_tags",
-        "peekOfCode": "register = template.Library()\n@register.filter\ndef get_star_range(value):\n    return range(value)",
+        "peekOfCode": "register = template.Library()\n@register.filter\ndef get_star_range(value):\n    try:\n        num_votes = int(value)\n        return range(num_votes)\n    except ValueError:\n        return []",
         "detail": "Tarot.templatetags.custom_tags",
         "documentation": {}
     },
@@ -554,7 +620,7 @@
         "kind": 6,
         "importPath": "Tarot.models",
         "description": "Tarot.models",
-        "peekOfCode": "class User(AbstractUser):\n    avatar = models.ImageField(upload_to='static/avatars/', null=True, blank=True , default='static/img/avatars/default_avatar.jpg')\n    cover_page = models.ImageField(upload_to='static/cover_pages/', null=True, blank=True)\n    tarot_role = models.CharField(max_length=50, default= \"Tarot Reading and AStrology\")\n    introduction = models.TextField(null=True)\n    status = models.CharField(max_length=255, null=True)\n    start_vote = models.IntegerField(null=True)\n    birth_date = models.DateField(null=True)\n    email = models.EmailField(null=True)\n    phone_number = models.CharField(max_length=10,null=True)",
+        "peekOfCode": "class User(AbstractUser):\n    avatar = models.ImageField(upload_to='static/avatars/', null=True, blank=True , default='static/img/avatars/default_avatar.jpg')\n    cover_page = models.ImageField(upload_to='static/cover_pages/', null=True, blank=True)\n    tarot_role = models.CharField(max_length=50, default= \"Tarot Reading and AStrology\")\n    introduction = models.TextField(null=True)\n    status = models.CharField(max_length=255, null=True)\n    star_vote = models.IntegerField(null=True,default= 0)\n    birth_date = models.DateField(null=True)\n    email = models.EmailField(null=True)\n    phone_number = models.CharField(max_length=10,null=True)",
         "detail": "Tarot.models",
         "documentation": {}
     },
@@ -572,7 +638,7 @@
         "kind": 5,
         "importPath": "Tarot.urls",
         "description": "Tarot.urls",
-        "peekOfCode": "app_name = \"Tarot\"\nurlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.TestPageView.as_view(), name='HomePage'),\n    path(\"list/\", listReader, name=\"list\"),\n    path(\"profile/\", profile, name=\"profile\"),\n    path(\"questions/\", question, name=\"questions\"),",
+        "peekOfCode": "app_name = \"Tarot\"\nurlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.MoreReaderView.as_view(), name='HomePagetesst'),\n    path(\"list/\", listReader, name=\"list\"),\n    path(\"profile/\", profile, name=\"profile\"),\n    path(\"questions/\", question, name=\"questions\"),",
         "detail": "Tarot.urls",
         "documentation": {}
     },
@@ -581,7 +647,7 @@
         "kind": 5,
         "importPath": "Tarot.urls",
         "description": "Tarot.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.TestPageView.as_view(), name='HomePage'),\n    path(\"list/\", listReader, name=\"list\"),\n    path(\"profile/\", profile, name=\"profile\"),\n    path(\"questions/\", question, name=\"questions\"),\n    path(\"chatbot/\", chatbot, name=\"chatbot\"),",
+        "peekOfCode": "urlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.MoreReaderView.as_view(), name='HomePagetesst'),\n    path(\"list/\", listReader, name=\"list\"),\n    path(\"profile/\", profile, name=\"profile\"),\n    path(\"questions/\", question, name=\"questions\"),\n    path(\"chatbot/\", chatbot, name=\"chatbot\"),",
         "detail": "Tarot.urls",
         "documentation": {}
     },
@@ -626,7 +692,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class MoreReaderView(View):\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        return render(request, 'more_reader.html', {'istarot_users': istarot_users })\ndef LogoutView(request):\n    logout(request)\n    return HttpResponseRedirect('/login/')",
+        "peekOfCode": "class MoreReaderView(View):\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        return render(request, 'more_reader.html', {'istarot_users': istarot_users })\n# views.py\nfrom django.shortcuts import render, redirect\ndef create_post(request):\n    if request.method == 'POST':\n        user_id = request.POST.get('user_id')\n        # Tạo bài viết mới với user_id",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -680,7 +746,7 @@
         "kind": 2,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "def hour(request):\n    return render(request, \"Hour.html\")\ndef chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")\nclass LoginPageView(View):\n    def get(self, request):",
+        "peekOfCode": "def hour(request):\n    return render(request, \"Hour.html\")\ndef chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")\n# def user_detail(request, user_id):\n#     user = get_object_or_404(User, id=user_id)",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -689,7 +755,7 @@
         "kind": 2,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "def chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")\nclass LoginPageView(View):\n    def get(self, request):\n        return render(request, 'login_page.html')\n    def post(self, request):",
+        "peekOfCode": "def chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")\n# def user_detail(request, user_id):\n#     user = get_object_or_404(User, id=user_id)\n#     # Đảm bảo rằng bạn truyền đúng tên trường hoặc thuộc tính để truy xuất thông tin của người dùng\n#     return render(request, 'user_detail.html', {'user': user})",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -698,7 +764,7 @@
         "kind": 2,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "def checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")\nclass LoginPageView(View):\n    def get(self, request):\n        return render(request, 'login_page.html')\n    def post(self, request):\n        user_name = request.POST.get('email')\n        password = request.POST.get('password')",
+        "peekOfCode": "def checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")\n# def user_detail(request, user_id):\n#     user = get_object_or_404(User, id=user_id)\n#     # Đảm bảo rằng bạn truyền đúng tên trường hoặc thuộc tính để truy xuất thông tin của người dùng\n#     return render(request, 'user_detail.html', {'user': user})\nclass LoginPageView(View):\n    def get(self, request):",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -707,7 +773,16 @@
         "kind": 2,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "def calendar(request):\n    return render(request, \"Calendar.html\")\nclass LoginPageView(View):\n    def get(self, request):\n        return render(request, 'login_page.html')\n    def post(self, request):\n        user_name = request.POST.get('email')\n        password = request.POST.get('password')\n        print(user_name, password)\n        check_login = authenticate(username=user_name, password=password)",
+        "peekOfCode": "def calendar(request):\n    return render(request, \"Calendar.html\")\n# def user_detail(request, user_id):\n#     user = get_object_or_404(User, id=user_id)\n#     # Đảm bảo rằng bạn truyền đúng tên trường hoặc thuộc tính để truy xuất thông tin của người dùng\n#     return render(request, 'user_detail.html', {'user': user})\nclass LoginPageView(View):\n    def get(self, request):\n        return render(request, 'login_page.html')\n    def post(self, request):",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "create_post",
+        "kind": 2,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "def create_post(request):\n    if request.method == 'POST':\n        user_id = request.POST.get('user_id')\n        # Tạo bài viết mới với user_id\n        # Thực hiện kiểm tra và lưu bài viết\n        # Chuyển hướng trở lại trang ban đầu hoặc trang thành công\n        return redirect('home')  # Chỉnh sửa tên của URL nếu cần thiết\n    return redirect('home')  # Xử lý yêu cầu GET hoặc yêu cầu không hợp lệ\ndef LogoutView(request):\n    logout(request)",
         "detail": "Tarot.views",
         "documentation": {}
     },

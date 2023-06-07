@@ -10,6 +10,7 @@
           {% if forloop.counter <= 10 %}
             <div class="homepage-user-container">
               <div class="background">
+                <a href="{% url 'Tarot:HomePagetesst' %}">
                 <img src="{{ user.avatar.url }}" alt="{{ user.username }}'s avatar">
                 <p class="user-info user-name">{{ user.last_name }}</p>
                 <p class="user-info tarot-role">{{ user.tarot_role }}</p>

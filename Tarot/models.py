@@ -7,7 +7,7 @@ class User(AbstractUser):
     tarot_role = models.CharField(max_length=50, default= "Tarot Reading and AStrology")
     introduction = models.TextField(null=True)
     status = models.CharField(max_length=255, null=True)
-    start_vote = models.IntegerField(null=True)
+    star_vote = models.IntegerField(null=True,default= 0)
     birth_date = models.DateField(null=True)
     email = models.EmailField(null=True)
     phone_number = models.CharField(max_length=10,null=True)

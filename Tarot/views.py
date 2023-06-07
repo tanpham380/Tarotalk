@@ -40,6 +40,11 @@ def checkout(request):
 
 def calendar(request):
     return render(request, "Calendar.html")
+# def user_detail(request, user_id):
+#     user = get_object_or_404(User, id=user_id)
+#     # Đảm bảo rằng bạn truyền đúng tên trường hoặc thuộc tính để truy xuất thông tin của người dùng
+
+#     return render(request, 'user_detail.html', {'user': user})
 
 class LoginPageView(View):
     def get(self, request):
@@ -117,6 +122,25 @@ class MoreReaderView(View):
     def get(self, request):
         istarot_users = User.objects.filter(istarot=True)
         return render(request, 'more_reader.html', {'istarot_users': istarot_users })
+
+
+
+
+
+# views.py
+from django.shortcuts import render, redirect
+
+
+def create_post(request):
+    if request.method == 'POST':
+        user_id = request.POST.get('user_id')
+        # Tạo bài viết mới với user_id
+        # Thực hiện kiểm tra và lưu bài viết
+        
+        # Chuyển hướng trở lại trang ban đầu hoặc trang thành công
+        return redirect('home')  # Chỉnh sửa tên của URL nếu cần thiết
+    
+    return redirect('home')  # Xử lý yêu cầu GET hoặc yêu cầu không hợp lệ
 
     
 def LogoutView(request):
