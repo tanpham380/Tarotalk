@@ -1,0 +1,63 @@
+{% extends "base.html" %} 
+
+
+
+
+{% load static %} 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'libs/bootstrap-5.3.0-dist/css/bootstrap.min.css' %}" /> 
+<link rel="stylesheet" href="{% static 'libs/calendar-01/css/style.css' %}" />
+<link rel="stylesheet" href="{% static 'css/chat.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/dup.css' %}" />
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .custom-card-title{
+    white-space: nowrap; 
+  width: 100%; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  }
+</style>
+<!--Coded With Love By Mutiullah Samim-->
+<img src="{% static 'img/homepage_bar.png' %}" data-node-id="b2839220-5e8c-477e-8a29-1d3ed038f78c" data-type="image" class="">
+
+
+<div class="container-fluid h-100 mt-5">
+  <div class="row justify-content-center h-100 d-flex align-items-stretch">
+    <div class="col-md-6">
+      <div class="card h-100">
+        <div class="container" style="background-color: #FDEDBB; border-radius: 10px;">
+          <div class="py-3" style="border-radius: 10px;">
+            <img src="../static/img/banner.jpg" class="card-img-top"/>
+          </div>
+        </div>
+        <div class="card-body px-5" style="text-align: center;">
+          <h3 class="card-title custom-card-title" style="text-align: center; font-size: 24px; font-weight: bold;">20 SUẤT XEM TAROT MIỄN PHÍ</h3>
+          <i class="card-text">20 suất xem Tarot miễn phí tại TAROTALK dành cho 50 người nhanh nhất đăng ký thành viên của TAROTALK!</i>
+          <div class="mt-4 d-grid"><a href="#" class="btn" style="background-color: #E3CFFF; color: #391250; font-weight: bold;">THAM GIA NGAY!</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="container" style="background-color: #FDEDBB; border-radius: 10px;">
+          <div class="py-3" style="border-radius: 10px;">
+            <img src="../static/img/banner.jpg" class="card-img-top"/>
+          </div>
+        </div>
+        <div class="card-body px-5" style="text-align: center;">
+          <h3 class="card-title custom-card-title" style="text-align: center; font-size: 24px; font-weight: bold;" >XEM TAROT TẠI TAROTALK: THÊM GIỜ, THÊM VUI!</h3>
+          <i class="card-text">TAROTALK mang đến sự kiện quay số chọn ra 5 người may mắn nhất và tặng 30 phút thêm cho đơn booking Tarot Reader theo giờ đầu tiên.</i>
+          <div class="mt-4 d-grid"><a href="#" class="btn" style="background-color: #E3CFFF; color: #391250; font-weight: bold;">THAM GIA NGAY!</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

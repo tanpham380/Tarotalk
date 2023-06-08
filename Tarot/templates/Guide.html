@@ -1,0 +1,49 @@
+{% extends "base.html" %} 
+
+
+
+
+{% load static %} 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'libs/bootstrap-5.3.0-dist/css/bootstrap.min.css' %}" /> 
+<link rel="stylesheet" href="{% static 'libs/calendar-01/css/style.css' %}" />
+<link rel="stylesheet" href="{% static 'css/chat.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/dup.css' %}" />
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Manrope&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<style>
+ .custom-list-item{
+  background-color: #E3CFFF;
+  margin-top: 24px;
+ }
+</style>
+<!--Coded With Love By Mutiullah Samim-->
+
+<div class="container-fluid h-100 mt-3" style="font-family: 'Inter', sans-serif;">
+  <div class="row justify-content-center">
+    <div class="col-11">
+      <div class="row">
+        <div class="p-1" style="text-align: center; background-color: #E3CFFF; border-radius: 50px; font-family: 'Montserrat', sans-serif;"><h3 class="m-0" style="color: #391250; font-weight: bold;">CÁC LƯU Ý KHI ĐẶT CÂU HỎI CHO TAROT READER</h3></div>
+      </div>
+      <div class="row mt-3 p-3 mb-3 pl-5 pr-5 flex-column align-items-center" style="background-color: #E3CFFF; font-size: 24px; border-radius: 25px; color: #391250;">
+        <div class="col-11">
+          <div class="custom-list-item">Các lưu ý:</div>
+          <div class="custom-list-item">1. Hãy bắt đầu cuộc trò chuyện với Tarot Reader bằng câu chuyện ngắn của bạn, kèm theo những thông tin liên quan về vấn đề đó. Ví dụ: Khi bạn muốn hỏi về chuyện tình cảm, hãy cho Tarot Reader biết về trạng thái hiện tại của cả hai bạn.</div>
+          <div class="custom-list-item">2. Không hỏi các câu hỏi thiếu phù hợp như: “bao giờ em giàu?”, “bao giờ em có người yêu?”,.. Hay các câu hỏi Yes/No (Vì Tarot mang đến thông điệp nên hỏi như vậy sẽ rất khó để trải bài.)</div>
+          <div class="custom-list-item">3. Không đặt câu hỏi liên quan đến yếu tố tâm linh như: tiền kiếp, âm dương,..</div>
+          <div class="custom-list-item mb-3">4. Không đặt câu hỏi thách thức người trải bài, hãy cởi mở và thành thật, đón nhận thông điệp một cách tích cực.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
