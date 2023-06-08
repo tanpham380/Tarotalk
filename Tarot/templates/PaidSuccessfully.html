@@ -1,11 +1,9 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 
+{% load static %}
 
-
-
-{% load static %} 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'libs/bootstrap-5.3.0-dist/css/bootstrap.min.css' %}" /> 
+<link rel="stylesheet" href="{% static 'libs/bootstrap-5.3.0-dist/css/bootstrap.min.css' %}" />
 <link rel="stylesheet" href="{% static 'libs/calendar-01/css/style.css' %}" />
 <link rel="stylesheet" href="{% static 'css/chat.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/dup.css' %}" />
@@ -14,28 +12,23 @@
 {% endblock %}
 
 {% block content %}
-
-<!--Coded With Love By Mutiullah Samim-->
-
 <div class="container-fluid h-100">
   <div class="row justify-content-center h-100">
     <div>
       <div class="modal d-block" id="exampleModal" tabindex="5" aria-labelledby="exampleModalLabel" aria-hidden="false">
-        <div class="modal-dialog h-100" tabindex="5"> 
+        <div class="modal-dialog h-100" tabindex="5">
           <div class="modal-content position-absolute top-50 start-50 translate-middle">
             <div class="modal-header" style="background-color: #FDEDBB;">
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <a href="{% url 'Tarot:HomePage' %}" class="btn-close"  ></a>
             </div>
             <div class="modal-body" style="background-color: #E3CFFF; text-align: center;">
               <span style="color: #391250; font-weight: bold;">Bạn đã thanh toán thành công!</span>
             </div>
-            <div class="modal-footer" style="background-color: #E3CFFF;">
-            </div>
+            <div class="modal-footer" style="background-color: #E3CFFF;"></div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 {% endblock %}

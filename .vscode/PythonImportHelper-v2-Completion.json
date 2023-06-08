@@ -640,7 +640,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class profileuser(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'profile.html', {'User': user })\n    def post(self,request, user_id):\n        if 'xem_theo_gio' in request.POST:\n            user = User.objects.get(user_id)\n            return render  (request, 'Hour.html', {'User': user })\n        elif 'xem_theo_so_luong_cau_hoi' in request.POST:\n            user = User.objects.get(id=user_id)",
+        "peekOfCode": "class profileuser(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'profile.html', {'User': user })\n    # def post(self,request, user_id):\n    #     if 'xem_theo_gio' in request.POST:\n    #         user = User.objects.get(user_id)\n    #         return render  (request, 'Hour.html', {'User': user })\n    #     elif 'xem_theo_so_luong_cau_hoi' in request.POST:\n    #         user = User.objects.get(id=user_id)",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -649,7 +649,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class question(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Questions.html', {'User': user })\n# def package(request):\n#     return render(request, \"Package.html\")\nclass package(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Package.html', {'User': user })",
+        "peekOfCode": "class question(LoginRequiredMixin,View):\n    login_url = '/login/'\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Questions.html', {'User': user })\n# def package(request):\n#     return render(request, \"Package.html\")\nclass package(LoginRequiredMixin,View):\n    login_url = '/login/'\n    def get(self, request, user_id):",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -658,7 +658,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class package(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Package.html', {'User': user })\n# def hour(request):\n#     return render(request, \"Hour.html\")\nclass hour(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Hour.html', {'User': user })",
+        "peekOfCode": "class package(LoginRequiredMixin,View):\n    login_url = '/login/'\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Package.html', {'User': user })\n# def hour(request):\n#     return render(request, \"Hour.html\")\nclass hour(LoginRequiredMixin, View):\n    login_url = '/login/'\n    def get(self, request, user_id):",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -667,7 +667,16 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class hour(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Hour.html', {'User': user })\ndef chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")\n# def calendar(request):\n#     return render(request, \"Calendar.html\")",
+        "peekOfCode": "class hour(LoginRequiredMixin, View):\n    login_url = '/login/'\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Hour.html', {'User': user })\ndef chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\nclass checkout(LoginRequiredMixin,View ):\n    login_url = '/login/'\n    def get(self, request):",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "checkout",
+        "kind": 6,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "class checkout(LoginRequiredMixin,View ):\n    login_url = '/login/'\n    def get(self, request):\n        return render(request, \"CheckOut.html\")\n# def calendar(request):\n#     return render(request, \"Calendar.html\")\nclass calendar(LoginRequiredMixin,View):\n    login_url = '/login/'\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -676,7 +685,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class calendar(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Calendar.html', {'User': user })\n# def user_detail(request, user_id):\n#     user = get_object_or_404(User, id=user_id)\n#     # Đảm bảo rằng bạn truyền đúng tên trường hoặc thuộc tính để truy xuất thông tin của người dùng\n#     return render(request, 'user_detail.html', {'user': user})\nclass LoginPageView(View):\n    def get(self, request):",
+        "peekOfCode": "class calendar(LoginRequiredMixin,View):\n    login_url = '/login/'\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Calendar.html', {'User': user })\n# def user_detail(request, user_id):\n#     user = get_object_or_404(User, id=user_id)\n#     # Đảm bảo rằng bạn truyền đúng tên trường hoặc thuộc tính để truy xuất thông tin của người dùng\n#     return render(request, 'user_detail.html', {'user': user})\nclass LoginPageView(View):",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -694,7 +703,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class ViewUser(View):\n    login_url = '/login/'\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        random_users = random.sample(list(istarot_users), 5)\n        context = {'istarot_users': random_users}\n        return render(request, 'homepage.html', context)\nclass RegisterView(View):\n    def get(self, request):\n        form = RegisterForm()",
+        "peekOfCode": "class ViewUser(View):\n    login_url = '/login/'\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        random_users = random.sample(list(istarot_users), 1)\n        context = {'istarot_users': random_users}\n        return render(request, 'homepage.html', context)\nclass RegisterView(View):\n    def get(self, request):\n        form = RegisterForm()",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -739,7 +748,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class Account(View) :\n    def get(self, request):\n        return render(request, 'Account.html')\nclass GuideView(View) :\n    def get(self, request):\n        return render(request, 'Guide.html')        \nclass PaidSuccessfullyView(View):\n    def get(self, request):\n        return render(request, 'PaidSuccessfully.html')\nclass MoreReaderView(View):",
+        "peekOfCode": "class Account(View) :\n    def get(self, request):\n        return render(request, 'Account.html')\nclass GuideView(View) :\n    def get(self, request):\n        return render(request, 'Guide.html')        \nclass PaidSuccessfullyView(View):\n    def get(self, request):\n        return render(request, 'PaidSuccessfully.html')\nclass MoreReaderView(LoginRequiredMixin,View):",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -748,7 +757,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class GuideView(View) :\n    def get(self, request):\n        return render(request, 'Guide.html')        \nclass PaidSuccessfullyView(View):\n    def get(self, request):\n        return render(request, 'PaidSuccessfully.html')\nclass MoreReaderView(View):\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        return render(request, 'more_reader.html', {'istarot_users': istarot_users })",
+        "peekOfCode": "class GuideView(View) :\n    def get(self, request):\n        return render(request, 'Guide.html')        \nclass PaidSuccessfullyView(View):\n    def get(self, request):\n        return render(request, 'PaidSuccessfully.html')\nclass MoreReaderView(LoginRequiredMixin,View):\n    login_url = '/login/'\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -757,7 +766,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class PaidSuccessfullyView(View):\n    def get(self, request):\n        return render(request, 'PaidSuccessfully.html')\nclass MoreReaderView(View):\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        return render(request, 'more_reader.html', {'istarot_users': istarot_users })\nclass UpdateUserView(LoginRequiredMixin, View):\n    login_url = '/login/'\n    def get(self, request):",
+        "peekOfCode": "class PaidSuccessfullyView(View):\n    def get(self, request):\n        return render(request, 'PaidSuccessfully.html')\nclass MoreReaderView(LoginRequiredMixin,View):\n    login_url = '/login/'\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        return render(request, 'more_reader.html', {'istarot_users': istarot_users })\nclass UpdateUserView(LoginRequiredMixin, View):\n    login_url = '/login/'",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -766,7 +775,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class MoreReaderView(View):\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        return render(request, 'more_reader.html', {'istarot_users': istarot_users })\nclass UpdateUserView(LoginRequiredMixin, View):\n    login_url = '/login/'\n    def get(self, request):\n        form = UpgradeUserForm()\n        return render(request, 'upgrade_User.html', {'form': form})\n    def post(self, request):",
+        "peekOfCode": "class MoreReaderView(LoginRequiredMixin,View):\n    login_url = '/login/'\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        return render(request, 'more_reader.html', {'istarot_users': istarot_users })\nclass UpdateUserView(LoginRequiredMixin, View):\n    login_url = '/login/'\n    def get(self, request):\n        form = UpgradeUserForm()\n        return render(request, 'upgrade_User.html', {'form': form})",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -793,7 +802,7 @@
         "kind": 2,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "def listReader(request):\n    return render(request, \"ListReader.html\")\n# class profileUser(View):\n#     def get(request):\n#         return render(request, \"Profile.html\")\nclass profileuser(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'profile.html', {'User': user })\n    def post(self,request, user_id):",
+        "peekOfCode": "def listReader(request):\n    return render(request, \"ListReader.html\")\n# class profileUser(View):\n#     def get(request):\n#         return render(request, \"Profile.html\")\nclass profileuser(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'profile.html', {'User': user })\n    # def post(self,request, user_id):",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -802,16 +811,7 @@
         "kind": 2,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "def chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")\n# def calendar(request):\n#     return render(request, \"Calendar.html\")\nclass calendar(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Calendar.html', {'User': user })",
-        "detail": "Tarot.views",
-        "documentation": {}
-    },
-    {
-        "label": "checkout",
-        "kind": 2,
-        "importPath": "Tarot.views",
-        "description": "Tarot.views",
-        "peekOfCode": "def checkout(request):\n    return render(request, \"CheckOut.html\")\n# def calendar(request):\n#     return render(request, \"Calendar.html\")\nclass calendar(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Calendar.html', {'User': user })\n# def user_detail(request, user_id):\n#     user = get_object_or_404(User, id=user_id)",
+        "peekOfCode": "def chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\nclass checkout(LoginRequiredMixin,View ):\n    login_url = '/login/'\n    def get(self, request):\n        return render(request, \"CheckOut.html\")\n# def calendar(request):\n#     return render(request, \"Calendar.html\")\nclass calendar(LoginRequiredMixin,View):\n    login_url = '/login/'",
         "detail": "Tarot.views",
         "documentation": {}
     },

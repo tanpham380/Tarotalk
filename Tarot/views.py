@@ -27,48 +27,54 @@ class profileuser(View):
     def get(self, request, user_id):
         user = User.objects.get(id=user_id)
         return render(request, 'profile.html', {'User': user })
-    def post(self,request, user_id):
-        if 'xem_theo_gio' in request.POST:
-            user = User.objects.get(user_id)
+    # def post(self,request, user_id):
+    #     if 'xem_theo_gio' in request.POST:
+    #         user = User.objects.get(user_id)
 
-            return render  (request, 'Hour.html', {'User': user })
-        elif 'xem_theo_so_luong_cau_hoi' in request.POST:
-            user = User.objects.get(id=user_id)
-            return render  (request, 'Questions.html', {'User': user })
-        elif 'xem_theo_goi' in request.POST:
-            user = User.objects.get(id=user_id)
-            return render  (request, 'Package.html', {'User': user })
+    #         return render  (request, 'Hour.html', {'User': user })
+    #     elif 'xem_theo_so_luong_cau_hoi' in request.POST:
+    #         user = User.objects.get(id=user_id)
+    #         return render  (request, 'Questions.html', {'User': user })
+    #     elif 'xem_theo_goi' in request.POST:
+    #         user = User.objects.get(id=user_id)
+    #         return render  (request, 'Package.html', {'User': user })
         
         
         
         
 # def question(request):
 #     return render(request, "Questions.html")
-class question(View):
+class question(LoginRequiredMixin,View):
+    login_url = '/login/'
     def get(self, request, user_id):
         user = User.objects.get(id=user_id)
         return render(request, 'Questions.html', {'User': user })
 # def package(request):
 #     return render(request, "Package.html")
-class package(View):
+class package(LoginRequiredMixin,View):
+    login_url = '/login/'
     def get(self, request, user_id):
         user = User.objects.get(id=user_id)
         return render(request, 'Package.html', {'User': user })
 # def hour(request):
 #     return render(request, "Hour.html")
-class hour(View):
+class hour(LoginRequiredMixin, View):
+    login_url = '/login/'
     def get(self, request, user_id):
         user = User.objects.get(id=user_id)
         return render(request, 'Hour.html', {'User': user })
 def chooseSlot(request):
     return render(request, "ChooseSlot.html")
 
-def checkout(request):
-    return render(request, "CheckOut.html")
+class checkout(LoginRequiredMixin,View ):
+    login_url = '/login/'
+    def get(self, request):
+        return render(request, "CheckOut.html")
 
 # def calendar(request):
 #     return render(request, "Calendar.html")
-class calendar(View):
+class calendar(LoginRequiredMixin,View):
+    login_url = '/login/'
     def get(self, request, user_id):
         user = User.objects.get(id=user_id)
         return render(request, 'Calendar.html', {'User': user })
@@ -98,7 +104,7 @@ class ViewUser(View):
     login_url = '/login/'
     def get(self, request):
         istarot_users = User.objects.filter(istarot=True)
-        random_users = random.sample(list(istarot_users), 5)
+        random_users = random.sample(list(istarot_users), 1)
         context = {'istarot_users': random_users}
         return render(request, 'homepage.html', context)
 
@@ -152,7 +158,8 @@ class GuideView(View) :
 class PaidSuccessfullyView(View):
     def get(self, request):
         return render(request, 'PaidSuccessfully.html')
-class MoreReaderView(View):
+class MoreReaderView(LoginRequiredMixin,View):
+    login_url = '/login/'
     def get(self, request):
         istarot_users = User.objects.filter(istarot=True)
         return render(request, 'more_reader.html', {'istarot_users': istarot_users })

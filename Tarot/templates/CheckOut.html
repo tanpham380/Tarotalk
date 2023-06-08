@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 
-
 {% load static %}
 
 {% block extra_css %}
@@ -11,6 +10,7 @@
 <link rel="stylesheet" href="{% static 'css/index.css' %}" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 {% endblock %}
+
 {% block content %}
 <div class="container-fluid d-flex justify-content-center">
   <div class="col-md-6 card package-zone text-center" style="background-color: #512968">
@@ -25,7 +25,6 @@
     <div class="row card-body card-content" style="
         padding-left: 10%;
         text-align: left;
-
         margin-top: -10px;
         margin-bottom: -10px;
       ">
@@ -76,7 +75,7 @@
       ">
       <div class="col-md-12">
         <label>
-          <input type="checkbox" />
+          <input type="checkbox" id="termsCheckbox" />
           Tôi đã đọc và đồng ý với
           <span class="underline">điều khoản và điều kiện</span> của TAROTALK.
         </label>
@@ -84,12 +83,24 @@
     </div>
     <div class="row card-body card-content">
       <div class="col-md-12">
-        <button type="button"  class="btn btn-checkout" style="background-color: #e3cfff ">
-          <a href="{% url 'Tarot:paid' %}" ></a>
+        <button type="button" id="confirmButton" class="btn btn-checkout" style="background-color: #e3cfff">
           Xác nhận
         </button>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  document.getElementById('confirmButton').addEventListener('click', function() {
+    var termsCheckbox = document.getElementById('termsCheckbox');
+    if (termsCheckbox.checked) {
+      // The checkbox is checked, do something
+      window.location.href = "{% url 'Tarot:paid' %}";
+    } else {
+      // The checkbox is not checked, show an error message or perform any desired action
+      alert('Vui lòng đồng ý với điều khoản và điều kiện của TAROTALK.');
+    }
+  });
+</script>
 {% endblock %}
