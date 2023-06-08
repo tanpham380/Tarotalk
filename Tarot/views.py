@@ -27,7 +27,17 @@ class profileuser(View):
     def get(self, request, user_id):
         user = User.objects.get(id=user_id)
         return render(request, 'profile.html', {'User': user })
-
+    def post(self,request, user_id):
+        if 'xem_theo_gio' in request.POST:
+            pass
+        elif 'xem_theo_so_luong_cau_hoi' in request.POST:
+            pass
+        elif 'xem_theo_goi' in request.POST:
+            pass
+        
+        
+        
+        
 # def question(request):
 #     return render(request, "Questions.html")
 class question(View):
@@ -135,7 +145,9 @@ class Account(View) :
 class GuideView(View) :
     def get(self, request):
         return render(request, 'Guide.html')        
-
+class PaidSuccessfullyView(View):
+    def get(self, request):
+        return render(request, 'PaidSuccessfully.html')
 class MoreReaderView(View):
     def get(self, request):
         istarot_users = User.objects.filter(istarot=True)

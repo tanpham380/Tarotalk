@@ -7,7 +7,6 @@ from .views import *
 
 app_name = "Tarot"
 urlpatterns = [
-
     path('', views.ViewUser.as_view(), name='HomePage'),
     path('login/', views.LoginPageView.as_view(), name='login'),
     path('register/', views.RegisterView.as_view(), name='register'),
@@ -27,5 +26,6 @@ urlpatterns = [
     path("post/", views.PostView.as_view(), name="post"),
     path("morereader/", views.MoreReaderView.as_view(), name="morereader"),
     path("xinloi/", xinloipagenaychuahoatdong, name="xinloi"),
+    path("paid/", views.PaidSuccessfullyView.as_view(), name="paid"),
     #  path('user/<int:user_id>/', views.user_detail, name='user_detail'),
 ]

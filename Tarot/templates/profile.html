@@ -33,13 +33,13 @@
             <div class="rating">
               <!-- Add your rating component here -->
               <div class="vote">
-                {% if User.star_vote %}
-                  {% for _ in user.star_vote|get_star_range %}
+                {% if User.star_vote is not None %}
+                  {% for _ in User.star_vote|get_star_range %}
                     <img src="{% static 'img/star.png' %}" alt="Star Icon" class="star-icon">
                   {% endfor %}
                 {% endif %}
               </div>
-            </div>
+            </div>            
             <div class="d-flex align-items-center">
               <button class="btn btn-chat btn-outline-light"><a href="{%url 'Tarot:chatbot' %}" style="text-decoration: none; color:black;"> Chat Now</a></button>
               <button class="btn btn-like">
@@ -55,9 +55,16 @@
         </p>
         <p class="list-service">Danh sách dịch vụ</p>
         <div class="service-buttons row col-md-4 position-fixed bottom-0 start-0">
-          <a href="{% url 'Tarot:hour' user.id %}" class="btn btn-service" style="text-decoration: none; color: #391250;">Xem theo giờ</a>
-          <a href="{% url 'Tarot:questions' user.id %}" class="btn btn-service" style="text-decoration: none; color: #391250;">Xem theo số lượng câu hỏi</a>
-          <a href="{% url 'Tarot:package' user.id %}" class="btn btn-service" style="text-decoration: none; color: #391250;">Xem theo gói</a>
+          <form method="post" >
+            {% csrf_token %}
+            <button type="submit"  name="xem_theo_gio" class="btn btn-service" style=" text-decoration: none; color: #391250;">Xem theo giờ</button>
+          </form>          <form method="post" >
+            {% csrf_token %}
+            <button type="submit" class="btn btn-service" name="xem_theo_so_luong_cau_hoi"  style=" text-decoration: none; color: #391250;">Xem theo số lượng câu hỏi</button>
+          </form>          <form method="post" >
+            {% csrf_token %}
+            <button type="submit" class="btn btn-service" name="xem_theo_goi"  style=" text-decoration: none; color: #391250;">Xem theo gói</button>
+          </form>
         </div>
         
       </div>

@@ -89,13 +89,21 @@
     color: #FFF5CC;
     font-weight: bold;
     margin-bottom: 50%;
-}
-
-.service-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .service-buttons {
     margin-bottom: 3%;
-}
-
-.btn-service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-service {
     height: fit-content;
     background-color: #E3CFFF;
     color: #391250;
@@ -103,7 +111,13 @@
     font-weight: bold;
     margin-left: 10px;
     border-radius: 20px;
-}
+    width: 100%; /* Set the width to 100% */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
 
 .btn-service:hover {
     background-color: #992ece;
