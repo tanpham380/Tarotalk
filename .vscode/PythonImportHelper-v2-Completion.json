@@ -748,7 +748,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class Account(View) :\n    def get(self, request):\n        return render(request, 'Account.html')\nclass GuideView(View) :\n    def get(self, request):\n        return render(request, 'Guide.html')        \nclass PaidSuccessfullyView(View):\n    def get(self, request):\n        return render(request, 'PaidSuccessfully.html')\nclass MoreReaderView(LoginRequiredMixin,View):",
+        "peekOfCode": "class Account(View) :\n    def get(self, request):\n        return render(request, 'Account.html')\nclass GuideView(View) :\n    def get(self, request):\n        return render(request, 'Guide.html')        \nclass PaidSuccessfullyView(View):\n    def get(self, request):\n        return render(request, 'PaidSuccessfully.html')\nclass MoreReaderView(View):",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -757,7 +757,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class GuideView(View) :\n    def get(self, request):\n        return render(request, 'Guide.html')        \nclass PaidSuccessfullyView(View):\n    def get(self, request):\n        return render(request, 'PaidSuccessfully.html')\nclass MoreReaderView(LoginRequiredMixin,View):\n    login_url = '/login/'\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)",
+        "peekOfCode": "class GuideView(View) :\n    def get(self, request):\n        return render(request, 'Guide.html')        \nclass PaidSuccessfullyView(View):\n    def get(self, request):\n        return render(request, 'PaidSuccessfully.html')\nclass MoreReaderView(View):\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        return render(request, 'more_reader.html', {'istarot_users': istarot_users })",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -766,7 +766,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class PaidSuccessfullyView(View):\n    def get(self, request):\n        return render(request, 'PaidSuccessfully.html')\nclass MoreReaderView(LoginRequiredMixin,View):\n    login_url = '/login/'\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        return render(request, 'more_reader.html', {'istarot_users': istarot_users })\nclass UpdateUserView(LoginRequiredMixin, View):\n    login_url = '/login/'",
+        "peekOfCode": "class PaidSuccessfullyView(View):\n    def get(self, request):\n        return render(request, 'PaidSuccessfully.html')\nclass MoreReaderView(View):\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        return render(request, 'more_reader.html', {'istarot_users': istarot_users })\nclass UpdateUserView(LoginRequiredMixin, View):\n    login_url = '/login/'\n    def get(self, request):",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -775,7 +775,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class MoreReaderView(LoginRequiredMixin,View):\n    login_url = '/login/'\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        return render(request, 'more_reader.html', {'istarot_users': istarot_users })\nclass UpdateUserView(LoginRequiredMixin, View):\n    login_url = '/login/'\n    def get(self, request):\n        form = UpgradeUserForm()\n        return render(request, 'upgrade_User.html', {'form': form})",
+        "peekOfCode": "class MoreReaderView(View):\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        return render(request, 'more_reader.html', {'istarot_users': istarot_users })\nclass UpdateUserView(LoginRequiredMixin, View):\n    login_url = '/login/'\n    def get(self, request):\n        form = UpgradeUserForm()\n        return render(request, 'upgrade_User.html', {'form': form})\n    def post(self, request):",
         "detail": "Tarot.views",
         "documentation": {}
     },

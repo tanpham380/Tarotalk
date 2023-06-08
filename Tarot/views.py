@@ -158,8 +158,7 @@ class GuideView(View) :
 class PaidSuccessfullyView(View):
     def get(self, request):
         return render(request, 'PaidSuccessfully.html')
-class MoreReaderView(LoginRequiredMixin,View):
-    login_url = '/login/'
+class MoreReaderView(View):
     def get(self, request):
         istarot_users = User.objects.filter(istarot=True)
         return render(request, 'more_reader.html', {'istarot_users': istarot_users })
