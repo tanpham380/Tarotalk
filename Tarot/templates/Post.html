@@ -1,0 +1,49 @@
+{% extends "base.html" %} 
+
+
+
+
+{% load static %} 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'libs/bootstrap-5.3.0-dist/css/bootstrap.min.css' %}" /> 
+<link rel="stylesheet" href="{% static 'libs/calendar-01/css/style.css' %}" />
+<link rel="stylesheet" href="{% static 'css/chat.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/dup.css' %}" />
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+{% endblock %}
+
+{% block content %}
+
+<style>
+  
+</style>
+<!--Coded With Love By Mutiullah Samim-->
+
+<img src="{% static 'img/homepage_bar.png' %}" data-node-id="b2839220-5e8c-477e-8a29-1d3ed038f78c" data-type="image" class="">
+
+
+<div class="container-fluid h-100 mt-3">
+  <div class="row justify-content-center">
+    <div class="col-7">
+      <div class="row">
+        <div class="card mb-3" style="max-width: 100%;">
+          <div class="row g-0" style="background-color: #E3CFFF;border-radius: 10px;">
+            <div class="col-md-4 d-flex flex-column">
+              <img src="../static/img/banner.jpg" class="img-fluid rounded-start h-100 py-3" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body" style="color: #391250;">
+                <h5 class="card-title" style="color: #391250;">Bói bài TAROt là gì?</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">Hello</div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

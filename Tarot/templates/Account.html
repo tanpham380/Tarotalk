@@ -1,0 +1,158 @@
+{% extends "base.html" %} 
+
+
+
+
+{% load static %} 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'libs/bootstrap-5.3.0-dist/css/bootstrap.min.css' %}" /> 
+<link rel="stylesheet" href="{% static 'libs/calendar-01/css/style.css' %}" />
+<link rel="stylesheet" href="{% static 'css/chat.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/dup.css' %}" />
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Manrope&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<style>
+  a, a:hover, a:active{
+    text-decoration: underline;
+    color: #391250;
+  }
+  a:hover{
+    text-decoration: underline;
+  }
+
+  .custom-icon-link{
+    text-decoration: none;
+    font-size: 15px;
+  }
+
+  .custom-icon-link i{
+    font-size: 24px;
+    color: black;
+    margin: 0 12px
+  }
+
+  .custom-line-height-14{
+    line-height: 1.4;
+  }
+
+  .custom-line-height-9{
+    line-height: 0.9;
+  }
+
+  ul li.custom-li{
+    background-color: #FDEDBB; 
+    color: #391250; 
+  }
+
+  ul li.custom-li:last-child{
+    background-color: #FDEDBB; 
+    color: #391250; 
+    border-bottom: #391250 0px solid !important;
+  }
+
+  .custom-border-bottom{
+    border-bottom: #391250 2px solid !important;
+    position: absolute;
+    width: 90%;
+    bottom: 0px;
+    height: 1px;
+    left:15px;
+    padding-bottom: 18px;
+  }
+  .custom-border-bottom::before{
+    content: '';
+    color:#391250;
+    height: 6px;
+    width: 6px;
+    background-color: #391250;
+    display: inline-block;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -3.5px;
+    z-index: 1;
+  }
+</style>
+<!--Coded With Love By Mutiullah Samim-->
+
+<div class="container-fluid h-100 mt-3" style="font-family: 'Inter', sans-serif;">
+  <div class="row justify-content-center">
+    <div class="col-3">
+      <div class="row py-4" style="background-color: #E3CFFF; border-radius: 25px;">
+        <div class="col-4" style="width: 100%;">
+          <div class="h-100 d-flex justify-content-center" style="background-color: #FFF5CC; border-radius: 50%;">
+            <img src="../static/img/star.png" width="100%"/>
+          </div>
+        </div>
+        <div class="col-8 d-flex flex-column justify-content-center align-items-start p-0 fluid" class="col-8" style="color: #391250;">
+          <div class="custom-line-height-9">
+            <div class="m-0 row" style="font-size: 15px;">
+              <div style="font-weight: bold;">ĐĂNG KÝ TÀI KHOẢN</div>
+            </div>
+            <div class="m-0 row" style="font-size: 15px;">
+              <a href="#">Đăng ký cho thành viên</a>
+            </div>
+          </div>
+
+          <!-- <div class="custom-line-height-14">
+            <div class="m-0 row">
+              <div style="font-weight: bold;">TÊN</div>
+            </div>
+            <div class="m-0 row" style="font-size: 15px;">
+              <div>ID: 123456</div>
+            </div>
+            <div class="m-0 row" style="font-size: 15px;">
+              <a href="#">Đăng ký cho Tarot Reader</a>
+            </div>
+          </div> -->
+
+
+        </div>
+      </div>
+      <div class="row mt-4 mb-4" style="border-radius: 25px; overflow: hidden;">
+        <ul class="list-group pr-0" style="color: #391250; border-radius: 25px;">
+          <li class="list-group-item p-0 custom-li pl-3">
+            <a href="#" class="custom-icon-link"><i class="bi bi-wallet2"></i> Ví và số dư</a>
+            <div class="custom-border-bottom"></div>
+          </li>
+          <li class="list-group-item p-0 custom-li pl-3">
+            <a href="#" class="custom-icon-link"><i class="bi bi-ticket-perforated"></i> Khuyến mãi</a>
+            <div class="custom-border-bottom"></div>
+          </li>
+          <li class="list-group-item p-0 custom-li pl-3">
+            <a href="#" class="custom-icon-link"><i class="bi bi-heart"></i> Yêu thích</a>
+            <div class="custom-border-bottom"></div>
+          </li>
+          <li class="list-group-item p-0 custom-li pl-3">
+            <a href="#" class="custom-icon-link"><i class="bi bi-card-list"></i> Lịch sử</a>
+            <div class="custom-border-bottom"></div>
+          </li>
+          <li class="list-group-item p-0 custom-li pl-3">
+            <a href="#" class="custom-icon-link"><i class="bi bi-paperclip"></i> Hướng dẫn</a>
+            <div class="custom-border-bottom"></div>
+          </li>
+          <li class="list-group-item p-0 custom-li pl-3">
+            <a href="#" class="custom-icon-link"><i class="bi bi-info-circle"></i> Về chúng tôi</a>
+            <div class="custom-border-bottom"></div>
+          </li>
+          <li class="list-group-item p-0 custom-li pl-3"><a href="#" class="custom-icon-link"><i class="bi bi-headset"></i> Hỗ trợ</a>
+          </li>
+        </ul>
+      </div>
+      <div class="row mt-2 mb-2" style="background-color: #FDEDBB; border-radius: 50px;">
+        <a href="#" class="custom-icon-link"><i class="bi bi-toggle-off"></i> Đăng xuất</a>
+      </div>
+      <div class="row mt-2 mb-2" style="background-color: #FDEDBB; border-radius: 50px;">
+        <a href="#" class="custom-icon-link"><i class="bi bi-toggle-on"></i> Đăng nhập</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
