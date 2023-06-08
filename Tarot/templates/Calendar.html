@@ -1,5 +1,5 @@
 {% extends "base.html" %} {% load static %} 
-
+{% load custom_tags %} {# Load the custom_tags file #}
 {% block extra_css %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/dup.css' %}" />
 <link rel="stylesheet" href="{% static 'libs/bootstrap-5.3.0-dist/css/bootstrap.min.css' %}" /> 
@@ -18,18 +18,20 @@
       style="text-align: center"
     >
       <div class="col-md-12 avatar-zone">
-        <img class="avatar" src="../static/img/ThaiAvatar.png" alt="avatar" />
+        <img class="avatar" src="{{ User.avatar.url }}" alt="avatar" style = "width: 30%; border-radius: 10px;" />
       </div>
       <div class="col-md-12 profile-infor mt-3">
-        <h5 class="card-title" style="text-align: center">Nguyễn Duy Thái</h5>
-        <p class="card-text">Tarot Reading & Astrologist</p>
+        <h5 class="card-title" style="text-align: center">{{User.last_name}}</h5>
+        <p class="card-text">{{User.tarot_role}}</p>
         <div class="rating">
           <!-- Add your rating component here -->
-          <span class="star">&#9733;</span>
-          <span class="star">&#9733;</span>
-          <span class="star">&#9733;</span>
-          <span class="star">&#9733;</span>
-          <span class="star">&#9733;</span>
+          <div class="vote">
+            {% if User.star_vote %}
+              {% for _ in user.star_vote|get_star_range %}
+                <img src="{% static 'img/star.png' %}" alt="Star Icon" class="star-icon">
+              {% endfor %}
+            {% endif %}
+          </div>
         </div>
       </div>
     </div>

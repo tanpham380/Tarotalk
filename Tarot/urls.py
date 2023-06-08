@@ -21,7 +21,7 @@ urlpatterns = [
     path("hour/user/<int:user_id>/", views.hour.as_view() , name="hour"),
     path("calendar/choose/", chooseSlot, name="choose"),
     path("calendar/choose/checkout/", checkout, name="checkout"),
-    path("calendar/", calendar, name="calendar"),
+    path("calendar/user/<int:user_id>/", views.calendar.as_view(), name="calendar"),
      path('create_post/', views.create_post, name='create_post'),
     #  path('user/<int:user_id>/', views.user_detail, name='user_detail'),
 ]

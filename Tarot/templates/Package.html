@@ -54,14 +54,12 @@
           {{User.introduction}}
         </p>
         <p class="list-service">Danh sách dịch vụ</p>
-
-        <div
-          class="service-buttons row col-md-4 position-fixed bottom-0 start-0"
-        >
-          <button class="btn btn-service"><a href="{% url 'Tarot:hour' user.id %}" style="text-decoration: none; color: #391250;"> Xem theo giờ </a></button>
-          <button class="btn btn-service"><a href="{% url 'Tarot:questions' user.id %}" style="text-decoration: none; color: #391250;" > Xem theo số lượng câu hỏi</a></button>
-          <button class="btn btn-service"><a href="{% url 'Tarot:package' user.id %}"style="text-decoration: none; color: #391250;"> Xem theo gói</a></button>
+        <div class="service-buttons row col-md-4 position-fixed bottom-0 start-0">
+          <a href="{% url 'Tarot:hour' user.id %}" class="btn btn-service" style="text-decoration: none; color: #391250;">Xem theo giờ</a>
+          <a href="{% url 'Tarot:questions' user.id %}" class="btn btn-service" style="text-decoration: none; color: #391250;">Xem theo số lượng câu hỏi</a>
+          <a href="{% url 'Tarot:package' user.id %}" class="btn btn-service" style="text-decoration: none; color: #391250;">Xem theo gói</a>
         </div>
+        E
       </div>
     </div>
   </div>
@@ -72,14 +70,15 @@
     <div class="col-md-6 card package-zone">
       <div class="card-header text-center package-zone-header">Theo gói</div>
       <div class="card-body package-zone-body">
-        <a href="{% url 'Tarot:calendar' %}" class="btn btn-package-item d-block">Trải bài tình duyên - 200.000 đồng</a>
-        <a href="{% url 'Tarot:calendar' %}" class="btn btn-package-item d-block">Trải bài mối quan hệ - 200.000
+
+        <a href="{% url 'Tarot:calendar' user.id %}" class="btn btn-package-item d-block">Trải bài tình duyên - 200.000 đồng</a>
+        <a href="{% url 'Tarot:calendar' user.id %}" class="btn btn-package-item d-block">Trải bài mối quan hệ - 200.000
           đồng</a>
-        <a href="{% url 'Tarot:calendar' %}" class="btn btn-package-item d-block">Trải bài gia đình - 180.000 đồng</a>
-        <a href="{% url 'Tarot:calendar' %}" class="btn btn-package-item d-block">Trải bài về học tập - 180.000 đồng</a>
-        <a href="{% url 'Tarot:calendar' %}" class="btn btn-package-item d-block">Trải bài về công việc - 180.000
+        <a href="{% url 'Tarot:calendar' user.id %}" class="btn btn-package-item d-block">Trải bài gia đình - 180.000 đồng</a>
+        <a href="{% url 'Tarot:calendar' user.id %}" class="btn btn-package-item d-block">Trải bài về học tập - 180.000 đồng</a>
+        <a href="{% url 'Tarot:calendar' user.id %}" class="btn btn-package-item d-block">Trải bài về công việc - 180.000
           đồng</a>
-        <a href="{% url 'Tarot:calendar' %}" class="btn btn-package-item d-block">Trải bài tổng quan - 250.000 đồng</a>
+        <a href="{% url 'Tarot:calendar' user.id %}" class="btn btn-package-item d-block">Trải bài tổng quan - 250.000 đồng</a>
       </div>
     </div>
 </div>

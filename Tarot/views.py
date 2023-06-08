@@ -52,8 +52,13 @@ def chooseSlot(request):
 def checkout(request):
     return render(request, "CheckOut.html")
 
-def calendar(request):
-    return render(request, "Calendar.html")
+# def calendar(request):
+#     return render(request, "Calendar.html")
+class calendar(View):
+    def get(self, request, user_id):
+        user = User.objects.get(id=user_id)
+        return render(request, 'Calendar.html', {'User': user })
+
 # def user_detail(request, user_id):
 #     user = get_object_or_404(User, id=user_id)
 #     # Đảm bảo rằng bạn truyền đúng tên trường hoặc thuộc tính để truy xuất thông tin của người dùng

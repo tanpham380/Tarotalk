@@ -54,14 +54,12 @@
           {{User.introduction}}
         </p>
         <p class="list-service">Danh sách dịch vụ</p>
-
-        <div
-          class="service-buttons row col-md-4 position-fixed bottom-0 start-0"
-        >
-          <button class="btn btn-service"><a href="{% url 'Tarot:hour' user.id %}" style="text-decoration: none; color: #391250;"> Xem theo giờ </a></button>
-          <button class="btn btn-service"><a href="{% url 'Tarot:questions' user.id %}" style="text-decoration: none; color: #391250;" > Xem theo số lượng câu hỏi</a></button>
-          <button class="btn btn-service"><a href="{% url 'Tarot:package' user.id %}"style="text-decoration: none; color: #391250;"> Xem theo gói</a></button>
+        <div class="service-buttons row col-md-4 position-fixed bottom-0 start-0">
+          <a href="{% url 'Tarot:hour' user.id %}" class="btn btn-service" style="text-decoration: none; color: #391250;">Xem theo giờ</a>
+          <a href="{% url 'Tarot:questions' user.id %}" class="btn btn-service" style="text-decoration: none; color: #391250;">Xem theo số lượng câu hỏi</a>
+          <a href="{% url 'Tarot:package' user.id %}" class="btn btn-service" style="text-decoration: none; color: #391250;">Xem theo gói</a>
         </div>
+        
       </div>
     </div>
   </div>

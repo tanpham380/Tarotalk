@@ -683,7 +683,16 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class hour(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Hour.html', {'User': user })\ndef chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")",
+        "peekOfCode": "class hour(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Hour.html', {'User': user })\ndef chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")\n# def calendar(request):\n#     return render(request, \"Calendar.html\")",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "calendar",
+        "kind": 6,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "class calendar(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Calendar.html', {'User': user })\n# def user_detail(request, user_id):\n#     user = get_object_or_404(User, id=user_id)\n#     # Đảm bảo rằng bạn truyền đúng tên trường hoặc thuộc tính để truy xuất thông tin của người dùng\n#     return render(request, 'user_detail.html', {'user': user})\nclass LoginPageView(View):\n    def get(self, request):",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -755,7 +764,7 @@
         "kind": 2,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "def chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")\n# def user_detail(request, user_id):\n#     user = get_object_or_404(User, id=user_id)\n#     # Đảm bảo rằng bạn truyền đúng tên trường hoặc thuộc tính để truy xuất thông tin của người dùng\n#     return render(request, 'user_detail.html', {'user': user})",
+        "peekOfCode": "def chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")\n# def calendar(request):\n#     return render(request, \"Calendar.html\")\nclass calendar(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Calendar.html', {'User': user })",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -764,16 +773,7 @@
         "kind": 2,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "def checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")\n# def user_detail(request, user_id):\n#     user = get_object_or_404(User, id=user_id)\n#     # Đảm bảo rằng bạn truyền đúng tên trường hoặc thuộc tính để truy xuất thông tin của người dùng\n#     return render(request, 'user_detail.html', {'user': user})\nclass LoginPageView(View):\n    def get(self, request):",
-        "detail": "Tarot.views",
-        "documentation": {}
-    },
-    {
-        "label": "calendar",
-        "kind": 2,
-        "importPath": "Tarot.views",
-        "description": "Tarot.views",
-        "peekOfCode": "def calendar(request):\n    return render(request, \"Calendar.html\")\n# def user_detail(request, user_id):\n#     user = get_object_or_404(User, id=user_id)\n#     # Đảm bảo rằng bạn truyền đúng tên trường hoặc thuộc tính để truy xuất thông tin của người dùng\n#     return render(request, 'user_detail.html', {'user': user})\nclass LoginPageView(View):\n    def get(self, request):\n        return render(request, 'login_page.html')\n    def post(self, request):",
+        "peekOfCode": "def checkout(request):\n    return render(request, \"CheckOut.html\")\n# def calendar(request):\n#     return render(request, \"Calendar.html\")\nclass calendar(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Calendar.html', {'User': user })\n# def user_detail(request, user_id):\n#     user = get_object_or_404(User, id=user_id)",
         "detail": "Tarot.views",
         "documentation": {}
     },
