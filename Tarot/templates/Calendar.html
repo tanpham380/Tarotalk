@@ -26,12 +26,13 @@
         <div class="rating">
           <!-- Add your rating component here -->
           <div class="vote">
-            {% if User.star_vote %}
-              {% for _ in user.star_vote|get_star_range %}
+            {% if User.star_vote is not None %}
+              {% for _ in User.star_vote|get_star_range %}
                 <img src="{% static 'img/star.png' %}" alt="Star Icon" class="star-icon">
               {% endfor %}
             {% endif %}
           </div>
+          
         </div>
       </div>
     </div>

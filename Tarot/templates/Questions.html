@@ -33,12 +33,13 @@
             <div class="rating">
               <!-- Add your rating component here -->
               <div class="vote">
-                {% if User.star_vote %}
-                  {% for _ in user.star_vote|get_star_range %}
+                {% if User.star_vote is not None %}
+                  {% for _ in User.star_vote|get_star_range %}
                     <img src="{% static 'img/star.png' %}" alt="Star Icon" class="star-icon">
                   {% endfor %}
                 {% endif %}
               </div>
+              
             </div>
             <div class="d-flex align-items-center">
               <button class="btn btn-chat btn-outline-light"><a href="{%url 'Tarot:chatbot' %}" style="text-decoration: none; color:black;"> Chat Now</a></button>
@@ -55,11 +56,10 @@
         </p>
         <p class="list-service">Danh sách dịch vụ</p>
         <div class="service-buttons row col-md-4 position-fixed bottom-0 start-0">
-          <a href="{% url 'Tarot:hour' user.id %}" class="btn btn-service" style="text-decoration: none; color: #391250;">Xem theo giờ</a>
-          <a href="{% url 'Tarot:questions' user.id %}" class="btn btn-service" style="text-decoration: none; color: #391250;">Xem theo số lượng câu hỏi</a>
-          <a href="{% url 'Tarot:package' user.id %}" class="btn btn-service" style="text-decoration: none; color: #391250;">Xem theo gói</a>
+          <a href="{% url 'Tarot:hour' User.id %}" class="btn btn-service" style="text-decoration: none; color: #391250;">Xem theo giờ</a>
+          <a href="{% url 'Tarot:questions' User.id %}" class="btn btn-service" style="text-decoration: none; color: #391250;">Xem theo số lượng câu hỏi</a>
+          <a href="{% url 'Tarot:package' User.id %}" class="btn btn-service" style="text-decoration: none; color: #391250;">Xem theo gói</a>
         </div>
-        
       </div>
     </div>
   </div>
@@ -70,9 +70,9 @@
     <div class="col-md-6 card package-zone" >
       <div class="card-header text-center package-zone-header">Theo số lượng câu hỏi</div>
       <div class="card-body package-zone-body">
-        <a href="{% url 'Tarot:calendar' %}" class="btn btn-package-item d-block"
+        <a href="{% url 'Tarot:calendar' User.id %}" class="btn btn-package-item d-block"
           > 3 câu hỏi - 100.000 đồng
-        <a href="{% url 'Tarot:calendar' %}" class="btn btn-package-item d-block"
+        <a href="{% url 'Tarot:calendar'  User.id %}" class="btn btn-package-item d-block"
           >5 câu hỏi - 120.000 đồng</a
         >
                 

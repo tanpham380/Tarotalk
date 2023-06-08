@@ -29,11 +29,15 @@ class profileuser(View):
         return render(request, 'profile.html', {'User': user })
     def post(self,request, user_id):
         if 'xem_theo_gio' in request.POST:
-            pass
+            user = User.objects.get(user_id)
+
+            return render  (request, 'Hour.html', {'User': user })
         elif 'xem_theo_so_luong_cau_hoi' in request.POST:
-            pass
+            user = User.objects.get(id=user_id)
+            return render  (request, 'Questions.html', {'User': user })
         elif 'xem_theo_goi' in request.POST:
-            pass
+            user = User.objects.get(id=user_id)
+            return render  (request, 'Package.html', {'User': user })
         
         
         
