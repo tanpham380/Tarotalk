@@ -357,22 +357,6 @@
         "documentation": {}
     },
     {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "redirect",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
         "label": "calendar",
         "kind": 6,
         "isExtraImport": true,
@@ -638,7 +622,7 @@
         "kind": 5,
         "importPath": "Tarot.urls",
         "description": "Tarot.urls",
-        "peekOfCode": "app_name = \"Tarot\"\nurlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.MoreReaderView.as_view(), name='HomePagetesst'),\n    path(\"list/\", listReader, name=\"list\"),\n    path(\"profile/user/<int:user_id>/\", views.profileuser.as_view(), name=\"profile\"),\n    path(\"questions/user/<int:user_id>/\", views.question.as_view(), name=\"questions\"),",
+        "peekOfCode": "app_name = \"Tarot\"\nurlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.TestPageView.as_view(), name='HomePagetesst'),\n    path(\"profile/user/<int:user_id>/\", views.profileuser.as_view(), name=\"profile\"),\n    path(\"questions/user/<int:user_id>/\", views.question.as_view(), name=\"questions\"),\n    path(\"chatbot/\", chatbot, name=\"chatbot\"),",
         "detail": "Tarot.urls",
         "documentation": {}
     },
@@ -647,7 +631,7 @@
         "kind": 5,
         "importPath": "Tarot.urls",
         "description": "Tarot.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.MoreReaderView.as_view(), name='HomePagetesst'),\n    path(\"list/\", listReader, name=\"list\"),\n    path(\"profile/user/<int:user_id>/\", views.profileuser.as_view(), name=\"profile\"),\n    path(\"questions/user/<int:user_id>/\", views.question.as_view(), name=\"questions\"),\n    path(\"chatbot/\", chatbot, name=\"chatbot\"),",
+        "peekOfCode": "urlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.TestPageView.as_view(), name='HomePagetesst'),\n    path(\"profile/user/<int:user_id>/\", views.profileuser.as_view(), name=\"profile\"),\n    path(\"questions/user/<int:user_id>/\", views.question.as_view(), name=\"questions\"),\n    path(\"chatbot/\", chatbot, name=\"chatbot\"),\n    path(\"package/user/<int:user_id>/\", views.package.as_view(), name=\"package\"),",
         "detail": "Tarot.urls",
         "documentation": {}
     },
@@ -728,7 +712,43 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class TestPageView(LoginRequiredMixin,View) :\n    login_url = '/login/'\n    def get(self, request):\n        form = UpgradeUserForm()\n        return render(request, 'upgrade_User.html', {'form': form})\n    def post(self, request):\n        form = UpgradeUserForm(request.POST, request.FILES)\n        if form.is_valid():\n            user = request.user\n            user.introduction = form.cleaned_data.get('introduction')",
+        "peekOfCode": "class TestPageView(View) :\n    def get(self, request):\n        return render(request, 'Post.html')\nclass PostView(View) :\n    def get(self, request):\n        return render(request, 'Post.html')    \nclass EventView(View) :\n    def get (self, request):\n        return render(request, 'Event.html')\nclass Account(View) :",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "PostView",
+        "kind": 6,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "class PostView(View) :\n    def get(self, request):\n        return render(request, 'Post.html')    \nclass EventView(View) :\n    def get (self, request):\n        return render(request, 'Event.html')\nclass Account(View) :\n    def get(self, request):\n        return render(request, 'Account.html')\nclass GuideView(View) :",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "EventView",
+        "kind": 6,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "class EventView(View) :\n    def get (self, request):\n        return render(request, 'Event.html')\nclass Account(View) :\n    def get(self, request):\n        return render(request, 'Account.html')\nclass GuideView(View) :\n    def get(self, request):\n        return render(request, 'Guide.html')        \nclass MoreReaderView(View):",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "Account",
+        "kind": 6,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "class Account(View) :\n    def get(self, request):\n        return render(request, 'Account.html')\nclass GuideView(View) :\n    def get(self, request):\n        return render(request, 'Guide.html')        \nclass MoreReaderView(View):\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        return render(request, 'more_reader.html', {'istarot_users': istarot_users })",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "GuideView",
+        "kind": 6,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "class GuideView(View) :\n    def get(self, request):\n        return render(request, 'Guide.html')        \nclass MoreReaderView(View):\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        return render(request, 'more_reader.html', {'istarot_users': istarot_users })\nclass UpdateUserView(LoginRequiredMixin, View):\n    login_url = '/login/'\n    def get(self, request):",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -737,7 +757,16 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class MoreReaderView(View):\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        return render(request, 'more_reader.html', {'istarot_users': istarot_users })\n# views.py\nfrom django.shortcuts import render, redirect\ndef create_post(request):\n    if request.method == 'POST':\n        user_id = request.POST.get('user_id')\n        # Tạo bài viết mới với user_id",
+        "peekOfCode": "class MoreReaderView(View):\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        return render(request, 'more_reader.html', {'istarot_users': istarot_users })\nclass UpdateUserView(LoginRequiredMixin, View):\n    login_url = '/login/'\n    def get(self, request):\n        form = UpgradeUserForm()\n        return render(request, 'upgrade_User.html', {'form': form})\n    def post(self, request):",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateUserView",
+        "kind": 6,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "class UpdateUserView(LoginRequiredMixin, View):\n    login_url = '/login/'\n    def get(self, request):\n        form = UpgradeUserForm()\n        return render(request, 'upgrade_User.html', {'form': form})\n    def post(self, request):\n        form = UpgradeUserForm(request.POST, request.FILES)\n        if form.is_valid():\n            user = request.user\n            user.introduction = form.cleaned_data.get('introduction')",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -778,11 +807,11 @@
         "documentation": {}
     },
     {
-        "label": "create_post",
+        "label": "xinloipagenaychuahoatdong",
         "kind": 2,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "def create_post(request):\n    if request.method == 'POST':\n        user_id = request.POST.get('user_id')\n        # Tạo bài viết mới với user_id\n        # Thực hiện kiểm tra và lưu bài viết\n        # Chuyển hướng trở lại trang ban đầu hoặc trang thành công\n        return redirect('home')  # Chỉnh sửa tên của URL nếu cần thiết\n    return redirect('home')  # Xử lý yêu cầu GET hoặc yêu cầu không hợp lệ\ndef LogoutView(request):\n    logout(request)",
+        "peekOfCode": "def xinloipagenaychuahoatdong(request):\n    return render(request, 'xinloi.html')\ndef LogoutView(request):\n    logout(request)\n    return HttpResponseRedirect('/login/')",
         "detail": "Tarot.views",
         "documentation": {}
     },

@@ -96,7 +96,7 @@
               <div style="font-weight: bold;">ĐĂNG KÝ TÀI KHOẢN</div>
             </div>
             <div class="m-0 row" style="font-size: 15px;">
-              <a href="#">Đăng ký cho thành viên</a>
+              <a href="{% url 'Tarot:register' %}">Đăng ký cho thành viên</a>
             </div>
           </div>
 
@@ -118,38 +118,38 @@
       <div class="row mt-4 mb-4" style="border-radius: 25px; overflow: hidden;">
         <ul class="list-group pr-0" style="color: #391250; border-radius: 25px;">
           <li class="list-group-item p-0 custom-li pl-3">
-            <a href="#" class="custom-icon-link"><i class="bi bi-wallet2"></i> Ví và số dư</a>
+            <a href="{%url 'Tarot:xinloi'%}" class="custom-icon-link"><i class="bi bi-wallet2"></i> Ví và số dư</a>
             <div class="custom-border-bottom"></div>
           </li>
           <li class="list-group-item p-0 custom-li pl-3">
-            <a href="#" class="custom-icon-link"><i class="bi bi-ticket-perforated"></i> Khuyến mãi</a>
+            <a href="{%url 'Tarot:xinloi'%}" class="custom-icon-link"><i class="bi bi-ticket-perforated"></i> Khuyến mãi</a>
             <div class="custom-border-bottom"></div>
           </li>
           <li class="list-group-item p-0 custom-li pl-3">
-            <a href="#" class="custom-icon-link"><i class="bi bi-heart"></i> Yêu thích</a>
+            <a href="{%url 'Tarot:xinloi'%}" class="custom-icon-link"><i class="bi bi-heart"></i> Yêu thích</a>
             <div class="custom-border-bottom"></div>
           </li>
           <li class="list-group-item p-0 custom-li pl-3">
-            <a href="#" class="custom-icon-link"><i class="bi bi-card-list"></i> Lịch sử</a>
+            <a href="{%url 'Tarot:xinloi'%}" class="custom-icon-link"><i class="bi bi-card-list"></i> Lịch sử</a>
             <div class="custom-border-bottom"></div>
           </li>
           <li class="list-group-item p-0 custom-li pl-3">
-            <a href="#" class="custom-icon-link"><i class="bi bi-paperclip"></i> Hướng dẫn</a>
+            <a href="{%url 'Tarot:guide'%}" class="custom-icon-link"><i class="bi bi-paperclip"></i> Hướng dẫn</a>
             <div class="custom-border-bottom"></div>
           </li>
           <li class="list-group-item p-0 custom-li pl-3">
-            <a href="#" class="custom-icon-link"><i class="bi bi-info-circle"></i> Về chúng tôi</a>
+            <a href="{%url 'Tarot:xinloi'%}" class="custom-icon-link"><i class="bi bi-info-circle"></i> Về chúng tôi</a>
             <div class="custom-border-bottom"></div>
           </li>
-          <li class="list-group-item p-0 custom-li pl-3"><a href="#" class="custom-icon-link"><i class="bi bi-headset"></i> Hỗ trợ</a>
+          <li class="list-group-item p-0 custom-li pl-3"><a href="{%url 'Tarot:xinloi'%}" class="custom-icon-link"><i class="bi bi-headset"></i> Hỗ trợ</a>
           </li>
         </ul>
       </div>
       <div class="row mt-2 mb-2" style="background-color: #FDEDBB; border-radius: 50px;">
-        <a href="#" class="custom-icon-link"><i class="bi bi-toggle-off"></i> Đăng xuất</a>
+        <a href="{%url 'Tarot:logout'%}" class="custom-icon-link"><i class="bi bi-toggle-off"></i> Đăng xuất</a>
       </div>
       <div class="row mt-2 mb-2" style="background-color: #FDEDBB; border-radius: 50px;">
-        <a href="#" class="custom-icon-link"><i class="bi bi-toggle-on"></i> Đăng nhập</a>
+        <a href="{%url 'Tarot:login'%}" class="custom-icon-link"><i class="bi bi-toggle-on"></i> Đăng nhập</a>
       </div>
     </div>
   </div>

@@ -16,7 +16,7 @@
                 <p class="user-info tarot-role">{{ user.tarot_role }}</p>
                 <p class="user-info status">{{ user.status }}</p>
               </div>
-              <a href="#" class="load-more-link">Xem Thêm ></a>
+              <a href="{%url 'Tarot:morereader'%}" class="load-more-link">Xem Thêm ></a>
             </div>
           {% endif %}
         {% endfor %}

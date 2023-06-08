@@ -117,7 +117,32 @@ class RegisterView(View):
             return render(request, 'register_page.html', {'form': form})
 
 
-class TestPageView(LoginRequiredMixin,View) :
+class TestPageView(View) :
+    def get(self, request):
+        return render(request, 'Post.html')
+
+class PostView(View) :
+    def get(self, request):
+        return render(request, 'Post.html')    
+class EventView(View) :
+    def get (self, request):
+        return render(request, 'Event.html')
+    
+       
+class Account(View) :
+    def get(self, request):
+        return render(request, 'Account.html')
+class GuideView(View) :
+    def get(self, request):
+        return render(request, 'Guide.html')        
+
+class MoreReaderView(View):
+    def get(self, request):
+        istarot_users = User.objects.filter(istarot=True)
+        return render(request, 'more_reader.html', {'istarot_users': istarot_users })
+
+
+class UpdateUserView(LoginRequiredMixin, View):
     login_url = '/login/'
     def get(self, request):
         form = UpgradeUserForm()
@@ -134,33 +159,8 @@ class TestPageView(LoginRequiredMixin,View) :
             return render(request, 'update_user_succesfull.html')
         else:
             return render(request, 'upgrade_User.html', {'form': form})
-    
-        
-
-class MoreReaderView(View):
-    def get(self, request):
-        istarot_users = User.objects.filter(istarot=True)
-        return render(request, 'more_reader.html', {'istarot_users': istarot_users })
-
-
-
-
-
-# views.py
-from django.shortcuts import render, redirect
-
-
-def create_post(request):
-    if request.method == 'POST':
-        user_id = request.POST.get('user_id')
-        # Tạo bài viết mới với user_id
-        # Thực hiện kiểm tra và lưu bài viết
-        
-        # Chuyển hướng trở lại trang ban đầu hoặc trang thành công
-        return redirect('home')  # Chỉnh sửa tên của URL nếu cần thiết
-    
-    return redirect('home')  # Xử lý yêu cầu GET hoặc yêu cầu không hợp lệ
-
+def xinloipagenaychuahoatdong(request):
+    return render(request, 'xinloi.html')
     
 def LogoutView(request):
     logout(request)
