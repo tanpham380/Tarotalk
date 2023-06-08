@@ -20,18 +20,32 @@ def chatbot(request):
 def listReader(request):
     return render(request, "ListReader.html")
 
-def profile(request):
-    return render(request, "profile.html")
+# class profileUser(View):
+#     def get(request):
+#         return render(request, "Profile.html")
+class profileuser(View):
+    def get(self, request, user_id):
+        user = User.objects.get(id=user_id)
+        return render(request, 'profile.html', {'User': user })
 
-def question(request):
-    return render(request, "Questions.html")
-
-def package(request):
-    return render(request, "Package.html")
-
-def hour(request):
-    return render(request, "Hour.html")
-
+# def question(request):
+#     return render(request, "Questions.html")
+class question(View):
+    def get(self, request, user_id):
+        user = User.objects.get(id=user_id)
+        return render(request, 'Questions.html', {'User': user })
+# def package(request):
+#     return render(request, "Package.html")
+class package(View):
+    def get(self, request, user_id):
+        user = User.objects.get(id=user_id)
+        return render(request, 'Package.html', {'User': user })
+# def hour(request):
+#     return render(request, "Hour.html")
+class hour(View):
+    def get(self, request, user_id):
+        user = User.objects.get(id=user_id)
+        return render(request, 'Hour.html', {'User': user })
 def chooseSlot(request):
     return render(request, "ChooseSlot.html")
 
@@ -61,7 +75,7 @@ class LoginPageView(View):
         return render(request, 'homepage.html')
 
 
-class ViewUser(LoginRequiredMixin ,View):
+class ViewUser(View):
     login_url = '/login/'
     def get(self, request):
         istarot_users = User.objects.filter(istarot=True)

@@ -7,7 +7,7 @@
 <div class="card-reader-container">
   {% for user in istarot_users %}
     <div class="more_card_reader">
-      <a href="{% url 'Tarot:HomePagetesst' %}">
+      <a href="{% url 'Tarot:profile' user.id %}">
         <!-- <a href="{% url 'user_detail' user.id %}"></a> -->
         <img src="{{ user.avatar.url }}">
         <h3>{{ user.last_name }}</h3>

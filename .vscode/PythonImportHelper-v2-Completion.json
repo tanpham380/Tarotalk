@@ -638,7 +638,7 @@
         "kind": 5,
         "importPath": "Tarot.urls",
         "description": "Tarot.urls",
-        "peekOfCode": "app_name = \"Tarot\"\nurlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.MoreReaderView.as_view(), name='HomePagetesst'),\n    path(\"list/\", listReader, name=\"list\"),\n    path(\"profile/\", profile, name=\"profile\"),\n    path(\"questions/\", question, name=\"questions\"),",
+        "peekOfCode": "app_name = \"Tarot\"\nurlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.MoreReaderView.as_view(), name='HomePagetesst'),\n    path(\"list/\", listReader, name=\"list\"),\n    path(\"profile/user/<int:user_id>/\", views.profileuser.as_view(), name=\"profile\"),\n    path(\"questions/user/<int:user_id>/\", views.question.as_view(), name=\"questions\"),",
         "detail": "Tarot.urls",
         "documentation": {}
     },
@@ -647,8 +647,44 @@
         "kind": 5,
         "importPath": "Tarot.urls",
         "description": "Tarot.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.MoreReaderView.as_view(), name='HomePagetesst'),\n    path(\"list/\", listReader, name=\"list\"),\n    path(\"profile/\", profile, name=\"profile\"),\n    path(\"questions/\", question, name=\"questions\"),\n    path(\"chatbot/\", chatbot, name=\"chatbot\"),",
+        "peekOfCode": "urlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.MoreReaderView.as_view(), name='HomePagetesst'),\n    path(\"list/\", listReader, name=\"list\"),\n    path(\"profile/user/<int:user_id>/\", views.profileuser.as_view(), name=\"profile\"),\n    path(\"questions/user/<int:user_id>/\", views.question.as_view(), name=\"questions\"),\n    path(\"chatbot/\", chatbot, name=\"chatbot\"),",
         "detail": "Tarot.urls",
+        "documentation": {}
+    },
+    {
+        "label": "profileuser",
+        "kind": 6,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "class profileuser(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'profile.html', {'User': user })\n# def question(request):\n#     return render(request, \"Questions.html\")\nclass question(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Questions.html', {'User': user })",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "question",
+        "kind": 6,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "class question(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Questions.html', {'User': user })\n# def package(request):\n#     return render(request, \"Package.html\")\nclass package(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Package.html', {'User': user })",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "package",
+        "kind": 6,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "class package(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Package.html', {'User': user })\n# def hour(request):\n#     return render(request, \"Hour.html\")\nclass hour(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Hour.html', {'User': user })",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "hour",
+        "kind": 6,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "class hour(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Hour.html', {'User': user })\ndef chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")",
+        "detail": "Tarot.views",
         "documentation": {}
     },
     {
@@ -665,7 +701,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class ViewUser(LoginRequiredMixin ,View):\n    login_url = '/login/'\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        random_users = random.sample(list(istarot_users), 5)\n        context = {'istarot_users': random_users}\n        return render(request, 'homepage.html', context)\nclass RegisterView(View):\n    def get(self, request):\n        form = RegisterForm()",
+        "peekOfCode": "class ViewUser(View):\n    login_url = '/login/'\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        random_users = random.sample(list(istarot_users), 5)\n        context = {'istarot_users': random_users}\n        return render(request, 'homepage.html', context)\nclass RegisterView(View):\n    def get(self, request):\n        form = RegisterForm()",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -701,7 +737,7 @@
         "kind": 2,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "def chatbot(request):\n    return render(request, \"Chatbox.html\")\ndef listReader(request):\n    return render(request, \"ListReader.html\")\ndef profile(request):\n    return render(request, \"profile.html\")\ndef question(request):\n    return render(request, \"Questions.html\")\ndef package(request):\n    return render(request, \"Package.html\")",
+        "peekOfCode": "def chatbot(request):\n    return render(request, \"Chatbox.html\")\ndef listReader(request):\n    return render(request, \"ListReader.html\")\n# class profileUser(View):\n#     def get(request):\n#         return render(request, \"Profile.html\")\nclass profileuser(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -710,43 +746,7 @@
         "kind": 2,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "def listReader(request):\n    return render(request, \"ListReader.html\")\ndef profile(request):\n    return render(request, \"profile.html\")\ndef question(request):\n    return render(request, \"Questions.html\")\ndef package(request):\n    return render(request, \"Package.html\")\ndef hour(request):\n    return render(request, \"Hour.html\")",
-        "detail": "Tarot.views",
-        "documentation": {}
-    },
-    {
-        "label": "profile",
-        "kind": 2,
-        "importPath": "Tarot.views",
-        "description": "Tarot.views",
-        "peekOfCode": "def profile(request):\n    return render(request, \"profile.html\")\ndef question(request):\n    return render(request, \"Questions.html\")\ndef package(request):\n    return render(request, \"Package.html\")\ndef hour(request):\n    return render(request, \"Hour.html\")\ndef chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")",
-        "detail": "Tarot.views",
-        "documentation": {}
-    },
-    {
-        "label": "question",
-        "kind": 2,
-        "importPath": "Tarot.views",
-        "description": "Tarot.views",
-        "peekOfCode": "def question(request):\n    return render(request, \"Questions.html\")\ndef package(request):\n    return render(request, \"Package.html\")\ndef hour(request):\n    return render(request, \"Hour.html\")\ndef chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")",
-        "detail": "Tarot.views",
-        "documentation": {}
-    },
-    {
-        "label": "package",
-        "kind": 2,
-        "importPath": "Tarot.views",
-        "description": "Tarot.views",
-        "peekOfCode": "def package(request):\n    return render(request, \"Package.html\")\ndef hour(request):\n    return render(request, \"Hour.html\")\ndef chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")",
-        "detail": "Tarot.views",
-        "documentation": {}
-    },
-    {
-        "label": "hour",
-        "kind": 2,
-        "importPath": "Tarot.views",
-        "description": "Tarot.views",
-        "peekOfCode": "def hour(request):\n    return render(request, \"Hour.html\")\ndef chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\ndef checkout(request):\n    return render(request, \"CheckOut.html\")\ndef calendar(request):\n    return render(request, \"Calendar.html\")\n# def user_detail(request, user_id):\n#     user = get_object_or_404(User, id=user_id)",
+        "peekOfCode": "def listReader(request):\n    return render(request, \"ListReader.html\")\n# class profileUser(View):\n#     def get(request):\n#         return render(request, \"Profile.html\")\nclass profileuser(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'profile.html', {'User': user })\n# def question(request):",
         "detail": "Tarot.views",
         "documentation": {}
     },
