@@ -87,7 +87,7 @@
       <div class="row py-4" style="background-color: #E3CFFF; border-radius: 25px;">
         <div class="col-4" style="width: 100%;">
           <div class="h-100 d-flex justify-content-center" style="background-color: #FFF5CC; border-radius: 50%;">
-            <img src="../static/img/star.png" width="100%"/>
+            <img src="{% static 'img\TAROTALK_LOGO.png' %}" width="100%"/>
           </div>
         </div>
         <div class="col-8 d-flex flex-column justify-content-center align-items-start p-0 fluid" class="col-8" style="color: #391250;">
@@ -145,9 +145,9 @@
           </li>
         </ul>
       </div>
-      <div class="row mt-2 mb-2" style="background-color: #FDEDBB; border-radius: 50px;">
+      <!-- <div class="row mt-2 mb-2" style="background-color: #FDEDBB; border-radius: 50px;">
         <a href="{%url 'Tarot:logout'%}" class="custom-icon-link"><i class="bi bi-toggle-off"></i> Đăng xuất</a>
-      </div>
+      </div> -->
       <div class="row mt-2 mb-2" style="background-color: #FDEDBB; border-radius: 50px;">
         <a href="{%url 'Tarot:login'%}" class="custom-icon-link"><i class="bi bi-toggle-on"></i> Đăng nhập</a>
       </div>

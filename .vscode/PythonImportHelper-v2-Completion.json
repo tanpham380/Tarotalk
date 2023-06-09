@@ -16,6 +16,14 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
         "label": "django.contrib.auth.models",
         "kind": 6,
         "isExtraImport": true,
@@ -242,6 +250,54 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -349,6 +405,14 @@
         "documentation": {}
     },
     {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -370,6 +434,22 @@
         "description": "django.views.generic.base",
         "isExtraImport": true,
         "detail": "django.views.generic.base",
+        "documentation": {}
+    },
+    {
+        "label": "static",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "isExtraImport": true,
+        "detail": "django.conf.urls.static",
+        "documentation": {}
+    },
+    {
+        "label": "static",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "isExtraImport": true,
+        "detail": "django.conf.urls.static",
         "documentation": {}
     },
     {
@@ -485,14 +565,6 @@
         "description": "pathlib",
         "isExtraImport": true,
         "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "static",
-        "importPath": "django.conf.urls.static",
-        "description": "django.conf.urls.static",
-        "isExtraImport": true,
-        "detail": "django.conf.urls.static",
         "documentation": {}
     },
     {
@@ -621,6 +693,33 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0013_alter_user_avatar_alter_user_cover_page",
+        "description": "Tarot.migrations.0013_alter_user_avatar_alter_user_cover_page",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0012_alter_user_cover_page'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='user',\n            name='avatar',\n            field=models.ImageField(blank=True, default='avatars/default_avatar.jpg', null=True, upload_to='avatars/'),\n        ),",
+        "detail": "Tarot.migrations.0013_alter_user_avatar_alter_user_cover_page",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0014_alter_user_cover_page",
+        "description": "Tarot.migrations.0014_alter_user_cover_page",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0013_alter_user_avatar_alter_user_cover_page'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='user',\n            name='cover_page',\n            field=models.ImageField(blank=True, default='cover_pages/banner.png', null=True, upload_to='cover_pages/'),\n        ),",
+        "detail": "Tarot.migrations.0014_alter_user_cover_page",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0015_alter_user_avatar",
+        "description": "Tarot.migrations.0015_alter_user_avatar",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0014_alter_user_cover_page'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='user',\n            name='avatar',\n            field=models.ImageField(blank=True, default='avatars/default_avatar.png', null=True, upload_to='avatars/'),\n        ),",
+        "detail": "Tarot.migrations.0015_alter_user_avatar",
+        "documentation": {}
+    },
+    {
         "label": "get_star_range",
         "kind": 2,
         "importPath": "Tarot.templatetags.custom_tags",
@@ -670,7 +769,7 @@
         "kind": 6,
         "importPath": "Tarot.models",
         "description": "Tarot.models",
-        "peekOfCode": "class User(AbstractUser):\n    avatar = models.ImageField(upload_to='avatars/', null=True, blank=True , default='static/img/avatars/default_avatar.jpg')\n    cover_page = models.ImageField(upload_to='cover_pages/', null=True, blank=True , default='static/img/cover_pages/default_avatar.jpg')\n    tarot_role = models.CharField(max_length=50, default= \"Tarot Reading and AStrology\")\n    introduction = models.TextField(null=True)\n    status = models.CharField(max_length=255, null=True)\n    star_vote = models.IntegerField(null=True,default= 0)\n    birth_date = models.DateField(null=True)\n    email = models.EmailField(null=True)\n    phone_number = models.CharField(max_length=10,null=True)",
+        "peekOfCode": "class User(AbstractUser):\n    avatar = models.ImageField(upload_to='avatars/', null=True, blank=True , default='avatars/default_avatar.png')\n    cover_page = models.ImageField(upload_to='cover_pages/', null=True, blank=True , default='cover_pages/banner.png')\n    tarot_role = models.CharField(max_length=50, default= \"Tarot Reading and AStrology\")\n    introduction = models.TextField(null=True)\n    status = models.CharField(max_length=255, null=True)\n    star_vote = models.IntegerField(null=True,default= 0)\n    birth_date = models.DateField(null=True)\n    email = models.EmailField(null=True)\n    phone_number = models.CharField(max_length=10,null=True)",
         "detail": "Tarot.models",
         "documentation": {}
     },
@@ -760,7 +859,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class LoginPageView(View):\n    def get(self, request):\n        return render(request, 'login_page.html')\n    def post(self, request):\n        user_name = request.POST.get('email')\n        password = request.POST.get('password')\n        print(user_name, password)\n        check_login = authenticate(username=user_name, password=password)\n        if check_login is None:\n            return render(request, 'login_page.html', {'error': 'Tên đăng nhập hoặc mật khẩu không đúng'})",
+        "peekOfCode": "class LoginPageView(View):\n    def get(self, request):\n        if request.user.is_authenticated:\n            return redirect('Tarot:HomePage')\n        return render(request, 'login_page.html')\n    def post(self, request):\n        user_name = request.POST.get('email')\n        password = request.POST.get('password')\n        print(user_name, password)\n        check_login = authenticate(username=user_name, password=password)",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -805,7 +904,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class EventView(View) :\n    def get (self, request):\n        return render(request, 'Event.html')\nclass Account(View) :\n    def get(self, request):\n        isReader= request.user\n        if request.user.is_authenticated and isReader.istarot:\n            return render(request, 'ReaderAccount.html')\n        elif request.user.is_authenticated:\n            return render(request, 'UpgradeAccount.html')",
+        "peekOfCode": "class EventView(View) :\n    def get (self, request):\n        return render(request, 'Event.html')\nclass Account(View) :\n    def get(self, request):\n        isReader= request.user\n        if request.user.is_authenticated and isReader.istarot:\n            user = User.objects.get(id=request.user.id)\n            return render(request, 'ReaderAccount.html', {'User': user })\n        elif request.user.is_authenticated:",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -814,7 +913,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class Account(View) :\n    def get(self, request):\n        isReader= request.user\n        if request.user.is_authenticated and isReader.istarot:\n            return render(request, 'ReaderAccount.html')\n        elif request.user.is_authenticated:\n            return render(request, 'UpgradeAccount.html')\n        else: return render(request, 'Account.html')\nclass GuideView(View) :\n    def get(self, request):",
+        "peekOfCode": "class Account(View) :\n    def get(self, request):\n        isReader= request.user\n        if request.user.is_authenticated and isReader.istarot:\n            user = User.objects.get(id=request.user.id)\n            return render(request, 'ReaderAccount.html', {'User': user })\n        elif request.user.is_authenticated:\n            user = User.objects.get(id=request.user.id)\n            print(User.avatar)\n            return render(request, 'UpgradeAccount.html', {'User': user })",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -1129,7 +1228,7 @@
         "kind": 5,
         "importPath": "Tarotalk.urls",
         "description": "Tarotalk.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('Tarot.urls')),\n] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('Tarot.urls')),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
         "detail": "Tarotalk.urls",
         "documentation": {}
     },

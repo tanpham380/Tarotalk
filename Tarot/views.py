@@ -9,6 +9,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from Tarot.models import User
 from .forms import *
 import random
+from django.urls import reverse
+
 
 # Create your views here.
 
@@ -87,6 +89,8 @@ class calendar(LoginRequiredMixin,View):
 
 class LoginPageView(View):
     def get(self, request):
+        if request.user.is_authenticated:
+            return redirect('Tarot:HomePage')
         return render(request, 'login_page.html')
     
     def post(self, request):
@@ -97,7 +101,8 @@ class LoginPageView(View):
         if check_login is None:
             return render(request, 'login_page.html', {'error': 'Tên đăng nhập hoặc mật khẩu không đúng'})
         login(request, check_login)
-        return render(request, 'HomePage.html')
+        #homepage_url = reverse('HomePage')
+        return redirect('Tarot:HomePage')
 
 
 class ViewUser(View):
@@ -153,9 +158,12 @@ class Account(View) :
     def get(self, request):
         isReader= request.user
         if request.user.is_authenticated and isReader.istarot:
-            return render(request, 'ReaderAccount.html')
+            user = User.objects.get(id=request.user.id)
+            return render(request, 'ReaderAccount.html', {'User': user })
         elif request.user.is_authenticated:
-            return render(request, 'UpgradeAccount.html')
+            user = User.objects.get(id=request.user.id)
+            print(User.avatar)
+            return render(request, 'UpgradeAccount.html', {'User': user })
         else: return render(request, 'Account.html')
         
 class GuideView(View) :
