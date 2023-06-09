@@ -97,7 +97,7 @@ class LoginPageView(View):
         if check_login is None:
             return render(request, 'login_page.html', {'error': 'Tên đăng nhập hoặc mật khẩu không đúng'})
         login(request, check_login)
-        return render(request, 'homepage.html')
+        return render(request, 'HomePage.html')
 
 
 class ViewUser(View):
@@ -106,7 +106,7 @@ class ViewUser(View):
         istarot_users = User.objects.filter(istarot=True)
         random_users = random.sample(list(istarot_users), 1)
         context = {'istarot_users': random_users}
-        return render(request, 'homepage.html', context)
+        return render(request, 'HomePage.html', context)
 
 class RegisterView(View):
     def get(self, request):

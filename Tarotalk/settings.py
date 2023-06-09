@@ -129,6 +129,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'Tarot.User'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'Tarot', 'static'),
 
 
 ]
+
+SECURE_CROSS_ORIGIN_OPENER_POLICY = None
