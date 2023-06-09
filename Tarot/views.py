@@ -165,7 +165,7 @@ class Account(View) :
         if request.user.is_authenticated and isReader.istarot:
             user = User.objects.get(id=request.user.id)
             return render(request, 'ReaderAccount.html', {'User': user })
-        if request.user.is_authenticated and isReader.istarot:
+        if request.user.is_authenticated :
             user = User.objects.get(id=request.user.id)
             return render(request, 'UpgradeAccount.html', {'User': user })
         

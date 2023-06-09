@@ -928,7 +928,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class EventView(View) :\n    def get (self, request):\n        return render(request, 'Event.html')\nclass Account(View) :\n    def get(self, request):\n        isReader= request.user\n        if request.user.is_authenticated and isReader.istarot:\n            user = User.objects.get(id=request.user.id)\n            return render(request, 'ReaderAccount.html', {'User': user })\n        if request.user.is_authenticated and isReader.istarot:",
+        "peekOfCode": "class EventView(View) :\n    def get (self, request):\n        return render(request, 'Event.html')\nclass Account(View) :\n    def get(self, request):\n        isReader= request.user\n        if request.user.is_authenticated and isReader.istarot:\n            user = User.objects.get(id=request.user.id)\n            return render(request, 'ReaderAccount.html', {'User': user })\n        if request.user.is_authenticated :",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -937,7 +937,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class Account(View) :\n    def get(self, request):\n        isReader= request.user\n        if request.user.is_authenticated and isReader.istarot:\n            user = User.objects.get(id=request.user.id)\n            return render(request, 'ReaderAccount.html', {'User': user })\n        if request.user.is_authenticated and isReader.istarot:\n            user = User.objects.get(id=request.user.id)\n            return render(request, 'UpgradeAccount.html', {'User': user })\n        return render(request, 'Account.html')",
+        "peekOfCode": "class Account(View) :\n    def get(self, request):\n        isReader= request.user\n        if request.user.is_authenticated and isReader.istarot:\n            user = User.objects.get(id=request.user.id)\n            return render(request, 'ReaderAccount.html', {'User': user })\n        if request.user.is_authenticated :\n            user = User.objects.get(id=request.user.id)\n            return render(request, 'UpgradeAccount.html', {'User': user })\n        return render(request, 'Account.html')",
         "detail": "Tarot.views",
         "documentation": {}
     },
