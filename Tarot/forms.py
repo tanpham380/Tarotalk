@@ -32,25 +32,24 @@ class RegisterForm(UserCreationForm):
     class Meta:
         model=User
         fields = ['last_name','email','birth_date','email','phone_number','password1','password2']
-class UpgradeUserForm(UserCreationForm):
+class UpgradeUserForm(forms.ModelForm):
     introduction = forms.CharField(
         label='Giới thiệu',
-        widget=forms.Textarea(attrs={'class': 'Upgradeform-control','required': 'required',}),
+        widget=forms.Textarea(attrs={'class': 'Upgradeform-control'}),
     )
     status = forms.CharField(
         label='Trạng thái',
-        widget=forms.TextInput(attrs={'class': 'Upgradeform-control','required': 'required',}),
-    )   
+        widget=forms.TextInput(attrs={'class': 'Upgradeform-control'}),
+    )
     cover_page = forms.ImageField(
         label='Ảnh bìa',
-        widget=forms.FileInput(attrs={'class': 'Upgradeform-control','required': 'required',}),
+        widget=forms.FileInput(attrs={'class': 'Upgradeform-control'}),
     )
     avatar = forms.ImageField(
         label='Ảnh đại diện',
-        widget=forms.FileInput(attrs={'class': 'Upgradeform-control','required': 'required',}),
+        widget=forms.FileInput(attrs={'class': 'Upgradeform-control'}),
     )
-     
-    
+
     class Meta:
-        model=User
-        fields = ['introduction','status','cover_page','avatar']
+        model = User
+        fields = ['introduction', 'status', 'cover_page', 'avatar']

@@ -5,14 +5,12 @@
 <div class="container-update">
     <div class="update-box">
         <h2 class="update-title">Đăng kí</h2>
-        <form method="POST" novalidate>
+        <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-group-update">
                 <label for="{{ form.avatar.id_for_label }}">Ảnh đại diện:</label>
                 {{ form.avatar }}
-
             </div>
-            
             <div class="form-group-update">
                 <label for="{{ form.cover_page.id_for_label }}">Ảnh bìa bạn muốn:</label>
                 {{ form.cover_page }}

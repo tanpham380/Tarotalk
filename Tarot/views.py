@@ -10,6 +10,10 @@ from Tarot.models import User
 from .forms import *
 import random
 from django.urls import reverse
+from django.core.files.storage import default_storage
+from django.core.files.base import ContentFile
+from datetime import date
+
 
 
 # Create your views here.
@@ -157,14 +161,33 @@ class EventView(View) :
 class Account(View) :
     def get(self, request):
         isReader= request.user
+
         if request.user.is_authenticated and isReader.istarot:
             user = User.objects.get(id=request.user.id)
             return render(request, 'ReaderAccount.html', {'User': user })
-        elif request.user.is_authenticated:
+        if request.user.is_authenticated and isReader.istarot:
             user = User.objects.get(id=request.user.id)
-            print(User.avatar)
             return render(request, 'UpgradeAccount.html', {'User': user })
-        else: return render(request, 'Account.html')
+        
+        return render(request, 'Account.html')
+        
+    def post(self, request):
+        if 'avatar' in request.FILES:
+            if request.FILES['avatar'] is None:
+                return redirect('Tarot:HomePage')
+            else:
+                picture = request.FILES['avatar']
+                user = User.objects.get(id=request.user.id)
+                old_avatar = user.avatar
+                default_storage.delete(old_avatar.path)
+                username = user.id
+                today = date.today()
+                filename = f"id_{username}_{today}.{picture.name.split('.')[-1]}"
+                user.avatar.save(filename, picture)
+                user.save()
+                return redirect('Tarot:account')
+
+                
         
 class GuideView(View) :
     def get(self, request):
@@ -180,21 +203,42 @@ class MoreReaderView(View):
 
 class UpdateUserView(LoginRequiredMixin, View):
     login_url = '/login/'
+    
     def get(self, request):
         form = UpgradeUserForm()
         return render(request, 'upgrade_User.html', {'form': form})
+    
     def post(self, request):
         form = UpgradeUserForm(request.POST, request.FILES)
+        
         if form.is_valid():
             user = request.user
+            picture = form.cleaned_data.get('avatar')
+            old_avatar = user.avatar
+            if old_avatar:
+                default_storage.delete(old_avatar.path)
+            username = user.id
+            today = date.today()
+            filenameavatar = f"id_{username}_{today}.{picture.name.split('.')[-1]}"
+            user.avatar.save(filenameavatar, picture)
+            coverpage = form.cleaned_data.get('cover_page')
+            old_coverpage = user.cover_page
+            if old_coverpage:
+                default_storage.delete(old_coverpage.path)
+            filenammecoverpage= f"id_{username}_{today}.{coverpage.name.split('.')[-1]}"
+            user.cover_page.save(filenammecoverpage, coverpage)
             user.introduction = form.cleaned_data.get('introduction')
             user.status = form.cleaned_data.get('status')
-            user.cover_page = form.cleaned_data.get('cover_page')
-            user.avatar = form.cleaned_data.get('avatar')
             user.save()
+            
             return render(request, 'update_user_succesfull.html')
         else:
+            print(form.errors)
             return render(request, 'upgrade_User.html', {'form': form})
+
+
+        
+        
 def xinloipagenaychuahoatdong(request):
     return render(request, 'xinloi.html')
     

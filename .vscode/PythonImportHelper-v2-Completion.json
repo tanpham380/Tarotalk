@@ -543,6 +543,30 @@
         "documentation": {}
     },
     {
+        "label": "default_storage",
+        "importPath": "django.core.files.storage",
+        "description": "django.core.files.storage",
+        "isExtraImport": true,
+        "detail": "django.core.files.storage",
+        "documentation": {}
+    },
+    {
+        "label": "ContentFile",
+        "importPath": "django.core.files.base",
+        "description": "django.core.files.base",
+        "isExtraImport": true,
+        "detail": "django.core.files.base",
+        "documentation": {}
+    },
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -760,7 +784,7 @@
         "kind": 6,
         "importPath": "Tarot.forms",
         "description": "Tarot.forms",
-        "peekOfCode": "class UpgradeUserForm(UserCreationForm):\n    introduction = forms.CharField(\n        label='Giới thiệu',\n        widget=forms.Textarea(attrs={'class': 'Upgradeform-control','required': 'required',}),\n    )\n    status = forms.CharField(\n        label='Trạng thái',\n        widget=forms.TextInput(attrs={'class': 'Upgradeform-control','required': 'required',}),\n    )   \n    cover_page = forms.ImageField(",
+        "peekOfCode": "class UpgradeUserForm(forms.ModelForm):\n    introduction = forms.CharField(\n        label='Giới thiệu',\n        widget=forms.Textarea(attrs={'class': 'Upgradeform-control'}),\n    )\n    status = forms.CharField(\n        label='Trạng thái',\n        widget=forms.TextInput(attrs={'class': 'Upgradeform-control'}),\n    )\n    cover_page = forms.ImageField(",
         "detail": "Tarot.forms",
         "documentation": {}
     },
@@ -904,7 +928,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class EventView(View) :\n    def get (self, request):\n        return render(request, 'Event.html')\nclass Account(View) :\n    def get(self, request):\n        isReader= request.user\n        if request.user.is_authenticated and isReader.istarot:\n            user = User.objects.get(id=request.user.id)\n            return render(request, 'ReaderAccount.html', {'User': user })\n        elif request.user.is_authenticated:",
+        "peekOfCode": "class EventView(View) :\n    def get (self, request):\n        return render(request, 'Event.html')\nclass Account(View) :\n    def get(self, request):\n        isReader= request.user\n        if request.user.is_authenticated and isReader.istarot:\n            user = User.objects.get(id=request.user.id)\n            return render(request, 'ReaderAccount.html', {'User': user })\n        if request.user.is_authenticated and isReader.istarot:",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -913,7 +937,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class Account(View) :\n    def get(self, request):\n        isReader= request.user\n        if request.user.is_authenticated and isReader.istarot:\n            user = User.objects.get(id=request.user.id)\n            return render(request, 'ReaderAccount.html', {'User': user })\n        elif request.user.is_authenticated:\n            user = User.objects.get(id=request.user.id)\n            print(User.avatar)\n            return render(request, 'UpgradeAccount.html', {'User': user })",
+        "peekOfCode": "class Account(View) :\n    def get(self, request):\n        isReader= request.user\n        if request.user.is_authenticated and isReader.istarot:\n            user = User.objects.get(id=request.user.id)\n            return render(request, 'ReaderAccount.html', {'User': user })\n        if request.user.is_authenticated and isReader.istarot:\n            user = User.objects.get(id=request.user.id)\n            return render(request, 'UpgradeAccount.html', {'User': user })\n        return render(request, 'Account.html')",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -949,7 +973,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class UpdateUserView(LoginRequiredMixin, View):\n    login_url = '/login/'\n    def get(self, request):\n        form = UpgradeUserForm()\n        return render(request, 'upgrade_User.html', {'form': form})\n    def post(self, request):\n        form = UpgradeUserForm(request.POST, request.FILES)\n        if form.is_valid():\n            user = request.user\n            user.introduction = form.cleaned_data.get('introduction')",
+        "peekOfCode": "class UpdateUserView(LoginRequiredMixin, View):\n    login_url = '/login/'\n    def get(self, request):\n        form = UpgradeUserForm()\n        return render(request, 'upgrade_User.html', {'form': form})\n    def post(self, request):\n        form = UpgradeUserForm(request.POST, request.FILES)\n        if form.is_valid():\n            user = request.user\n            picture = form.cleaned_data.get('avatar')",
         "detail": "Tarot.views",
         "documentation": {}
     },
