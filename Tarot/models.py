@@ -2,8 +2,8 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser,Group, Permission
 # Create your models here.
 class User(AbstractUser):
-    avatar = models.ImageField(upload_to='static/avatars/', null=True, blank=True , default='static/img/avatars/default_avatar.jpg')
-    cover_page = models.ImageField(upload_to='static/cover_pages/', null=True, blank=True)
+    avatar = models.ImageField(upload_to='avatars/', null=True, blank=True , default='static/img/avatars/default_avatar.jpg')
+    cover_page = models.ImageField(upload_to='cover_pages/', null=True, blank=True , default='static/img/cover_pages/default_avatar.jpg')
     tarot_role = models.CharField(max_length=50, default= "Tarot Reading and AStrology")
     introduction = models.TextField(null=True)
     status = models.CharField(max_length=255, null=True)

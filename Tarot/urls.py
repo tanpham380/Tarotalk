@@ -3,6 +3,8 @@ from django.urls import path
 from . import views
 from django.views.generic.base import RedirectView
 from .views import *
+from django.conf.urls.static import static
+from django.conf import settings
 
 
 app_name = "Tarot"
@@ -28,4 +30,4 @@ urlpatterns = [
     path("xinloi/", xinloipagenaychuahoatdong, name="xinloi"),
     path("paid/", views.PaidSuccessfullyView.as_view(), name="paid"),
     #  path('user/<int:user_id>/', views.user_detail, name='user_detail'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

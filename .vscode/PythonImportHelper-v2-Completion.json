@@ -8,6 +8,14 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
         "label": "django.contrib.auth.models",
         "kind": 6,
         "isExtraImport": true,
@@ -202,6 +210,38 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -330,6 +370,14 @@
         "description": "django.views.generic.base",
         "isExtraImport": true,
         "detail": "django.views.generic.base",
+        "documentation": {}
+    },
+    {
+        "label": "static",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "isExtraImport": true,
+        "detail": "django.conf.urls.static",
         "documentation": {}
     },
     {
@@ -555,6 +603,24 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0011_alter_user_avatar_alter_user_cover_page",
+        "description": "Tarot.migrations.0011_alter_user_avatar_alter_user_cover_page",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0010_alter_user_star_vote'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='user',\n            name='avatar',\n            field=models.ImageField(blank=True, default='static/img/avatars/default_avatar.jpg', null=True, upload_to='avatars/'),\n        ),",
+        "detail": "Tarot.migrations.0011_alter_user_avatar_alter_user_cover_page",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0012_alter_user_cover_page",
+        "description": "Tarot.migrations.0012_alter_user_cover_page",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0011_alter_user_avatar_alter_user_cover_page'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='user',\n            name='cover_page',\n            field=models.ImageField(blank=True, default='static/img/cover_pages/default_avatar.jpg', null=True, upload_to='cover_pages/'),\n        ),",
+        "detail": "Tarot.migrations.0012_alter_user_cover_page",
+        "documentation": {}
+    },
+    {
         "label": "get_star_range",
         "kind": 2,
         "importPath": "Tarot.templatetags.custom_tags",
@@ -604,7 +670,7 @@
         "kind": 6,
         "importPath": "Tarot.models",
         "description": "Tarot.models",
-        "peekOfCode": "class User(AbstractUser):\n    avatar = models.ImageField(upload_to='static/avatars/', null=True, blank=True , default='static/img/avatars/default_avatar.jpg')\n    cover_page = models.ImageField(upload_to='static/cover_pages/', null=True, blank=True)\n    tarot_role = models.CharField(max_length=50, default= \"Tarot Reading and AStrology\")\n    introduction = models.TextField(null=True)\n    status = models.CharField(max_length=255, null=True)\n    star_vote = models.IntegerField(null=True,default= 0)\n    birth_date = models.DateField(null=True)\n    email = models.EmailField(null=True)\n    phone_number = models.CharField(max_length=10,null=True)",
+        "peekOfCode": "class User(AbstractUser):\n    avatar = models.ImageField(upload_to='avatars/', null=True, blank=True , default='static/img/avatars/default_avatar.jpg')\n    cover_page = models.ImageField(upload_to='cover_pages/', null=True, blank=True , default='static/img/cover_pages/default_avatar.jpg')\n    tarot_role = models.CharField(max_length=50, default= \"Tarot Reading and AStrology\")\n    introduction = models.TextField(null=True)\n    status = models.CharField(max_length=255, null=True)\n    star_vote = models.IntegerField(null=True,default= 0)\n    birth_date = models.DateField(null=True)\n    email = models.EmailField(null=True)\n    phone_number = models.CharField(max_length=10,null=True)",
         "detail": "Tarot.models",
         "documentation": {}
     },
@@ -1000,7 +1066,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDATE_INPUT_FORMATS = ['%d-%m-%Y']\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n    os.path.join(BASE_DIR, 'Tarot', 'static'),",
+        "peekOfCode": "STATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDATE_INPUT_FORMATS = ['%d-%m-%Y']\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n    #os.path.join(BASE_DIR, 'Tarot', 'static'),",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -1009,7 +1075,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDATE_INPUT_FORMATS = ['%d-%m-%Y']\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n    os.path.join(BASE_DIR, 'Tarot', 'static'),\n]",
+        "peekOfCode": "#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDATE_INPUT_FORMATS = ['%d-%m-%Y']\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n    #os.path.join(BASE_DIR, 'Tarot', 'static'),\n]",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -1018,7 +1084,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "DATE_INPUT_FORMATS = ['%d-%m-%Y']\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n    os.path.join(BASE_DIR, 'Tarot', 'static'),\n]\nSECURE_CROSS_ORIGIN_OPENER_POLICY = None",
+        "peekOfCode": "DATE_INPUT_FORMATS = ['%d-%m-%Y']\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n    #os.path.join(BASE_DIR, 'Tarot', 'static'),\n]\nSECURE_CROSS_ORIGIN_OPENER_POLICY = None",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -1027,7 +1093,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n    os.path.join(BASE_DIR, 'Tarot', 'static'),\n]\nSECURE_CROSS_ORIGIN_OPENER_POLICY = None",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n    #os.path.join(BASE_DIR, 'Tarot', 'static'),\n]\nSECURE_CROSS_ORIGIN_OPENER_POLICY = None",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -1036,7 +1102,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "AUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n    os.path.join(BASE_DIR, 'Tarot', 'static'),\n]\nSECURE_CROSS_ORIGIN_OPENER_POLICY = None",
+        "peekOfCode": "AUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n    #os.path.join(BASE_DIR, 'Tarot', 'static'),\n]\nSECURE_CROSS_ORIGIN_OPENER_POLICY = None",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -1045,7 +1111,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "STATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n    os.path.join(BASE_DIR, 'Tarot', 'static'),\n]\nSECURE_CROSS_ORIGIN_OPENER_POLICY = None",
+        "peekOfCode": "STATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n    #os.path.join(BASE_DIR, 'Tarot', 'static'),\n]\nSECURE_CROSS_ORIGIN_OPENER_POLICY = None",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
