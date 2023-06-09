@@ -104,7 +104,7 @@ class ViewUser(View):
     login_url = '/login/'
     def get(self, request):
         istarot_users = User.objects.filter(istarot=True)
-        random_users = random.sample(list(istarot_users), 1)
+        random_users = random.sample(list(istarot_users), min(5, istarot_users.count()))
         context = {'istarot_users': random_users}
         return render(request, 'HomePage.html', context)
 

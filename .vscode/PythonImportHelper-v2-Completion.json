@@ -785,7 +785,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class ViewUser(View):\n    login_url = '/login/'\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        random_users = random.sample(list(istarot_users), 1)\n        context = {'istarot_users': random_users}\n        return render(request, 'HomePage.html', context)\nclass RegisterView(View):\n    def get(self, request):\n        form = RegisterForm()",
+        "peekOfCode": "class ViewUser(View):\n    login_url = '/login/'\n    def get(self, request):\n        istarot_users = User.objects.filter(istarot=True)\n        random_users = random.sample(list(istarot_users), min(5, istarot_users.count()))\n        context = {'istarot_users': random_users}\n        return render(request, 'HomePage.html', context)\nclass RegisterView(View):\n    def get(self, request):\n        form = RegisterForm()",
         "detail": "Tarot.views",
         "documentation": {}
     },
