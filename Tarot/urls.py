@@ -28,5 +28,6 @@ urlpatterns = [
     path("morereader/", views.MoreReaderView.as_view(), name="morereader"),
     path("xinloi/", xinloipagenaychuahoatdong, name="xinloi"),
     path("paid/", views.PaidSuccessfullyView.as_view(), name="paid"),
+    path("upgradeUser/", views.UpdateUserView.as_view(), name="upgradeUser"),
     #  path('user/<int:user_id>/', views.user_detail, name='user_detail'),
 ] 

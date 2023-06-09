@@ -796,7 +796,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class PostView(View) :\n    def get(self, request):\n        return render(request, 'Post.html')    \nclass EventView(View) :\n    def get (self, request):\n        return render(request, 'Event.html')\nclass Account(View) :\n    def get(self, request):\n        return render(request, 'Account.html')\nclass GuideView(View) :",
+        "peekOfCode": "class PostView(View) :\n    def get(self, request):\n        return render(request, 'Post.html')    \nclass EventView(View) :\n    def get (self, request):\n        return render(request, 'Event.html')\nclass Account(View) :\n    def get(self, request):\n        isReader= request.user\n        if request.user.is_authenticated and isReader.istarot:",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -805,7 +805,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class EventView(View) :\n    def get (self, request):\n        return render(request, 'Event.html')\nclass Account(View) :\n    def get(self, request):\n        return render(request, 'Account.html')\nclass GuideView(View) :\n    def get(self, request):\n        return render(request, 'Guide.html')        \nclass PaidSuccessfullyView(View):",
+        "peekOfCode": "class EventView(View) :\n    def get (self, request):\n        return render(request, 'Event.html')\nclass Account(View) :\n    def get(self, request):\n        isReader= request.user\n        if request.user.is_authenticated and isReader.istarot:\n            return render(request, 'ReaderAccount.html')\n        elif request.user.is_authenticated:\n            return render(request, 'UpgradeAccount.html')",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -814,7 +814,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class Account(View) :\n    def get(self, request):\n        return render(request, 'Account.html')\nclass GuideView(View) :\n    def get(self, request):\n        return render(request, 'Guide.html')        \nclass PaidSuccessfullyView(View):\n    def get(self, request):\n        return render(request, 'PaidSuccessfully.html')\nclass MoreReaderView(View):",
+        "peekOfCode": "class Account(View) :\n    def get(self, request):\n        isReader= request.user\n        if request.user.is_authenticated and isReader.istarot:\n            return render(request, 'ReaderAccount.html')\n        elif request.user.is_authenticated:\n            return render(request, 'UpgradeAccount.html')\n        else: return render(request, 'Account.html')\nclass GuideView(View) :\n    def get(self, request):",
         "detail": "Tarot.views",
         "documentation": {}
     },

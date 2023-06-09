@@ -151,7 +151,13 @@ class EventView(View) :
        
 class Account(View) :
     def get(self, request):
-        return render(request, 'Account.html')
+        isReader= request.user
+        if request.user.is_authenticated and isReader.istarot:
+            return render(request, 'ReaderAccount.html')
+        elif request.user.is_authenticated:
+            return render(request, 'UpgradeAccount.html')
+        else: return render(request, 'Account.html')
+        
 class GuideView(View) :
     def get(self, request):
         return render(request, 'Guide.html')        
