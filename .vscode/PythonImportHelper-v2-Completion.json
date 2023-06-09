@@ -946,7 +946,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'Asia/Ho_Chi_Minh'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'Asia/Ho_Chi_Minh'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nSTATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -955,7 +955,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "TIME_ZONE = 'Asia/Ho_Chi_Minh'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDATE_INPUT_FORMATS = ['%d-%m-%Y']",
+        "peekOfCode": "TIME_ZONE = 'Asia/Ho_Chi_Minh'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nSTATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -964,7 +964,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDATE_INPUT_FORMATS = ['%d-%m-%Y']\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nSTATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -973,7 +973,25 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDATE_INPUT_FORMATS = ['%d-%m-%Y']\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nSTATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDATE_INPUT_FORMATS = ['%d-%m-%Y']",
+        "detail": "Tarotalk.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_URL",
+        "kind": 5,
+        "importPath": "Tarotalk.settings",
+        "description": "Tarotalk.settings",
+        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nSTATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDATE_INPUT_FORMATS = ['%d-%m-%Y']\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [",
+        "detail": "Tarotalk.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_ROOT",
+        "kind": 5,
+        "importPath": "Tarotalk.settings",
+        "description": "Tarotalk.settings",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nSTATIC_URL = 'static/'\n#STATIC_ROOT = BASE_DIR / 'static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDATE_INPUT_FORMATS = ['%d-%m-%Y']\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
