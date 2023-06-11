@@ -1,78 +1,175 @@
-{% extends "base.html" %}
-
-{% load static %}
-
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'libs/bootstrap-5.3.0-dist/css/bootstrap.min.css' %}" />
+{% extends "base.html" %} {% load static %} {% block extra_css %}
+<link
+  rel="stylesheet"
+  href="{% static 'libs/bootstrap-5.3.0-dist/css/bootstrap.min.css' %}"
+/>
 <link rel="stylesheet" href="{% static 'libs/calendar-01/css/style.css' %}" />
 <link rel="stylesheet" href="{% static 'css/chat.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/dup.css' %}" />
 <link rel="stylesheet" href="{% static 'css/index.css' %}" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-{% endblock %}
-
-{% block content %}
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+/>
+{% endblock %} {% block content %}
 <div class="container-fluid d-flex justify-content-center">
-  <div class="col-md-6 card package-zone text-center" style="background-color: #512968">
-    <div class="card-header text-center package-zone-header" style="background-color: #e3cfff; color: #512968">
+  <div
+    class="col-md-6 card package-zone text-center"
+    style="background-color: #512968"
+  >
+    <div
+      class="card-header text-center package-zone-header"
+      style="background-color: #e3cfff; color: #512968"
+    >
       Xác nhận thông tin
     </div>
     <div class="row card-body">
-      <div class="card-title" style="margin-top: -10px; margin-bottom: -10px; padding-left: 10%">
+      <div
+        class="card-title"
+        style="margin-top: -10px; margin-bottom: -10px; padding-left: 10%"
+      >
         Dịch vụ đã chọn:
       </div>
     </div>
-    <div class="row card-body card-content" style="
+    <div
+      class="row card-body card-content"
+      style="
         padding-left: 10%;
         text-align: left;
         margin-top: -10px;
         margin-bottom: -10px;
-      ">
+      "
+    >
       <div class="col-md-7">Trải bài tổng quan</div>
-      <div class="col-md-5 align-right" style="padding-right: 10%; padding-left: 8%">
+      <div
+        class="col-md-5 align-right"
+        style="padding-right: 10%; padding-left: 8%"
+      >
         250.000 VNĐ
       </div>
     </div>
-    <div class="row card-body card-content" style="
+    <div
+      class="row card-body card-content"
+      style="
         padding-left: 10%;
         text-align: left;
         padding-right: 10%;
         margin-top: -10px;
         margin-bottom: -10px;
-      ">
+      "
+    >
       <div class="col-md-7">TỔNG</div>
-      <div class="col-md-5 align-right" style="padding-right: 10%; padding-left: 13.5%">
+      <div
+        class="col-md-5 align-right"
+        style="padding-right: 10%; padding-left: 13.5%"
+      >
         250.000 VNĐ
       </div>
     </div>
-    <div class="row card-body card-content line text-center" style="color: #fff5cc">
+    <div
+      class="row card-body card-content line text-center"
+      style="color: #fff5cc"
+    >
       <div class="col-md-12">--------------------------------------------</div>
     </div>
-    <div class="row card-body card-content payment" style="
+    <div
+      class="row card-body card-content payment"
+      style="
         padding-left: 10%;
         text-align: left;
         padding-right: 10%;
         margin-top: -10px;
         margin-bottom: -10px;
-      ">
-      <div class="col-md-12">Thanh toán qua ví MoMo</div>
+      "
+    >
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        style="
+          background-color: #512968;
+          border-color: #512968;
+          color: #fff5cc;
+          text-align: left;
+        "
+      >
+        Thanh toán qua ví MoMo
+      </button>
     </div>
-    <div class="row card-body card-content payment" style="
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content" style="background-color: #e3cfff">
+          <div class="modal-header">
+            <h5
+              class="modal-title"
+              id="exampleModalLabel"
+              style="
+                color: #512968;
+                margin-left: auto;
+                font-weight: bold;
+                text-transform: uppercase;
+              "
+            >
+              Momo payment
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img
+              src="{% static 'img/momoQR.jpg'%}"
+              style="width: 300px; height: 300px"
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              style="background-color: #512968; color: #e3cfff"
+            >
+              Close
+            </button>
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="row card-body card-content payment"
+      style="
         padding-left: 10%;
         text-align: left;
         padding-right: 10%;
         margin-top: -10px;
         margin-bottom: -10px;
-      ">
+      "
+    >
       <div class="col-md-12">Thanh toán qua ngân hàng</div>
     </div>
-    <div class="row card-body card-content payment" style="
+    <div
+      class="row card-body card-content payment"
+      style="
         padding-left: 10%;
         text-align: left;
         padding-right: 10%;
         margin-top: -10px;
         margin-bottom: -10px;
-      ">
+      "
+    >
       <div class="col-md-12">
         <label>
           <input type="checkbox" id="termsCheckbox" />
@@ -83,7 +180,12 @@
     </div>
     <div class="row card-body card-content">
       <div class="col-md-12">
-        <button type="button" id="confirmButton" class="btn btn-checkout" style="background-color: #e3cfff">
+        <button
+          type="button"
+          id="confirmButton"
+          class="btn btn-checkout"
+          style="background-color: #e3cfff"
+        >
           Xác nhận
         </button>
       </div>
@@ -92,15 +194,17 @@
 </div>
 
 <script>
-  document.getElementById('confirmButton').addEventListener('click', function() {
-    var termsCheckbox = document.getElementById('termsCheckbox');
-    if (termsCheckbox.checked) {
-      // The checkbox is checked, do something
-      window.location.href = "{% url 'Tarot:paid' %}";
-    } else {
-      // The checkbox is not checked, show an error message or perform any desired action
-      alert('Vui lòng đồng ý với điều khoản và điều kiện của TAROTALK.');
-    }
-  });
+  document
+    .getElementById("confirmButton")
+    .addEventListener("click", function () {
+      var termsCheckbox = document.getElementById("termsCheckbox");
+      if (termsCheckbox.checked) {
+        // The checkbox is checked, do something
+        window.location.href = "{% url 'Tarot:paid' %}";
+      } else {
+        // The checkbox is not checked, show an error message or perform any desired action
+        alert("Vui lòng đồng ý với điều khoản và điều kiện của TAROTALK.");
+      }
+    });
 </script>
 {% endblock %}
