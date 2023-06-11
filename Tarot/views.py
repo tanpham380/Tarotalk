@@ -71,8 +71,9 @@ class hour(LoginRequiredMixin, View):
         user = User.objects.get(id=user_id)
         return render(request, 'Hour.html', {'User': user })
 class chooseSlot(View):
-    def get (self, request):
-        return render(request, "ChooseSlot.html")
+    def get (self, request, user_id):
+        user = User.objects.get(id=user_id)
+        return render(request, "ChooseSlot.html", {'User': user })
     def post (self, request):
         pass
 import locale
@@ -89,6 +90,8 @@ class checkout(LoginRequiredMixin, View):
         user = User.objects.get(id=user_id)
         list_dich_vu = giao_dich.objects.filter(user_id=user,user_use = request.user, is_paid = False, is_delete = False)
         total = 0
+        if list_dich_vu is None :
+            redirect('Tarot:HomePage')
         giao_dich_counts = Counter()
         
         for item in list_dich_vu:
@@ -111,6 +114,8 @@ class checkout(LoginRequiredMixin, View):
                 item.save()
                 
         list_dich_vu = giao_dich.objects.filter(user_id=user,user_use = request.user, is_paid = False, is_delete = False)
+        if list_dich_vu is None :
+            redirect('Tarot:HomePage')
         total = 0
         giao_dich_counts = Counter()        
         for item in list_dich_vu:

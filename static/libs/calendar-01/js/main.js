@@ -50,7 +50,9 @@
             //window.location.href = "{% url 'Tarot:choose' %}"; 
             // var chooselink = "/calendar/choose/";
             // w.location.href= chooselink;
-            window.location.href="/calendar/choose";
+
+            window.location.href = packageURL;
+
             if (secondClickDateObj > thirdClickDateObj && thirdClickDateObj > firstClickDateObj) {
                 secondClicked = thirdClicked;
                 // then choose dates again from the start :)

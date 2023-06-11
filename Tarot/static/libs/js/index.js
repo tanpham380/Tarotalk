@@ -4,8 +4,7 @@ var buttons = document.getElementsByClassName('btn-package-item');
 
 for (var i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function() {
-      var user_id = "{{ User.id }}"
-      redirectToURL("/calendar/"+user_id);
+      redirectToURL("/calendar/");
     });
   }
 // Function to redirect to a specific URL

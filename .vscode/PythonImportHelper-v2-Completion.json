@@ -1005,18 +1005,10 @@
     },
     {
         "label": "consumers",
-        "importPath": "core",
-        "description": "core",
+        "importPath": "chat",
+        "description": "chat",
         "isExtraImport": true,
-        "detail": "core",
-        "documentation": {}
-    },
-    {
-        "label": "routing",
-        "importPath": "core",
-        "description": "core",
-        "isExtraImport": true,
-        "detail": "core",
+        "detail": "chat",
         "documentation": {}
     },
     {
@@ -1388,6 +1380,14 @@
         "documentation": {}
     },
     {
+        "label": "routing",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
         "label": "Path",
         "importPath": "pathlib",
         "description": "pathlib",
@@ -1507,7 +1507,7 @@
         "kind": 6,
         "importPath": "core.consumers",
         "description": "core.consumers",
-        "peekOfCode": "class ChatConsumer(AsyncWebsocketConsumer):\n    async def connect(self):\n        user_id = self.scope[\"session\"][\"_auth_user_id\"]\n        self.group_name = \"{}\".format(user_id)\n        # Join room group\n        await self.channel_layer.group_add(\n            self.group_name,\n            self.channel_name\n        )\n        await self.accept()",
+        "peekOfCode": "class ChatConsumer(AsyncWebsocketConsumer):\n    async def connect(self):\n        user_id = self.scope[\"session\"][\"_auth_user_id\"]\n        self.group_name = f\"user_{user_id}\"\n        # Join room group\n        await self.channel_layer.group_add(\n            self.group_name,\n            self.channel_name\n        )\n        await self.accept()",
         "detail": "core.consumers",
         "documentation": {}
     },
@@ -1525,7 +1525,7 @@
         "kind": 5,
         "importPath": "core.routing",
         "description": "core.routing",
-        "peekOfCode": "websocket_urlpatterns = [\n    re_path(r'^ws/$', consumers.ChatConsumer),\n]",
+        "peekOfCode": "websocket_urlpatterns = [\n    re_path(r'^ws/$', consumers.ChatConsumer.as_asgi()),\n]",
         "detail": "core.routing",
         "documentation": {}
     },
@@ -1939,7 +1939,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class hour(LoginRequiredMixin, View):\n    login_url = '/login/'\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Hour.html', {'User': user })\nclass chooseSlot(View):\n    def get (self, request):\n        return render(request, \"ChooseSlot.html\")\n    def post (self, request):\n        pass",
+        "peekOfCode": "class hour(LoginRequiredMixin, View):\n    login_url = '/login/'\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Hour.html', {'User': user })\nclass chooseSlot(View):\n    def get (self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, \"ChooseSlot.html\", {'User': user })\n    def post (self, request):",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -1948,7 +1948,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class chooseSlot(View):\n    def get (self, request):\n        return render(request, \"ChooseSlot.html\")\n    def post (self, request):\n        pass\nimport locale\nimport collections\nfrom collections import Counter\nfrom django.contrib import messages\nclass checkout(LoginRequiredMixin, View):",
+        "peekOfCode": "class chooseSlot(View):\n    def get (self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, \"ChooseSlot.html\", {'User': user })\n    def post (self, request):\n        pass\nimport locale\nimport collections\nfrom collections import Counter\nfrom django.contrib import messages",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -1957,7 +1957,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class checkout(LoginRequiredMixin, View):\n    login_url = '/login/'\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        list_dich_vu = giao_dich.objects.filter(user_id=user,user_use = request.user, is_paid = False, is_delete = False)\n        total = 0\n        giao_dich_counts = Counter()\n        for item in list_dich_vu:\n            total += item.price\n            giao_dich_counts[item.name] += 1",
+        "peekOfCode": "class checkout(LoginRequiredMixin, View):\n    login_url = '/login/'\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        list_dich_vu = giao_dich.objects.filter(user_id=user,user_use = request.user, is_paid = False, is_delete = False)\n        total = 0\n        if list_dich_vu is None :\n            redirect('Tarot:HomePage')\n        giao_dich_counts = Counter()\n        for item in list_dich_vu:",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -2389,7 +2389,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "ASGI_APPLICATION = 'chat.routing.application'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {\n            \"hosts\": [('127.0.0.1', 6379)],\n        },\n    },\n}",
+        "peekOfCode": "ASGI_APPLICATION = 'Tarotalk.routing.application'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {\n            \"hosts\": [('127.0.0.1', 6379)],\n        },\n    },\n}",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
