@@ -50,7 +50,8 @@
             //window.location.href = "{% url 'Tarot:choose' %}"; 
             // var chooselink = "/calendar/choose/";
             // w.location.href= chooselink;
-            window.location.href="/calendar/choose";
+            var user_id = "{{ User.id }}"
+            window.location.href="/calendar/choose"+ user_id;
             if (secondClickDateObj > thirdClickDateObj && thirdClickDateObj > firstClickDateObj) {
                 secondClicked = thirdClicked;
                 // then choose dates again from the start :)

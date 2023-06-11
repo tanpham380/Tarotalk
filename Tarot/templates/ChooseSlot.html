@@ -40,5 +40,20 @@
     </div>
 </div>
 <script src="../static/libs/bootstrap-5.3.0-dist/js/bootstrap.min.js"></script>
-<script src="{% static 'libs/js/choose-slot.js' %}"></script>
+<!-- <script src="{% static 'libs/js/choose-slot.js' %}"></script> -->
+<script>
+    var buttons = document.getElementsByClassName('btn-package-item');
+    
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener('click', function() {
+        var user_id = "{{ User.id }}"; // Retrieve the user_id from the Django template variable
+        redirectToURL("/calendar/choose/checkout/" + user_id);
+      });
+    }
+    
+    // Function to redirect to a specific URL
+    function redirectToURL(url) {
+      window.location.href = url;
+    }
+  </script>
 {% endblock %}

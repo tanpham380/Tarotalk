@@ -56,6 +56,38 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
         "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
@@ -393,6 +425,94 @@
     },
     {
         "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -1161,6 +1281,48 @@
         "documentation": {}
     },
     {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
+        "isExtraImport": true,
+        "detail": "django.utils",
+        "documentation": {}
+    },
+    {
+        "label": "locale",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "locale",
+        "description": "locale",
+        "detail": "locale",
+        "documentation": {}
+    },
+    {
+        "label": "collections",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "collections",
+        "description": "collections",
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "Counter",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -1578,6 +1740,60 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0022_giao_dich_user_use",
+        "description": "Tarot.migrations.0022_giao_dich_user_use",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0021_rename_dich_vu_giao_dich'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='giao_dich',\n            name='user_use',\n            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='user_use', to=settings.AUTH_USER_MODEL),\n        ),",
+        "detail": "Tarot.migrations.0022_giao_dich_user_use",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0023_alter_giao_dich_user_id_alter_giao_dich_user_use",
+        "description": "Tarot.migrations.0023_alter_giao_dich_user_id_alter_giao_dich_user_use",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0022_giao_dich_user_use'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='giao_dich',\n            name='user_id',\n            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='user_id', to=settings.AUTH_USER_MODEL),\n        ),",
+        "detail": "Tarot.migrations.0023_alter_giao_dich_user_id_alter_giao_dich_user_use",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0024_alter_giao_dich_user_id",
+        "description": "Tarot.migrations.0024_alter_giao_dich_user_id",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0023_alter_giao_dich_user_id_alter_giao_dich_user_use'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='giao_dich',\n            name='user_id',\n            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),\n        ),",
+        "detail": "Tarot.migrations.0024_alter_giao_dich_user_id",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0025_giao_dich_is_paid_alter_giao_dich_user_id",
+        "description": "Tarot.migrations.0025_giao_dich_is_paid_alter_giao_dich_user_id",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0024_alter_giao_dich_user_id'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='giao_dich',\n            name='is_paid',\n            field=models.BooleanField(default=False),\n        ),",
+        "detail": "Tarot.migrations.0025_giao_dich_is_paid_alter_giao_dich_user_id",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0026_remove_giao_dich_total",
+        "description": "Tarot.migrations.0026_remove_giao_dich_total",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0025_giao_dich_is_paid_alter_giao_dich_user_id'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='giao_dich',\n            name='total',\n        ),\n    ]",
+        "detail": "Tarot.migrations.0026_remove_giao_dich_total",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0027_alter_giao_dich_date",
+        "description": "Tarot.migrations.0027_alter_giao_dich_date",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0026_remove_giao_dich_total'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='giao_dich',\n            name='date',\n            field=models.DateTimeField(null=True),\n        ),",
+        "detail": "Tarot.migrations.0027_alter_giao_dich_date",
+        "documentation": {}
+    },
+    {
         "label": "get_star_range",
         "kind": 2,
         "importPath": "Tarot.templatetags.custom_tags",
@@ -1636,7 +1852,7 @@
         "kind": 6,
         "importPath": "Tarot.models",
         "description": "Tarot.models",
-        "peekOfCode": "class giao_dich (models.Model ):\n    id = models.AutoField(primary_key=True)\n    user_id = models.ForeignKey(User, on_delete=models.CASCADE)\n    name = models.CharField(max_length=255,null=True  )\n    price = models.IntegerField(null=True)\n    date  = models.DateField(null=True)\n    total = models.IntegerField(null=True)\n    def __str__(self): \n        return self.name + ' ' + 'giao dich so ' + str(self.id)",
+        "peekOfCode": "class giao_dich (models.Model ):\n    id = models.AutoField(primary_key=True)\n    user_id = models.ForeignKey(User, on_delete=models.CASCADE , related_name='user_id'  )\n    name = models.CharField(max_length=255,null=True  )\n    price = models.IntegerField(null=True)\n    date  = models.DateTimeField(null=True)\n    user_use = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_use', null=False)\n    is_paid = models.BooleanField(default=False)\n    def __str__(self): \n        return self.name + ' ' + 'giao dịch số ' + str(self.id) +'| ' +'User sử dụng dịch vụ'+\" \" + str(self.user_use.username) + ' '     + \"được cung cấp bởi \"    + str(self.user_id.username)",
         "detail": "Tarot.models",
         "documentation": {}
     },
@@ -1699,7 +1915,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class chooseSlot(View):\n    def get (self, request):\n        return render(request, \"ChooseSlot.html\")\n    def post (self, request):\n        pass\nclass checkout(LoginRequiredMixin,View ):\n    login_url = '/login/'\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        list_dich_vu = giao_dich.objects.filter(user_id=user)",
+        "peekOfCode": "class chooseSlot(View):\n    def get (self, request):\n        return render(request, \"ChooseSlot.html\")\n    def post (self, request):\n        pass\nimport locale\nimport collections\nfrom collections import Counter\nclass checkout(LoginRequiredMixin, View):\n    login_url = '/login/'",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -1708,7 +1924,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class checkout(LoginRequiredMixin,View ):\n    login_url = '/login/'\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        list_dich_vu = giao_dich.objects.filter(user_id=user)\n        for price in range(len(list_dich_vu)):\n            total = 0\n            total += list_dich_vu[price].price\n        return render(request, 'CheckOut.html', {'User': user, 'list_dich_vu': list_dich_vu, 'total': total })\n# def calendar(request):",
+        "peekOfCode": "class checkout(LoginRequiredMixin, View):\n    login_url = '/login/'\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        list_dich_vu = giao_dich.objects.filter(user_id=user,user_use = request.user, is_paid = False)\n        total = 0\n        giao_dich_counts = Counter()\n        for item in list_dich_vu:\n            total += item.price\n            giao_dich_counts[item.name] += 1",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -1717,7 +1933,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class calendar(LoginRequiredMixin,View):\n    login_url = '/login/'\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Calendar.html', {'User': user })\n    def post(self, request, user_id):\n        current_date = date.today()\n        user = User.objects.get(id=user_id)\n        print(request.POST)\n        if '30phut' in request.POST:",
+        "peekOfCode": "class calendar(LoginRequiredMixin,View):\n    login_url = '/login/'\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Calendar.html', {'User': user })\n    def post(self, request, user_id):\n        current_date = timezone.now()\n        user = User.objects.get(id=user_id)\n        user_use= request.user\n        if '30phut' in request.POST:",
         "detail": "Tarot.views",
         "documentation": {}
     },

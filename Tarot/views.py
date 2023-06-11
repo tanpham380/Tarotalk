@@ -13,7 +13,8 @@ from django.urls import reverse
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 from datetime import date
-
+from datetime import datetime
+from django.utils import timezone
 
 
 # Create your views here.
@@ -74,17 +75,31 @@ class chooseSlot(View):
         return render(request, "ChooseSlot.html")
     def post (self, request):
         pass
+import locale
+import collections
 
-class checkout(LoginRequiredMixin,View ):
+from collections import Counter
+
+class checkout(LoginRequiredMixin, View):
     login_url = '/login/'
     
     def get(self, request, user_id):
         user = User.objects.get(id=user_id)
-        list_dich_vu = giao_dich.objects.filter(user_id=user)
-        for price in range(len(list_dich_vu)):
-            total = 0
-            total += list_dich_vu[price].price
-        return render(request, 'CheckOut.html', {'User': user, 'list_dich_vu': list_dich_vu, 'total': total })
+        list_dich_vu = giao_dich.objects.filter(user_id=user,user_use = request.user, is_paid = False)
+        total = 0
+        giao_dich_counts = Counter()
+        
+        for item in list_dich_vu:
+            total += item.price
+            giao_dich_counts[item.name] += 1
+        
+        locale.setlocale(locale.LC_ALL, 'vi_VN.UTF-8')
+        total_vnd = locale.format_string("%d", total, grouping=True) + " VNĐ"
+       
+        giao_dich_items = giao_dich_counts.items()
+        print(giao_dich_items)
+        return render(request, 'CheckOut.html', {'User': user, 'list_dich_vu': list(giao_dich_items), 'total': total_vnd })
+
 
 # def calendar(request):
 #     return render(request, "Calendar.html")
@@ -94,43 +109,43 @@ class calendar(LoginRequiredMixin,View):
         user = User.objects.get(id=user_id)
         return render(request, 'Calendar.html', {'User': user })
     def post(self, request, user_id):
-        current_date = date.today()
+        current_date = timezone.now()
         user = User.objects.get(id=user_id)
-        print(request.POST)
+        user_use= request.user
         if '30phut' in request.POST:
             # User selected 30phut, so save it in the dich_vu table
-            dich_vu_obj = giao_dich.objects.create(user_id=user, name='30phut', price=80000, date=current_date)
+            dich_vu_obj = giao_dich.objects.create(is_paid = False ,user_id=user, name='30 phút - 1 chủ đề - 80.000 đồng', price=80000, date=current_date , user_use=user_use)
             dich_vu_obj.save()
         else: print("Không có 30 phút")
         if '60phut' in request.POST:
             # User selected 60phut, so save it in the dich_vu table
-            dich_vu_obj = giao_dich.objects.create(user_id=user, name='60phut', price=150000, date=current_date)
+            dich_vu_obj = giao_dich.objects.create(is_paid = False,user_id=user, name='60 phút - 1 chủ đề - 150.000 đồng', price=150000, date=current_date , user_use=user_use)
             dich_vu_obj.save()
         if 'tongquan' in request.POST:
             # User selected tongquan, so save it in the dich_vu table
-            dich_vu_obj = giao_dich.objects.create(user_id=user, name='tongquan', price=250000, date=current_date)
+            dich_vu_obj = giao_dich.objects.create(is_paid = False,user_id=user, name='Trải bài tổng quan - 250.000 đồng', price=250000, date=current_date, user_use=user_use)
             dich_vu_obj.save()
         if 'tinhduyen' in request.POST:
             # User selected tinhduyen, so save it in the dich_vu table
-            dich_vu_obj = giao_dich.objects.create(user_id=user, name='tinhduyen', price=200000, date=current_date)
+            dich_vu_obj = giao_dich.objects.create(is_paid = False,user_id=user, name='Trải bài tình duyên - 200.000 đồng', price=200000, date=current_date, user_use=user_use)
             dich_vu_obj.save()
         if 'giadinh' in request.POST:
-            dich_vu_obj = giao_dich.objects.create(user_id=user, name='giadinh', price=180000, date=current_date)
+            dich_vu_obj = giao_dich.objects.create(is_paid = False,user_id=user, name='Trải bài gia đình - 180.000 đồng', price=180000, date=current_date, user_use=user_use)
             dich_vu_obj.save()
         if 'hoctap' in request.POST:
-            dich_vu_obj = giao_dich.objects.create(user_id=user, name='hoctap', price=180000, date=current_date)
+            dich_vu_obj = giao_dich.objects.create(is_paid = False,user_id=user, name='Trải bài về học tập - 180.000 đồng', price=180000, date=current_date, user_use=user_use)
             dich_vu_obj.save()
         if 'congviec' in request.POST:
-            dich_vu_obj = giao_dich.objects.create(user_id=user, name='congviec', price=180000, date=current_date)
+            dich_vu_obj = giao_dich.objects.create(is_paid = False,user_id=user, name='Trải bài về công việc - 180.000 đồng', price=180000, date=current_date, user_use=user_use)
             dich_vu_obj.save()       
         if 'quanhe' in request.POST:
-            dich_vu_obj = giao_dich.objects.create(user_id=user, name='quanhe', price=200000, date=current_date)
+            dich_vu_obj = giao_dich.objects.create(is_paid = False,user_id=user, name='Trải bài mối quan hệ - 200.000 đồng', price=200000, date=current_date, user_use=user_use)
             dich_vu_obj.save()    
         if '3cauhoi' in request.POST:
-            dich_vu_obj = giao_dich.objects.create(user_id=user, name='3cauhoi', price=100000, date=current_date)
+            dich_vu_obj = giao_dich.objects.create(is_paid = False,user_id=user, name='3 câu hỏi - 100.000 đồng', price=100000, date=current_date, user_use=user_use)
             dich_vu_obj.save()
         if '6cauhoi' in request.POST:
-            dich_vu_obj = giao_dich.objects.create(user_id=user, name='6cauhoi', price=120000, date=current_date)
+            dich_vu_obj = giao_dich.objects.create(is_paid = False,user_id=user, name='5 câu hỏi - 120.000 đồng', price=120000, date=current_date, user_use=user_use)
             dich_vu_obj.save()                                                
         return render(request, 'Calendar.html', {'User': user })
             

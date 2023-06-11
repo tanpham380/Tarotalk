@@ -21,10 +21,11 @@ class User(AbstractUser):
 
 class giao_dich (models.Model ):
     id = models.AutoField(primary_key=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE , related_name='user_id'  )
     name = models.CharField(max_length=255,null=True  )
     price = models.IntegerField(null=True)
-    date  = models.DateField(null=True)
-    total = models.IntegerField(null=True)
+    date  = models.DateTimeField(null=True)
+    user_use = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_use', null=False)
+    is_paid = models.BooleanField(default=False)
     def __str__(self): 
-        return self.name + ' ' + 'giao dich so ' + str(self.id)
+        return self.name + ' ' + 'giao dịch số ' + str(self.id) +'| ' +'User sử dụng dịch vụ'+" " + str(self.user_use.username) + ' '     + "được cung cấp bởi "    + str(self.user_id.username)
