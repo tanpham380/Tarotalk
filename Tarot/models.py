@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser,Group, Permission
+from django.utils.html import format_html
+
 # Create your models here.
+
 class User(AbstractUser):
     avatar = models.ImageField(upload_to='avatars/', null=True, blank=True , default='avatars/default_avatar.png')
     cover_page = models.ImageField(upload_to='cover_pages/', null=True, blank=True , default='cover_pages/banner.png')
@@ -40,3 +43,19 @@ class giao_dich (models.Model ):
             f"{self.name} giao dịch số {self.id} | User sử dụng dịch vụ {self.user_use.username} được cung cấp bởi "
             f"{self.user_id.username} ||||| trạng thái {trangthai}"
         )
+    def trangthai_colored(self):
+        trangthai = "Chưa thanh toán"
+        color = "yellow"  # Default color for "Chưa thanh toán"
+
+        if self.is_paid:
+            trangthai = "Đã thanh toán"
+            color = "green"
+        elif self.is_delete and not self.is_paid:
+            trangthai = "Đã hủy"
+            color = "red"
+
+        return format_html('<span style="color: {};">{}</span>', color, trangthai)
+
+    trangthai_colored.short_description = "Trạng thái"  # Column header for the modified field
+    class Meta:
+        verbose_name_plural = "Giao dịch"

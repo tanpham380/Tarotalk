@@ -1174,6 +1174,14 @@
         "documentation": {}
     },
     {
+        "label": "format_html",
+        "importPath": "django.utils.html",
+        "description": "django.utils.html",
+        "isExtraImport": true,
+        "detail": "django.utils.html",
+        "documentation": {}
+    },
+    {
         "label": "django.http",
         "kind": 6,
         "isExtraImport": true,
@@ -1842,6 +1850,24 @@
         "description": "Tarot.templatetags.custom_tags",
         "peekOfCode": "register = template.Library()\n@register.filter\ndef get_star_range(value):\n    try:\n        num_votes = int(value)\n        return range(num_votes)\n    except ValueError:\n        return []",
         "detail": "Tarot.templatetags.custom_tags",
+        "documentation": {}
+    },
+    {
+        "label": "UserAdmin",
+        "kind": 6,
+        "importPath": "Tarot.admin",
+        "description": "Tarot.admin",
+        "peekOfCode": "class UserAdmin(admin.ModelAdmin):\n    list_display = ('username', 'email', 'is_staff', 'is_active', 'date_joined')\n    list_filter = ('is_staff', 'is_superuser', 'is_active', 'groups')\n    search_fields = ('username', 'email')\n    ordering = ('username',)\nclass GiaoDichAdmin(admin.ModelAdmin) :\n    list_display = ('trangthai_colored','name','price','date')\n    search_fields = ('user','ngay_giao_dich','trang_thai')\n    ordering = ('id',)\nadmin.site.register(User,UserAdmin)",
+        "detail": "Tarot.admin",
+        "documentation": {}
+    },
+    {
+        "label": "GiaoDichAdmin",
+        "kind": 6,
+        "importPath": "Tarot.admin",
+        "description": "Tarot.admin",
+        "peekOfCode": "class GiaoDichAdmin(admin.ModelAdmin) :\n    list_display = ('trangthai_colored','name','price','date')\n    search_fields = ('user','ngay_giao_dich','trang_thai')\n    ordering = ('id',)\nadmin.site.register(User,UserAdmin)\nadmin.site.register(giao_dich,GiaoDichAdmin)",
+        "detail": "Tarot.admin",
         "documentation": {}
     },
     {
