@@ -319,7 +319,40 @@ class UpdateUserView(LoginRequiredMixin, View):
         else:
             print(form.errors)
             return render(request, 'upgrade_User.html', {'form': form})
-
+class EditReaderView(LoginRequiredMixin, View):
+    login_url = '/login/'
+    
+    def get(self, request):
+        form = UpgradeUserForm()
+        return render(request, 'edit_reader.html', {'form': form})
+    
+    def post(self, request):
+        form = UpgradeUserForm(request.POST, request.FILES)
+        
+        if form.is_valid():
+            user = request.user
+            picture = form.cleaned_data.get('avatar')
+            old_avatar = user.avatar
+            if old_avatar:
+                default_storage.delete(old_avatar.path)
+            username = user.id
+            today = date.today()
+            filenameavatar = f"id_{username}_{today}.{picture.name.split('.')[-1]}"
+            user.avatar.save(filenameavatar, picture)
+            coverpage = form.cleaned_data.get('cover_page')
+            old_coverpage = user.cover_page
+            if old_coverpage:
+                default_storage.delete(old_coverpage.path)
+            filenammecoverpage= f"id_{username}_{today}.{coverpage.name.split('.')[-1]}"
+            user.cover_page.save(filenammecoverpage, coverpage)
+            user.introduction = form.cleaned_data.get('introduction')
+            user.status = form.cleaned_data.get('status')
+            user.save()
+            
+            return render(request, 'edit_page_successfully.html')
+        else:
+            print(form.errors)
+            return render(request, 'edit_reader.html', {'form': form})
 
         
         

@@ -2070,6 +2070,15 @@
         "documentation": {}
     },
     {
+        "label": "EditReaderView",
+        "kind": 6,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "class EditReaderView(LoginRequiredMixin, View):\n    login_url = '/login/'\n    def get(self, request):\n        form = UpgradeUserForm()\n        return render(request, 'edit_reader.html', {'form': form})\n    def post(self, request):\n        form = UpgradeUserForm(request.POST, request.FILES)\n        if form.is_valid():\n            user = request.user\n            picture = form.cleaned_data.get('avatar')",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
         "label": "chatbot",
         "kind": 2,
         "importPath": "Tarot.views",
