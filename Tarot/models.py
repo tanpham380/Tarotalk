@@ -12,6 +12,11 @@ class User(AbstractUser):
     email = models.EmailField(null=True)
     phone_number = models.CharField(max_length=10,null=True)
     istarot = models.BooleanField(default=False)
+    def __str__(self):
+        if self.istarot :
+            showstr = "Người này là Reader"
+            return self.username + ' ' + showstr
+        return self.username
     
 
 class dich_vu (models.Model ):

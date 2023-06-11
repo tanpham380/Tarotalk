@@ -24,45 +24,51 @@
         "documentation": {}
     },
     {
-        "label": "django.contrib.auth.models",
-        "kind": 6,
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
         "isExtraImport": true,
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "detail": "django.contrib.auth.models",
+        "detail": "django.conf",
         "documentation": {}
     },
     {
-        "label": "AbstractUser",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
         "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
+        "detail": "django.db",
         "documentation": {}
     },
     {
-        "label": "Group",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
         "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
+        "detail": "django.db",
         "documentation": {}
     },
     {
-        "label": "Permission",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
         "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
+        "detail": "django.db",
         "documentation": {}
     },
     {
-        "label": "django.contrib.auth.validators",
-        "kind": 6,
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
         "isExtraImport": true,
-        "importPath": "django.contrib.auth.validators",
-        "description": "django.contrib.auth.validators",
-        "detail": "django.contrib.auth.validators",
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "IntegrityError",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
         "documentation": {}
     },
     {
@@ -315,6 +321,569 @@
         "documentation": {}
     },
     {
+        "label": "django.contrib.auth.models",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "AbstractUser",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "Group",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "Permission",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "APITestCase",
+        "importPath": "rest_framework.test",
+        "description": "rest_framework.test",
+        "isExtraImport": true,
+        "detail": "rest_framework.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "MessageModel",
+        "importPath": "core.models",
+        "description": "core.models",
+        "isExtraImport": true,
+        "detail": "core.models",
+        "documentation": {}
+    },
+    {
+        "label": "MessageModel",
+        "importPath": "core.models",
+        "description": "core.models",
+        "isExtraImport": true,
+        "detail": "core.models",
+        "documentation": {}
+    },
+    {
+        "label": "MessageModel",
+        "importPath": "core.models",
+        "description": "core.models",
+        "isExtraImport": true,
+        "detail": "core.models",
+        "documentation": {}
+    },
+    {
+        "label": "MessageModel",
+        "importPath": "core.models",
+        "description": "core.models",
+        "isExtraImport": true,
+        "detail": "core.models",
+        "documentation": {}
+    },
+    {
+        "label": "ModelAdmin",
+        "importPath": "django.contrib.admin",
+        "description": "django.contrib.admin",
+        "isExtraImport": true,
+        "detail": "django.contrib.admin",
+        "documentation": {}
+    },
+    {
+        "label": "site",
+        "importPath": "django.contrib.admin",
+        "description": "django.contrib.admin",
+        "isExtraImport": true,
+        "detail": "django.contrib.admin",
+        "documentation": {}
+    },
+    {
+        "label": "Q",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "Model",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "TextField",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "DateTimeField",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "ForeignKey",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "CASCADE",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "Tarot.models",
+        "description": "Tarot.models",
+        "isExtraImport": true,
+        "detail": "Tarot.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "Tarot.models",
+        "description": "Tarot.models",
+        "isExtraImport": true,
+        "detail": "Tarot.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "Tarot.models",
+        "description": "Tarot.models",
+        "isExtraImport": true,
+        "detail": "Tarot.models",
+        "documentation": {}
+    },
+    {
+        "label": "PageNumberPagination",
+        "importPath": "rest_framework.pagination",
+        "description": "rest_framework.pagination",
+        "isExtraImport": true,
+        "detail": "rest_framework.pagination",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "ModelViewSet",
+        "importPath": "rest_framework.viewsets",
+        "description": "rest_framework.viewsets",
+        "isExtraImport": true,
+        "detail": "rest_framework.viewsets",
+        "documentation": {}
+    },
+    {
+        "label": "SessionAuthentication",
+        "importPath": "rest_framework.authentication",
+        "description": "rest_framework.authentication",
+        "isExtraImport": true,
+        "detail": "rest_framework.authentication",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "Tarotalk",
+        "description": "Tarotalk",
+        "isExtraImport": true,
+        "detail": "Tarotalk",
+        "documentation": {}
+    },
+    {
+        "label": "MessageModelSerializer",
+        "importPath": "core.serializers",
+        "description": "core.serializers",
+        "isExtraImport": true,
+        "detail": "core.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "UserModelSerializer",
+        "importPath": "core.serializers",
+        "description": "core.serializers",
+        "isExtraImport": true,
+        "detail": "core.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncWebsocketConsumer",
+        "importPath": "channels.generic.websocket",
+        "description": "channels.generic.websocket",
+        "isExtraImport": true,
+        "detail": "channels.generic.websocket",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "async_to_sync",
+        "importPath": "asgiref.sync",
+        "description": "asgiref.sync",
+        "isExtraImport": true,
+        "detail": "asgiref.sync",
+        "documentation": {}
+    },
+    {
+        "label": "get_channel_layer",
+        "importPath": "channels.layers",
+        "description": "channels.layers",
+        "isExtraImport": true,
+        "detail": "channels.layers",
+        "documentation": {}
+    },
+    {
+        "label": "consumers",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "routing",
+        "importPath": "core",
+        "description": "core",
+        "isExtraImport": true,
+        "detail": "core",
+        "documentation": {}
+    },
+    {
+        "label": "url",
+        "importPath": "django.conf.urls",
+        "description": "django.conf.urls",
+        "isExtraImport": true,
+        "detail": "django.conf.urls",
+        "documentation": {}
+    },
+    {
+        "label": "ModelSerializer",
+        "importPath": "rest_framework.serializers",
+        "description": "rest_framework.serializers",
+        "isExtraImport": true,
+        "detail": "rest_framework.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "CharField",
+        "importPath": "rest_framework.serializers",
+        "description": "rest_framework.serializers",
+        "isExtraImport": true,
+        "detail": "rest_framework.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "TemplateView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "TemplateView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "DefaultRouter",
+        "importPath": "rest_framework.routers",
+        "description": "rest_framework.routers",
+        "isExtraImport": true,
+        "detail": "rest_framework.routers",
+        "documentation": {}
+    },
+    {
+        "label": "DefaultRouter",
+        "importPath": "rest_framework.routers",
+        "description": "rest_framework.routers",
+        "isExtraImport": true,
+        "detail": "rest_framework.routers",
+        "documentation": {}
+    },
+    {
+        "label": "MessageModelViewSet",
+        "importPath": "core.api",
+        "description": "core.api",
+        "isExtraImport": true,
+        "detail": "core.api",
+        "documentation": {}
+    },
+    {
+        "label": "UserModelViewSet",
+        "importPath": "core.api",
+        "description": "core.api",
+        "isExtraImport": true,
+        "detail": "core.api",
+        "documentation": {}
+    },
+    {
+        "label": "MessageModelViewSet",
+        "importPath": "core.api",
+        "description": "core.api",
+        "isExtraImport": true,
+        "detail": "core.api",
+        "documentation": {}
+    },
+    {
+        "label": "UserModelViewSet",
+        "importPath": "core.api",
+        "description": "core.api",
+        "isExtraImport": true,
+        "detail": "core.api",
+        "documentation": {}
+    },
+    {
+        "label": "django.contrib.auth.validators",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.contrib.auth.validators",
+        "description": "django.contrib.auth.validators",
+        "detail": "django.contrib.auth.validators",
+        "documentation": {}
+    },
+    {
         "label": "django.utils.timezone",
         "kind": 6,
         "isExtraImport": true,
@@ -356,27 +925,11 @@
         "documentation": {}
     },
     {
-        "label": "AppConfig",
-        "importPath": "django.apps",
-        "description": "django.apps",
-        "isExtraImport": true,
-        "detail": "django.apps",
-        "documentation": {}
-    },
-    {
         "label": "UserCreationForm",
         "importPath": "django.contrib.auth.forms",
         "description": "django.contrib.auth.forms",
         "isExtraImport": true,
         "detail": "django.contrib.auth.forms",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
         "documentation": {}
     },
     {
@@ -394,38 +947,6 @@
         "description": "django.http",
         "isExtraImport": true,
         "detail": "django.http",
-        "documentation": {}
-    },
-    {
-        "label": "path",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
-        "label": "reverse",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
-        "label": "path",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
-        "label": "include",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
         "documentation": {}
     },
     {
@@ -450,30 +971,6 @@
         "description": "django.conf.urls.static",
         "isExtraImport": true,
         "detail": "django.conf.urls.static",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "redirect",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
         "documentation": {}
     },
     {
@@ -523,14 +1020,6 @@
         "description": "django.contrib.auth.mixins",
         "isExtraImport": true,
         "detail": "django.contrib.auth.mixins",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "Tarot.models",
-        "description": "Tarot.models",
-        "isExtraImport": true,
-        "detail": "Tarot.models",
         "documentation": {}
     },
     {
@@ -584,6 +1073,30 @@
         "documentation": {}
     },
     {
+        "label": "ProtocolTypeRouter",
+        "importPath": "channels.routing",
+        "description": "channels.routing",
+        "isExtraImport": true,
+        "detail": "channels.routing",
+        "documentation": {}
+    },
+    {
+        "label": "URLRouter",
+        "importPath": "channels.routing",
+        "description": "channels.routing",
+        "isExtraImport": true,
+        "detail": "channels.routing",
+        "documentation": {}
+    },
+    {
+        "label": "AuthMiddlewareStack",
+        "importPath": "channels.auth",
+        "description": "channels.auth",
+        "isExtraImport": true,
+        "detail": "channels.auth",
+        "documentation": {}
+    },
+    {
         "label": "Path",
         "importPath": "pathlib",
         "description": "pathlib",
@@ -606,6 +1119,168 @@
         "importPath": "sys",
         "description": "sys",
         "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "core.migrations.0001_initial",
+        "description": "core.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='MessageModel',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "core.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "core.migrations.0002_alter_messagemodel_id",
+        "description": "core.migrations.0002_alter_messagemodel_id",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('core', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='messagemodel',\n            name='id',\n            field=models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),\n        ),",
+        "detail": "core.migrations.0002_alter_messagemodel_id",
+        "documentation": {}
+    },
+    {
+        "label": "MessageApiTestCase",
+        "kind": 6,
+        "importPath": "core.tests.test_api",
+        "description": "core.tests.test_api",
+        "peekOfCode": "class MessageApiTestCase(APITestCase):\n    def setUp(self):\n        self.test_user1 = User.objects.create(username='u1')\n        self.test_user1.set_password('u1')\n        self.test_user1.save()\n        self.test_user2 = User.objects.create(username='u2', password='u2')\n        self.test_user2.set_password('u2')\n        self.test_user2.save()\n        self.test_user3 = User.objects.create(username='u3', password='u3')\n        self.test_user3.set_password('u3')",
+        "detail": "core.tests.test_api",
+        "documentation": {}
+    },
+    {
+        "label": "MessageTestCase",
+        "kind": 6,
+        "importPath": "core.tests.test_model",
+        "description": "core.tests.test_model",
+        "peekOfCode": "class MessageTestCase(TestCase):\n    \"\"\"\n    Toy model test cases (there isn't much bussine logic).\n    \"\"\"\n    def setUp(self):\n        self.test_user1 = User.objects.create(username='bart')\n        self.test_user2 = User.objects.create(username='milhouse')\n    def test_message_user(self):\n        msg = MessageModel.objects.create(user=self.test_user2,\n                                          recipient=self.test_user1,",
+        "detail": "core.tests.test_model",
+        "documentation": {}
+    },
+    {
+        "label": "MessageModelAdmin",
+        "kind": 6,
+        "importPath": "core.admin",
+        "description": "core.admin",
+        "peekOfCode": "class MessageModelAdmin(ModelAdmin):\n    readonly_fields = ('timestamp',)\n    search_fields = ('id', 'body', 'user__username', 'recipient__username')\n    list_display = ('id', 'user', 'recipient', 'timestamp', 'characters')\n    list_display_links = ('id',)\n    list_filter = ('user', 'recipient')\n    date_hierarchy = 'timestamp'\nsite.register(MessageModel, MessageModelAdmin)",
+        "detail": "core.admin",
+        "documentation": {}
+    },
+    {
+        "label": "CsrfExemptSessionAuthentication",
+        "kind": 6,
+        "importPath": "core.api",
+        "description": "core.api",
+        "peekOfCode": "class CsrfExemptSessionAuthentication(SessionAuthentication):\n    \"\"\"\n    SessionAuthentication scheme used by DRF. DRF's SessionAuthentication uses\n    Django's session framework for authentication which requires CSRF to be\n    checked. In this case we are going to disable CSRF tokens for the API.\n    \"\"\"\n    def enforce_csrf(self, request):\n        return\nclass MessagePagination(PageNumberPagination):\n    \"\"\"",
+        "detail": "core.api",
+        "documentation": {}
+    },
+    {
+        "label": "MessagePagination",
+        "kind": 6,
+        "importPath": "core.api",
+        "description": "core.api",
+        "peekOfCode": "class MessagePagination(PageNumberPagination):\n    \"\"\"\n    Limit message prefetch to one page.\n    \"\"\"\n    page_size = settings.MESSAGES_TO_LOAD\nclass MessageModelViewSet(ModelViewSet):\n    queryset = MessageModel.objects.all()\n    serializer_class = MessageModelSerializer\n    allowed_methods = ('GET', 'POST', 'HEAD', 'OPTIONS')\n    authentication_classes = (CsrfExemptSessionAuthentication,)",
+        "detail": "core.api",
+        "documentation": {}
+    },
+    {
+        "label": "MessageModelViewSet",
+        "kind": 6,
+        "importPath": "core.api",
+        "description": "core.api",
+        "peekOfCode": "class MessageModelViewSet(ModelViewSet):\n    queryset = MessageModel.objects.all()\n    serializer_class = MessageModelSerializer\n    allowed_methods = ('GET', 'POST', 'HEAD', 'OPTIONS')\n    authentication_classes = (CsrfExemptSessionAuthentication,)\n    pagination_class = MessagePagination\n    def list(self, request, *args, **kwargs):\n        self.queryset = self.queryset.filter(Q(recipient=request.user) |\n                                             Q(user=request.user))\n        target = self.request.query_params.get('target', None)",
+        "detail": "core.api",
+        "documentation": {}
+    },
+    {
+        "label": "UserModelViewSet",
+        "kind": 6,
+        "importPath": "core.api",
+        "description": "core.api",
+        "peekOfCode": "class UserModelViewSet(ModelViewSet):\n    queryset = User.objects.all()\n    serializer_class = UserModelSerializer\n    allowed_methods = ('GET', 'HEAD', 'OPTIONS')\n    pagination_class = None  # Get all user\n    def list(self, request, *args, **kwargs):\n        # Get all users except yourself\n        self.queryset = self.queryset.exclude(id=request.user.id)\n        return super(UserModelViewSet, self).list(request, *args, **kwargs)",
+        "detail": "core.api",
+        "documentation": {}
+    },
+    {
+        "label": "CoreConfig",
+        "kind": 6,
+        "importPath": "core.apps",
+        "description": "core.apps",
+        "peekOfCode": "class CoreConfig(AppConfig):\n    name = 'core'",
+        "detail": "core.apps",
+        "documentation": {}
+    },
+    {
+        "label": "ChatConsumer",
+        "kind": 6,
+        "importPath": "core.consumers",
+        "description": "core.consumers",
+        "peekOfCode": "class ChatConsumer(AsyncWebsocketConsumer):\n    async def connect(self):\n        user_id = self.scope[\"session\"][\"_auth_user_id\"]\n        self.group_name = \"{}\".format(user_id)\n        # Join room group\n        await self.channel_layer.group_add(\n            self.group_name,\n            self.channel_name\n        )\n        await self.accept()",
+        "detail": "core.consumers",
+        "documentation": {}
+    },
+    {
+        "label": "MessageModel",
+        "kind": 6,
+        "importPath": "core.models",
+        "description": "core.models",
+        "peekOfCode": "class MessageModel(Model):\n    \"\"\"\n    This class represents a chat message. It has a owner (user), timestamp and\n    the message body.\n    \"\"\"\n    user = ForeignKey(User, on_delete=CASCADE, verbose_name='user',\n                      related_name='from_user', db_index=True)\n    recipient = ForeignKey(User, on_delete=CASCADE, verbose_name='recipient',\n                           related_name='to_user', db_index=True)\n    timestamp = DateTimeField('timestamp', auto_now_add=True, editable=False,",
+        "detail": "core.models",
+        "documentation": {}
+    },
+    {
+        "label": "websocket_urlpatterns",
+        "kind": 5,
+        "importPath": "core.routing",
+        "description": "core.routing",
+        "peekOfCode": "websocket_urlpatterns = [\n    url(r'^ws$', consumers.ChatConsumer),\n]",
+        "detail": "core.routing",
+        "documentation": {}
+    },
+    {
+        "label": "MessageModelSerializer",
+        "kind": 6,
+        "importPath": "core.serializers",
+        "description": "core.serializers",
+        "peekOfCode": "class MessageModelSerializer(ModelSerializer):\n    user = CharField(source='user.username', read_only=True)\n    recipient = CharField(source='recipient.username')\n    def create(self, validated_data):\n        user = self.context['request'].user\n        recipient = get_object_or_404(\n            User, username=validated_data['recipient']['username'])\n        msg = MessageModel(recipient=recipient,\n                           body=validated_data['body'],\n                           user=user)",
+        "detail": "core.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "UserModelSerializer",
+        "kind": 6,
+        "importPath": "core.serializers",
+        "description": "core.serializers",
+        "peekOfCode": "class UserModelSerializer(ModelSerializer):\n    class Meta:\n        model = User\n        fields = ('username',)",
+        "detail": "core.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "core.urls",
+        "description": "core.urls",
+        "peekOfCode": "router = DefaultRouter()\nrouter.register(r'message', MessageModelViewSet, basename='message-api')\nrouter.register(r'user', UserModelViewSet, basename='user-api')\nurlpatterns = [\n    path(r'api/v1/', include(router.urls)),\n    path('', login_required(views.chat_view), name='home'),\n]",
+        "detail": "core.urls",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "core.urls",
+        "description": "core.urls",
+        "peekOfCode": "urlpatterns = [\n    path(r'api/v1/', include(router.urls)),\n    path('', login_required(views.chat_view), name='home'),\n]",
+        "detail": "core.urls",
+        "documentation": {}
+    },
+    {
+        "label": "chat_view",
+        "kind": 2,
+        "importPath": "core.views",
+        "description": "core.views",
+        "peekOfCode": "def chat_view(request):\n    return render(request, 'core/chat.html')",
+        "detail": "core.views",
         "documentation": {}
     },
     {
@@ -1032,6 +1707,15 @@
         "documentation": {}
     },
     {
+        "label": "application",
+        "kind": 5,
+        "importPath": "Tarotalk.routing",
+        "description": "Tarotalk.routing",
+        "peekOfCode": "application = ProtocolTypeRouter({\n    \"websocket\": AuthMiddlewareStack(\n        URLRouter(\n            core_routing.websocket_urlpatterns\n        )\n    ),\n})",
+        "detail": "Tarotalk.routing",
+        "documentation": {}
+    },
+    {
         "label": "BASE_DIR",
         "kind": 5,
         "importPath": "Tarotalk.settings",
@@ -1072,7 +1756,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'Tarot',\n]\nMIDDLEWARE = [",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'Tarot',\n    'core',\n    'rest_framework',",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -1207,7 +1891,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "DATE_INPUT_FORMATS = ['%d-%m-%Y']\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n    #os.path.join(BASE_DIR, 'Tarot', 'static'),\n]\nSECURE_CROSS_ORIGIN_OPENER_POLICY = None",
+        "peekOfCode": "DATE_INPUT_FORMATS = ['%d-%m-%Y']\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n    #os.path.join(BASE_DIR, 'Tarot', 'static'),\n]\nWSGI_APPLICATION = 'Tarotalk.wsgi.application'\nSECURE_CROSS_ORIGIN_OPENER_POLICY = None\nREST_FRAMEWORK = {",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -1216,7 +1900,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n    #os.path.join(BASE_DIR, 'Tarot', 'static'),\n]\nSECURE_CROSS_ORIGIN_OPENER_POLICY = None",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n    #os.path.join(BASE_DIR, 'Tarot', 'static'),\n]\nWSGI_APPLICATION = 'Tarotalk.wsgi.application'\nSECURE_CROSS_ORIGIN_OPENER_POLICY = None\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -1225,7 +1909,7 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "AUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n    #os.path.join(BASE_DIR, 'Tarot', 'static'),\n]\nSECURE_CROSS_ORIGIN_OPENER_POLICY = None",
+        "peekOfCode": "AUTH_USER_MODEL = 'Tarot.User'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n    #os.path.join(BASE_DIR, 'Tarot', 'static'),\n]\nWSGI_APPLICATION = 'Tarotalk.wsgi.application'\nSECURE_CROSS_ORIGIN_OPENER_POLICY = None\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.IsAuthenticated'",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -1234,7 +1918,16 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "STATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n    #os.path.join(BASE_DIR, 'Tarot', 'static'),\n]\nSECURE_CROSS_ORIGIN_OPENER_POLICY = None",
+        "peekOfCode": "STATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n    #os.path.join(BASE_DIR, 'Tarot', 'static'),\n]\nWSGI_APPLICATION = 'Tarotalk.wsgi.application'\nSECURE_CROSS_ORIGIN_OPENER_POLICY = None\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.IsAuthenticated'\n    ],",
+        "detail": "Tarotalk.settings",
+        "documentation": {}
+    },
+    {
+        "label": "WSGI_APPLICATION",
+        "kind": 5,
+        "importPath": "Tarotalk.settings",
+        "description": "Tarotalk.settings",
+        "peekOfCode": "WSGI_APPLICATION = 'Tarotalk.wsgi.application'\nSECURE_CROSS_ORIGIN_OPENER_POLICY = None\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.IsAuthenticated'\n    ],\n    'DEFAULT_PAGINATION_CLASS':\n        'rest_framework.pagination.LimitOffsetPagination',\n    'PAGE_SIZE': 100\n}",
         "detail": "Tarotalk.settings",
         "documentation": {}
     },
@@ -1243,8 +1936,62 @@
         "kind": 5,
         "importPath": "Tarotalk.settings",
         "description": "Tarotalk.settings",
-        "peekOfCode": "SECURE_CROSS_ORIGIN_OPENER_POLICY = None",
+        "peekOfCode": "SECURE_CROSS_ORIGIN_OPENER_POLICY = None\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.IsAuthenticated'\n    ],\n    'DEFAULT_PAGINATION_CLASS':\n        'rest_framework.pagination.LimitOffsetPagination',\n    'PAGE_SIZE': 100\n}\nMESSAGES_TO_LOAD = 15",
         "detail": "Tarotalk.settings",
+        "documentation": {}
+    },
+    {
+        "label": "REST_FRAMEWORK",
+        "kind": 5,
+        "importPath": "Tarotalk.settings",
+        "description": "Tarotalk.settings",
+        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.IsAuthenticated'\n    ],\n    'DEFAULT_PAGINATION_CLASS':\n        'rest_framework.pagination.LimitOffsetPagination',\n    'PAGE_SIZE': 100\n}\nMESSAGES_TO_LOAD = 15\n# In settings.py",
+        "detail": "Tarotalk.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MESSAGES_TO_LOAD",
+        "kind": 5,
+        "importPath": "Tarotalk.settings",
+        "description": "Tarotalk.settings",
+        "peekOfCode": "MESSAGES_TO_LOAD = 15\n# In settings.py\nCHANNEL_LAYERS = {\n    \"default\": {\n        \"BACKEND\": \"asgiref.inmemory.ChannelLayer\",\n        \"ROUTING\": \"core.routing.channel_routing\",\n    },\n}\ntry:\n    from local_settings import *",
+        "detail": "Tarotalk.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CHANNEL_LAYERS",
+        "kind": 5,
+        "importPath": "Tarotalk.settings",
+        "description": "Tarotalk.settings",
+        "peekOfCode": "CHANNEL_LAYERS = {\n    \"default\": {\n        \"BACKEND\": \"asgiref.inmemory.ChannelLayer\",\n        \"ROUTING\": \"core.routing.channel_routing\",\n    },\n}\ntry:\n    from local_settings import *\nexcept ImportError:\n    pass",
+        "detail": "Tarotalk.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ASGI_APPLICATION",
+        "kind": 5,
+        "importPath": "Tarotalk.settings",
+        "description": "Tarotalk.settings",
+        "peekOfCode": "ASGI_APPLICATION = 'chat.routing.application'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {\n            \"hosts\": [('127.0.0.1', 6379)],\n        },\n    },\n}",
+        "detail": "Tarotalk.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CHANNEL_LAYERS",
+        "kind": 5,
+        "importPath": "Tarotalk.settings",
+        "description": "Tarotalk.settings",
+        "peekOfCode": "CHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {\n            \"hosts\": [('127.0.0.1', 6379)],\n        },\n    },\n}",
+        "detail": "Tarotalk.settings",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "Tarotalk.urls",
+        "description": "Tarotalk.urls",
+        "peekOfCode": "router = DefaultRouter()\nrouter.register(r'message', MessageModelViewSet, basename='message-api')\nrouter.register(r'user', UserModelViewSet, basename='user-api')\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('Tarot.urls')),\n    path('chat/', include('core.urls')),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "detail": "Tarotalk.urls",
         "documentation": {}
     },
     {
@@ -1252,7 +1999,7 @@
         "kind": 5,
         "importPath": "Tarotalk.urls",
         "description": "Tarotalk.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('Tarot.urls')),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('Tarot.urls')),\n    path('chat/', include('core.urls')),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
         "detail": "Tarotalk.urls",
         "documentation": {}
     },
