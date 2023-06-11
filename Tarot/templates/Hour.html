@@ -42,8 +42,7 @@
               
             </div>
             <div class="d-flex align-items-center">
-              <button class="btn btn-chat btn-outline-light"><a href="{%url 'Tarot:chatbot' %}" style="text-decoration: none; color:black;"> Chat Now</a></button>
-              <button class="btn btn-like">
+<button class="btn btn-chat btn-outline-light"><a href="{%url 'core:chat' %}" style="text-decoration: none; color:black;"> Chat Now</a></button>              <button class="btn btn-like">
                 <i class="fas fa-heart fa-lg text-white"></i>
               </button>
             </div>
@@ -69,14 +68,26 @@
     <div class="col-md-5"></div>
     <div class="col-md-6 card package-zone" >
       <div class="card-header text-center package-zone-header">Theo giờ</div>
+
       <div class="card-body package-zone-body">
+        <form id="form30" action="{% url 'Tarot:calendar' User.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" name="30phut" class="btn btn-package-item d-block">30 phút - 1 chủ đề - 80.000 đồng</button>
+        </form>
+        
+        <form id="form60" action="{% url 'Tarot:calendar' User.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" name="60phut" class="btn btn-package-item d-block">60 phút - 1 chủ đề - 150.000 đồng</button>
+        </form>
+        
+      
+      <!-- <div class="card-body package-zone-body">
         <a href="{% url 'Tarot:calendar' User.id %}" class="btn btn-package-item d-block"
-          > 30 phút - 1 chủ đề - 80.000 đồng
+          > 30 phút - 1 chủ đề - 80.000 đồng </a>
         <a href="{% url 'Tarot:calendar' User.id %}" class="btn btn-package-item d-block"
           >60 phút - 1 chủ đề - 150.000 đồng</a
         >
-                
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

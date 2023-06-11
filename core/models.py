@@ -1,4 +1,6 @@
-from Tarot.models import User
+from django.conf import settings
+
+from django.contrib.auth.models import User
 from django.db.models import (Model, TextField, DateTimeField, ForeignKey,
                               CASCADE)
 
@@ -12,10 +14,11 @@ class MessageModel(Model):
     the message body.
 
     """
-    user = ForeignKey(User, on_delete=CASCADE, verbose_name='user',
-                      related_name='from_user', db_index=True)
-    recipient = ForeignKey(User, on_delete=CASCADE, verbose_name='recipient',
-                           related_name='to_user', db_index=True)
+    user = ForeignKey(settings.AUTH_USER_MODEL, on_delete=CASCADE, verbose_name='user',
+                    related_name='from_user', db_index=True)
+    recipient = ForeignKey(settings.AUTH_USER_MODEL, on_delete=CASCADE, verbose_name='recipient',
+                        related_name='to_user', db_index=True)
+
     timestamp = DateTimeField('timestamp', auto_now_add=True, editable=False,
                               db_index=True)
     body = TextField('body')

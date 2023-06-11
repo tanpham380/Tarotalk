@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from Tarot.models import User
 from django.shortcuts import get_object_or_404
 from core.models import MessageModel
 from rest_framework.serializers import ModelSerializer, CharField
@@ -26,4 +26,4 @@ class MessageModelSerializer(ModelSerializer):
 class UserModelSerializer(ModelSerializer):
     class Meta:
         model = User
-        fields = ('username',)
+        fields = ('username','id')

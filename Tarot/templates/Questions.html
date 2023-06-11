@@ -42,8 +42,7 @@
               
             </div>
             <div class="d-flex align-items-center">
-              <button class="btn btn-chat btn-outline-light"><a href="{%url 'Tarot:chatbot' %}" style="text-decoration: none; color:black;"> Chat Now</a></button>
-              <button class="btn btn-like">
+              <button class="btn btn-chat btn-outline-light"><a href="{%url 'core:chat' %}" style="text-decoration: none; color:black;"> Chat Now</a></button>              <button class="btn btn-like">
                 <i class="fas fa-heart fa-lg text-white"></i>
               </button>
             </div>
@@ -70,12 +69,19 @@
     <div class="col-md-6 card package-zone" >
       <div class="card-header text-center package-zone-header">Theo số lượng câu hỏi</div>
       <div class="card-body package-zone-body">
-        <a href="{% url 'Tarot:calendar' User.id %}" class="btn btn-package-item d-block"
+        <!-- <a href="{% url 'Tarot:calendar' User.id %}" class="btn btn-package-item d-block"
           > 3 câu hỏi - 100.000 đồng
         <a href="{% url 'Tarot:calendar'  User.id %}" class="btn btn-package-item d-block"
           >5 câu hỏi - 120.000 đồng</a
-        >
-                
+        > -->
+        <form id="3cauhoi" action="{% url 'Tarot:calendar' User.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" name="3cauhoi" class="btn btn-package-item d-block">3 câu hỏi - 100.000 đồng</button>
+        </form>
+        <form id="6cauhoi" action="{% url 'Tarot:calendar' User.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" name="6cauhoi" class="btn btn-package-item d-block">5 câu hỏi - 120.000 đồng</button>
+        </form>       
       </div>
     </div>
   </div>

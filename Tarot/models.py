@@ -19,10 +19,12 @@ class User(AbstractUser):
         return self.username
     
 
-class dich_vu (models.Model ):
-    id = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-    name = models.CharField(max_length=255,  )
-    price = models.IntegerField()
-    content = models.TextField()
-    date  = models.DateField()
-    
+class giao_dich (models.Model ):
+    id = models.AutoField(primary_key=True)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255,null=True  )
+    price = models.IntegerField(null=True)
+    date  = models.DateField(null=True)
+    total = models.IntegerField(null=True)
+    def __str__(self): 
+        return self.name + ' ' + 'giao dich so ' + str(self.id)

@@ -196,4 +196,10 @@
   </div>
 </div>
 
+
+<script>
+  let sessionKey = '{{ request.session.session_key }}';
+  let currentUser = '{{ request.user.username }}';
+</script>
+<script src="{% static 'js/app.js' %}"></script>s
 {% endblock %}

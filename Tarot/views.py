@@ -6,7 +6,7 @@ from django.shortcuts import redirect, render
 from django.views import View
 from django.contrib.auth import authenticate, login , logout
 from django.contrib.auth.mixins import LoginRequiredMixin
-from Tarot.models import User
+from Tarot.models import *
 from .forms import *
 import random
 from django.urls import reverse
@@ -69,13 +69,22 @@ class hour(LoginRequiredMixin, View):
     def get(self, request, user_id):
         user = User.objects.get(id=user_id)
         return render(request, 'Hour.html', {'User': user })
-def chooseSlot(request):
-    return render(request, "ChooseSlot.html")
+class chooseSlot(View):
+    def get (self, request):
+        return render(request, "ChooseSlot.html")
+    def post (self, request):
+        pass
 
 class checkout(LoginRequiredMixin,View ):
     login_url = '/login/'
-    def get(self, request):
-        return render(request, "CheckOut.html")
+    
+    def get(self, request, user_id):
+        user = User.objects.get(id=user_id)
+        list_dich_vu = giao_dich.objects.filter(user_id=user)
+        for price in range(len(list_dich_vu)):
+            total = 0
+            total += list_dich_vu[price].price
+        return render(request, 'CheckOut.html', {'User': user, 'list_dich_vu': list_dich_vu, 'total': total })
 
 # def calendar(request):
 #     return render(request, "Calendar.html")
@@ -84,7 +93,48 @@ class calendar(LoginRequiredMixin,View):
     def get(self, request, user_id):
         user = User.objects.get(id=user_id)
         return render(request, 'Calendar.html', {'User': user })
-
+    def post(self, request, user_id):
+        current_date = date.today()
+        user = User.objects.get(id=user_id)
+        print(request.POST)
+        if '30phut' in request.POST:
+            # User selected 30phut, so save it in the dich_vu table
+            dich_vu_obj = giao_dich.objects.create(user_id=user, name='30phut', price=80000, date=current_date)
+            dich_vu_obj.save()
+        else: print("Không có 30 phút")
+        if '60phut' in request.POST:
+            # User selected 60phut, so save it in the dich_vu table
+            dich_vu_obj = giao_dich.objects.create(user_id=user, name='60phut', price=150000, date=current_date)
+            dich_vu_obj.save()
+        if 'tongquan' in request.POST:
+            # User selected tongquan, so save it in the dich_vu table
+            dich_vu_obj = giao_dich.objects.create(user_id=user, name='tongquan', price=250000, date=current_date)
+            dich_vu_obj.save()
+        if 'tinhduyen' in request.POST:
+            # User selected tinhduyen, so save it in the dich_vu table
+            dich_vu_obj = giao_dich.objects.create(user_id=user, name='tinhduyen', price=200000, date=current_date)
+            dich_vu_obj.save()
+        if 'giadinh' in request.POST:
+            dich_vu_obj = giao_dich.objects.create(user_id=user, name='giadinh', price=180000, date=current_date)
+            dich_vu_obj.save()
+        if 'hoctap' in request.POST:
+            dich_vu_obj = giao_dich.objects.create(user_id=user, name='hoctap', price=180000, date=current_date)
+            dich_vu_obj.save()
+        if 'congviec' in request.POST:
+            dich_vu_obj = giao_dich.objects.create(user_id=user, name='congviec', price=180000, date=current_date)
+            dich_vu_obj.save()       
+        if 'quanhe' in request.POST:
+            dich_vu_obj = giao_dich.objects.create(user_id=user, name='quanhe', price=200000, date=current_date)
+            dich_vu_obj.save()    
+        if '3cauhoi' in request.POST:
+            dich_vu_obj = giao_dich.objects.create(user_id=user, name='3cauhoi', price=100000, date=current_date)
+            dich_vu_obj.save()
+        if '6cauhoi' in request.POST:
+            dich_vu_obj = giao_dich.objects.create(user_id=user, name='6cauhoi', price=120000, date=current_date)
+            dich_vu_obj.save()                                                
+        return render(request, 'Calendar.html', {'User': user })
+            
+        
 # def user_detail(request, user_id):
 #     user = get_object_or_404(User, id=user_id)
 #     # Đảm bảo rằng bạn truyền đúng tên trường hoặc thuộc tính để truy xuất thông tin của người dùng

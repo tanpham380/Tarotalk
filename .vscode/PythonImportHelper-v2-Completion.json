@@ -32,6 +32,30 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
         "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
@@ -304,6 +328,78 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -378,6 +474,15 @@
         "documentation": {}
     },
     {
+        "label": "django.urls",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "reverse",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -386,7 +491,23 @@
         "documentation": {}
     },
     {
+        "label": "re_path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -602,14 +723,6 @@
         "documentation": {}
     },
     {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
         "label": "redirect",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -642,7 +755,7 @@
         "documentation": {}
     },
     {
-        "label": "User",
+        "label": "*",
         "importPath": "Tarot.models",
         "description": "Tarot.models",
         "isExtraImport": true,
@@ -768,14 +881,6 @@
         "description": "core",
         "isExtraImport": true,
         "detail": "core",
-        "documentation": {}
-    },
-    {
-        "label": "url",
-        "importPath": "django.conf.urls",
-        "description": "django.conf.urls",
-        "isExtraImport": true,
-        "detail": "django.conf.urls",
         "documentation": {}
     },
     {
@@ -1225,7 +1330,7 @@
         "kind": 6,
         "importPath": "core.models",
         "description": "core.models",
-        "peekOfCode": "class MessageModel(Model):\n    \"\"\"\n    This class represents a chat message. It has a owner (user), timestamp and\n    the message body.\n    \"\"\"\n    user = ForeignKey(User, on_delete=CASCADE, verbose_name='user',\n                      related_name='from_user', db_index=True)\n    recipient = ForeignKey(User, on_delete=CASCADE, verbose_name='recipient',\n                           related_name='to_user', db_index=True)\n    timestamp = DateTimeField('timestamp', auto_now_add=True, editable=False,",
+        "peekOfCode": "class MessageModel(Model):\n    \"\"\"\n    This class represents a chat message. It has a owner (user), timestamp and\n    the message body.\n    \"\"\"\n    user = ForeignKey(settings.AUTH_USER_MODEL, on_delete=CASCADE, verbose_name='user',\n                    related_name='from_user', db_index=True)\n    recipient = ForeignKey(settings.AUTH_USER_MODEL, on_delete=CASCADE, verbose_name='recipient',\n                        related_name='to_user', db_index=True)\n    timestamp = DateTimeField('timestamp', auto_now_add=True, editable=False,",
         "detail": "core.models",
         "documentation": {}
     },
@@ -1234,7 +1339,7 @@
         "kind": 5,
         "importPath": "core.routing",
         "description": "core.routing",
-        "peekOfCode": "websocket_urlpatterns = [\n    url(r'^ws$', consumers.ChatConsumer),\n]",
+        "peekOfCode": "websocket_urlpatterns = [\n    re_path(r'^ws/$', consumers.ChatConsumer),\n]",
         "detail": "core.routing",
         "documentation": {}
     },
@@ -1252,7 +1357,7 @@
         "kind": 6,
         "importPath": "core.serializers",
         "description": "core.serializers",
-        "peekOfCode": "class UserModelSerializer(ModelSerializer):\n    class Meta:\n        model = User\n        fields = ('username',)",
+        "peekOfCode": "class UserModelSerializer(ModelSerializer):\n    class Meta:\n        model = User\n        fields = ('username','id')",
         "detail": "core.serializers",
         "documentation": {}
     },
@@ -1261,7 +1366,16 @@
         "kind": 5,
         "importPath": "core.urls",
         "description": "core.urls",
-        "peekOfCode": "router = DefaultRouter()\nrouter.register(r'message', MessageModelViewSet, basename='message-api')\nrouter.register(r'user', UserModelViewSet, basename='user-api')\nurlpatterns = [\n    path(r'api/v1/', include(router.urls)),\n    path('', login_required(views.chat_view), name='home'),\n]",
+        "peekOfCode": "router = DefaultRouter()\nrouter.register(r'message', MessageModelViewSet, basename='message-api')\nrouter.register(r'user', UserModelViewSet, basename='user-api')\napp_name = \"core\"\nurlpatterns = [\n    path(r'api/v1/', include(router.urls)),\n    path('', login_required(\n        TemplateView.as_view(template_name='core/chat.html')), name='chat'),\n]",
+        "detail": "core.urls",
+        "documentation": {}
+    },
+    {
+        "label": "app_name",
+        "kind": 5,
+        "importPath": "core.urls",
+        "description": "core.urls",
+        "peekOfCode": "app_name = \"core\"\nurlpatterns = [\n    path(r'api/v1/', include(router.urls)),\n    path('', login_required(\n        TemplateView.as_view(template_name='core/chat.html')), name='chat'),\n]",
         "detail": "core.urls",
         "documentation": {}
     },
@@ -1270,17 +1384,8 @@
         "kind": 5,
         "importPath": "core.urls",
         "description": "core.urls",
-        "peekOfCode": "urlpatterns = [\n    path(r'api/v1/', include(router.urls)),\n    path('', login_required(views.chat_view), name='home'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(r'api/v1/', include(router.urls)),\n    path('', login_required(\n        TemplateView.as_view(template_name='core/chat.html')), name='chat'),\n]",
         "detail": "core.urls",
-        "documentation": {}
-    },
-    {
-        "label": "chat_view",
-        "kind": 2,
-        "importPath": "core.views",
-        "description": "core.views",
-        "peekOfCode": "def chat_view(request):\n    return render(request, 'core/chat.html')",
-        "detail": "core.views",
         "documentation": {}
     },
     {
@@ -1419,6 +1524,60 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0016_remove_dich_vu_content_dich_vu_total_and_more",
+        "description": "Tarot.migrations.0016_remove_dich_vu_content_dich_vu_total_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0015_alter_user_avatar'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='dich_vu',\n            name='content',\n        ),\n        migrations.AddField(",
+        "detail": "Tarot.migrations.0016_remove_dich_vu_content_dich_vu_total_and_more",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0017_delete_dich_vu",
+        "description": "Tarot.migrations.0017_delete_dich_vu",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0016_remove_dich_vu_content_dich_vu_total_and_more'),\n    ]\n    operations = [\n        migrations.DeleteModel(\n            name='dich_vu',\n        ),\n    ]",
+        "detail": "Tarot.migrations.0017_delete_dich_vu",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0018_dich_vu",
+        "description": "Tarot.migrations.0018_dich_vu",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0017_delete_dich_vu'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='dich_vu',\n            fields=[\n                ('id', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, primary_key=True, serialize=False, to=settings.AUTH_USER_MODEL)),\n                ('name', models.CharField(max_length=255, null=True)),",
+        "detail": "Tarot.migrations.0018_dich_vu",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0019_delete_dich_vu",
+        "description": "Tarot.migrations.0019_delete_dich_vu",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0018_dich_vu'),\n    ]\n    operations = [\n        migrations.DeleteModel(\n            name='dich_vu',\n        ),\n    ]",
+        "detail": "Tarot.migrations.0019_delete_dich_vu",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0020_dich_vu",
+        "description": "Tarot.migrations.0020_dich_vu",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0019_delete_dich_vu'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='dich_vu',\n            fields=[\n                ('id', models.AutoField(primary_key=True, serialize=False)),\n                ('name', models.CharField(max_length=255, null=True)),",
+        "detail": "Tarot.migrations.0020_dich_vu",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0021_rename_dich_vu_giao_dich",
+        "description": "Tarot.migrations.0021_rename_dich_vu_giao_dich",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0020_dich_vu'),\n    ]\n    operations = [\n        migrations.RenameModel(\n            old_name='dich_vu',\n            new_name='giao_dich',\n        ),\n    ]",
+        "detail": "Tarot.migrations.0021_rename_dich_vu_giao_dich",
+        "documentation": {}
+    },
+    {
         "label": "get_star_range",
         "kind": 2,
         "importPath": "Tarot.templatetags.custom_tags",
@@ -1473,11 +1632,11 @@
         "documentation": {}
     },
     {
-        "label": "dich_v",
+        "label": "giao_dic",
         "kind": 6,
         "importPath": "Tarot.models",
         "description": "Tarot.models",
-        "peekOfCode": "class dich_vu (models.Model ):\n    id = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)\n    name = models.CharField(max_length=255,  )\n    price = models.IntegerField()\n    content = models.TextField()\n    date  = models.DateField()",
+        "peekOfCode": "class giao_dich (models.Model ):\n    id = models.AutoField(primary_key=True)\n    user_id = models.ForeignKey(User, on_delete=models.CASCADE)\n    name = models.CharField(max_length=255,null=True  )\n    price = models.IntegerField(null=True)\n    date  = models.DateField(null=True)\n    total = models.IntegerField(null=True)\n    def __str__(self): \n        return self.name + ' ' + 'giao dich so ' + str(self.id)",
         "detail": "Tarot.models",
         "documentation": {}
     },
@@ -1486,7 +1645,7 @@
         "kind": 5,
         "importPath": "Tarot.urls",
         "description": "Tarot.urls",
-        "peekOfCode": "app_name = \"Tarot\"\nurlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.TestPageView.as_view(), name='HomePagetesst'),\n    path(\"profile/user/<int:user_id>/\", views.profileuser.as_view(), name=\"profile\"),\n    path(\"questions/user/<int:user_id>/\", views.question.as_view(), name=\"questions\"),\n    path(\"chatbot/\", chatbot, name=\"chatbot\"),",
+        "peekOfCode": "app_name = \"Tarot\"\nurlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.TestPageView.as_view(), name='HomePagetesst'),\n    path(\"profile/user/<int:user_id>/\", views.profileuser.as_view(), name=\"profile\"),\n    path(\"questions/user/<int:user_id>/\", views.question.as_view(), name=\"questions\"),\n    path(\"chatbot/\", include('core.urls'), name=\"chatbot\"),",
         "detail": "Tarot.urls",
         "documentation": {}
     },
@@ -1495,7 +1654,7 @@
         "kind": 5,
         "importPath": "Tarot.urls",
         "description": "Tarot.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.TestPageView.as_view(), name='HomePagetesst'),\n    path(\"profile/user/<int:user_id>/\", views.profileuser.as_view(), name=\"profile\"),\n    path(\"questions/user/<int:user_id>/\", views.question.as_view(), name=\"questions\"),\n    path(\"chatbot/\", chatbot, name=\"chatbot\"),\n    path(\"package/user/<int:user_id>/\", views.package.as_view(), name=\"package\"),",
+        "peekOfCode": "urlpatterns = [\n    path('', views.ViewUser.as_view(), name='HomePage'),\n    path('login/', views.LoginPageView.as_view(), name='login'),\n    path('register/', views.RegisterView.as_view(), name='register'),\n    path('logout/', views.LogoutView, name='logout'),\n    path('testpage/',  views.TestPageView.as_view(), name='HomePagetesst'),\n    path(\"profile/user/<int:user_id>/\", views.profileuser.as_view(), name=\"profile\"),\n    path(\"questions/user/<int:user_id>/\", views.question.as_view(), name=\"questions\"),\n    path(\"chatbot/\", include('core.urls'), name=\"chatbot\"),\n    path(\"package/user/<int:user_id>/\", views.package.as_view(), name=\"package\"),",
         "detail": "Tarot.urls",
         "documentation": {}
     },
@@ -1531,7 +1690,16 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class hour(LoginRequiredMixin, View):\n    login_url = '/login/'\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Hour.html', {'User': user })\ndef chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\nclass checkout(LoginRequiredMixin,View ):\n    login_url = '/login/'\n    def get(self, request):",
+        "peekOfCode": "class hour(LoginRequiredMixin, View):\n    login_url = '/login/'\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Hour.html', {'User': user })\nclass chooseSlot(View):\n    def get (self, request):\n        return render(request, \"ChooseSlot.html\")\n    def post (self, request):\n        pass",
+        "detail": "Tarot.views",
+        "documentation": {}
+    },
+    {
+        "label": "chooseSlot",
+        "kind": 6,
+        "importPath": "Tarot.views",
+        "description": "Tarot.views",
+        "peekOfCode": "class chooseSlot(View):\n    def get (self, request):\n        return render(request, \"ChooseSlot.html\")\n    def post (self, request):\n        pass\nclass checkout(LoginRequiredMixin,View ):\n    login_url = '/login/'\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        list_dich_vu = giao_dich.objects.filter(user_id=user)",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -1540,7 +1708,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class checkout(LoginRequiredMixin,View ):\n    login_url = '/login/'\n    def get(self, request):\n        return render(request, \"CheckOut.html\")\n# def calendar(request):\n#     return render(request, \"Calendar.html\")\nclass calendar(LoginRequiredMixin,View):\n    login_url = '/login/'\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)",
+        "peekOfCode": "class checkout(LoginRequiredMixin,View ):\n    login_url = '/login/'\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        list_dich_vu = giao_dich.objects.filter(user_id=user)\n        for price in range(len(list_dich_vu)):\n            total = 0\n            total += list_dich_vu[price].price\n        return render(request, 'CheckOut.html', {'User': user, 'list_dich_vu': list_dich_vu, 'total': total })\n# def calendar(request):",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -1549,7 +1717,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class calendar(LoginRequiredMixin,View):\n    login_url = '/login/'\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Calendar.html', {'User': user })\n# def user_detail(request, user_id):\n#     user = get_object_or_404(User, id=user_id)\n#     # Đảm bảo rằng bạn truyền đúng tên trường hoặc thuộc tính để truy xuất thông tin của người dùng\n#     return render(request, 'user_detail.html', {'user': user})\nclass LoginPageView(View):",
+        "peekOfCode": "class calendar(LoginRequiredMixin,View):\n    login_url = '/login/'\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'Calendar.html', {'User': user })\n    def post(self, request, user_id):\n        current_date = date.today()\n        user = User.objects.get(id=user_id)\n        print(request.POST)\n        if '30phut' in request.POST:",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -1667,15 +1835,6 @@
         "importPath": "Tarot.views",
         "description": "Tarot.views",
         "peekOfCode": "def listReader(request):\n    return render(request, \"ListReader.html\")\n# class profileUser(View):\n#     def get(request):\n#         return render(request, \"Profile.html\")\nclass profileuser(View):\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        return render(request, 'profile.html', {'User': user })\n    # def post(self,request, user_id):",
-        "detail": "Tarot.views",
-        "documentation": {}
-    },
-    {
-        "label": "chooseSlot",
-        "kind": 2,
-        "importPath": "Tarot.views",
-        "description": "Tarot.views",
-        "peekOfCode": "def chooseSlot(request):\n    return render(request, \"ChooseSlot.html\")\nclass checkout(LoginRequiredMixin,View ):\n    login_url = '/login/'\n    def get(self, request):\n        return render(request, \"CheckOut.html\")\n# def calendar(request):\n#     return render(request, \"Calendar.html\")\nclass calendar(LoginRequiredMixin,View):\n    login_url = '/login/'",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -1983,15 +2142,6 @@
         "description": "Tarotalk.settings",
         "peekOfCode": "CHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {\n            \"hosts\": [('127.0.0.1', 6379)],\n        },\n    },\n}",
         "detail": "Tarotalk.settings",
-        "documentation": {}
-    },
-    {
-        "label": "router",
-        "kind": 5,
-        "importPath": "Tarotalk.urls",
-        "description": "Tarotalk.urls",
-        "peekOfCode": "router = DefaultRouter()\nrouter.register(r'message', MessageModelViewSet, basename='message-api')\nrouter.register(r'user', UserModelViewSet, basename='user-api')\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('Tarot.urls')),\n    path('chat/', include('core.urls')),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
-        "detail": "Tarotalk.urls",
         "documentation": {}
     },
     {

@@ -42,8 +42,7 @@
               
             </div>
             <div class="d-flex align-items-center">
-              <button class="btn btn-chat btn-outline-light"><a href="{%url 'Tarot:chatbot' %}" style="text-decoration: none; color:black;"> Chat Now</a></button>
-              <button class="btn btn-like">
+              <button class="btn btn-chat btn-outline-light"><a href="{%url 'core:chat' %}" style="text-decoration: none; color:black;"> Chat Now</a></button>              <button class="btn btn-like">
                 <i class="fas fa-heart fa-lg text-white"></i>
               </button>
             </div>
@@ -70,15 +69,39 @@
     <div class="col-md-6 card package-zone">
       <div class="card-header text-center package-zone-header">Theo gói</div>
       <div class="card-body package-zone-body">
-
-        <a href="{% url 'Tarot:calendar' User.id %}" class="btn btn-package-item d-block">Trải bài tình duyên - 200.000 đồng</a>
+        <form id="tinhduyen" action="{% url 'Tarot:calendar' User.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" name="tinhduyen" class="btn btn-package-item d-block">Trải bài tình duyên - 200.000 đồng</button>
+        </form>
+        
+        <form id="quanhe" action="{% url 'Tarot:calendar' User.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" name="quanhe" class="btn btn-package-item d-block">Trải bài mối quan hệ - 200.000 đồng</button>
+        </form>
+        <form id="giadinh" action="{% url 'Tarot:calendar' User.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" name="giadinh" class="btn btn-package-item d-block">Trải bài gia đình - 180.000 đồng</button>
+        </form>
+        <form id="hoctap" action="{% url 'Tarot:calendar' User.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" name="hoctap" class="btn btn-package-item d-block">Trải bài về học tập - 180.000 đồng</button>
+        </form>
+        <form id="congviec" action="{% url 'Tarot:calendar' User.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" name="congviec" class="btn btn-package-item d-block">Trải bài về công việc - 180.000 đồng</button>
+        </form>
+        <form id="tongquan" action="{% url 'Tarot:calendar' User.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" name="tongquan" class="btn btn-package-item d-block">Trải bài tổng quan - 250.000 đồng</button>
+        </form>
+        <!-- <a href="{% url 'Tarot:calendar' User.id %}" class="btn btn-package-item d-block">Trải bài tình duyên - 200.000 đồng</a>
         <a href="{% url 'Tarot:calendar' User.id %}" class="btn btn-package-item d-block">Trải bài mối quan hệ - 200.000
           đồng</a>
         <a href="{% url 'Tarot:calendar' User.id %}" class="btn btn-package-item d-block">Trải bài gia đình - 180.000 đồng</a>
         <a href="{% url 'Tarot:calendar' User.id %}" class="btn btn-package-item d-block">Trải bài về học tập - 180.000 đồng</a>
         <a href="{% url 'Tarot:calendar' User.id %}" class="btn btn-package-item d-block">Trải bài về công việc - 180.000
           đồng</a>
-        <a href="{% url 'Tarot:calendar' User.id %}" class="btn btn-package-item d-block">Trải bài tổng quan - 250.000 đồng</a>
+        <a href="{% url 'Tarot:calendar' User.id %}" class="btn btn-package-item d-block">Trải bài tổng quan - 250.000 đồng</a> -->
       </div>
     </div>
 </div>

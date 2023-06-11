@@ -26,18 +26,32 @@ class ChatConsumer(AsyncWebsocketConsumer):
         )
 
     # Receive message from WebSocket
-    async def receive(self, text_data=None,bytes_data = None):
+    # async def receive(self, text_data=None,bytes_data = None):
 
+    #     text_data_json = json.loads(text_data)
+    #     message = text_data_json['message']
+    #     # Send message to room group
+    #     await self.channel_layer.group_send(
+    #         self.chat_group_name,
+    #         {
+    #             'type': 'recieve_group_message',
+    #             'message': message
+    #         }
+    #     )
+    async def receive(self, text_data=None, bytes_data=None):
         text_data_json = json.loads(text_data)
         message = text_data_json['message']
         # Send message to room group
         await self.channel_layer.group_send(
-            self.chat_group_name,
+            self.group_name,  # Fix the typo here
             {
-                'type': 'recieve_group_message',
+                'type': 'receive_group_message',
                 'message': message
             }
         )
+
+
+
 
     async def recieve_group_message(self, event):
         message = event['message']

@@ -1,11 +1,11 @@
 import django.http
-from django.urls import path
+import django.urls
 from . import views
 from django.views.generic.base import RedirectView
 from .views import *
 from django.conf.urls.static import static
 from django.conf import settings
-
+from django.urls import include, path
 
 app_name = "Tarot"
 urlpatterns = [
@@ -16,11 +16,11 @@ urlpatterns = [
     path('testpage/',  views.TestPageView.as_view(), name='HomePagetesst'),
     path("profile/user/<int:user_id>/", views.profileuser.as_view(), name="profile"),
     path("questions/user/<int:user_id>/", views.question.as_view(), name="questions"),
-    path("chatbot/", chatbot, name="chatbot"),
+    path("chatbot/", include('core.urls'), name="chatbot"),
     path("package/user/<int:user_id>/", views.package.as_view(), name="package"),
     path("hour/user/<int:user_id>/", views.hour.as_view() , name="hour"),
-    path("calendar/choose/", chooseSlot, name="choose"),
-    path("calendar/choose/checkout/", views.checkout.as_view(), name="checkout"), 
+    path("calendar/choose/",  views.chooseSlot.as_view(), name="choose"),
+    path("calendar/choose/checkout/<int:user_id>", views.checkout.as_view(), name="checkout"), 
     path("calendar/user/<int:user_id>/", views.calendar.as_view(), name="calendar"),
     path("guide/", views.GuideView.as_view(), name="guide"),
     path("account/", views.Account.as_view(), name="account"),
