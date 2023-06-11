@@ -27,5 +27,16 @@ class giao_dich (models.Model ):
     date  = models.DateTimeField(null=True)
     user_use = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_use', null=False)
     is_paid = models.BooleanField(default=False)
-    def __str__(self): 
-        return self.name + ' ' + 'giao dịch số ' + str(self.id) +'| ' +'User sử dụng dịch vụ'+" " + str(self.user_use.username) + ' '     + "được cung cấp bởi "    + str(self.user_id.username)
+    is_delete = models.BooleanField(default=False)
+    def __str__(self):
+        trangthai = "chưa thanh toán"
+        
+        if self.is_paid:
+            trangthai = "Đã thanh toán"
+        elif self.is_delete and not self.is_paid:
+            trangthai = "Đã hủy"
+        
+        return (
+            f"{self.name} giao dịch số {self.id} | User sử dụng dịch vụ {self.user_use.username} được cung cấp bởi "
+            f"{self.user_id.username} ||||| trạng thái {trangthai}"
+        )

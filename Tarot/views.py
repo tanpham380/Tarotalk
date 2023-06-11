@@ -79,13 +79,15 @@ import locale
 import collections
 
 from collections import Counter
+from django.contrib import messages
+
 
 class checkout(LoginRequiredMixin, View):
     login_url = '/login/'
     
     def get(self, request, user_id):
         user = User.objects.get(id=user_id)
-        list_dich_vu = giao_dich.objects.filter(user_id=user,user_use = request.user, is_paid = False)
+        list_dich_vu = giao_dich.objects.filter(user_id=user,user_use = request.user, is_paid = False, is_delete = False)
         total = 0
         giao_dich_counts = Counter()
         
@@ -97,10 +99,27 @@ class checkout(LoginRequiredMixin, View):
         total_vnd = locale.format_string("%d", total, grouping=True) + " VNĐ"
        
         giao_dich_items = giao_dich_counts.items()
-        print(giao_dich_items)
         return render(request, 'CheckOut.html', {'User': user, 'list_dich_vu': list(giao_dich_items), 'total': total_vnd })
-
-
+    def post(self, request, user_id):
+        user = User.objects.get(id=user_id)
+        item_value = request.POST.get('item')
+        list_dich_vu = giao_dich.objects.filter(user_id=user,user_use = request.user, is_paid = False, is_delete = False)
+        a = request.POST
+        for item in list_dich_vu : 
+            if item_value == item.name:
+                item.is_delete = True
+                item.save()
+                
+        list_dich_vu = giao_dich.objects.filter(user_id=user,user_use = request.user, is_paid = False, is_delete = False)
+        total = 0
+        giao_dich_counts = Counter()        
+        for item in list_dich_vu:
+            total += item.price
+            giao_dich_counts[item.name] += 1
+        locale.setlocale(locale.LC_ALL, 'vi_VN.UTF-8')
+        total_vnd = locale.format_string("%d", total, grouping=True) + " VNĐ"
+        giao_dich_items = giao_dich_counts.items()
+        return render(request, 'CheckOut.html', {'User': user, 'list_dich_vu': list(giao_dich_items), 'total': total_vnd })
 # def calendar(request):
 #     return render(request, "Calendar.html")
 class calendar(LoginRequiredMixin,View):

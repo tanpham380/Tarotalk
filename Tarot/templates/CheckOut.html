@@ -1,24 +1,19 @@
 {% extends "base.html" %} {% load static %} {% block extra_css %}
-<link
-  rel="stylesheet"
-  href="{% static 'libs/bootstrap-5.3.0-dist/css/bootstrap.min.css' %}"
-/>
+<link rel="stylesheet" href="{% static 'libs/bootstrap-5.3.0-dist/css/bootstrap.min.css' %}" />
 <link rel="stylesheet" href="{% static 'libs/calendar-01/css/style.css' %}" />
 <link rel="stylesheet" href="{% static 'css/chat.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/dup.css' %}" />
 <link rel="stylesheet" href="{% static 'css/index.css' %}" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 <style>
   .item-row {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    overflow: hidden; /* Add this to hide overflowing text */
+    overflow: hidden;
+    /* Add this to hide overflowing text */
   }
 
   .item-info {
@@ -28,10 +23,15 @@
   }
 
   .item-info span {
-    white-space: nowrap; /* Add this to prevent line breaks */
+    white-space: nowrap;
+    /* Add this to prevent line breaks */
   }
 
   .item-row form {
+    margin-left: 10px;
+  }
+
+  .item-text {
     margin-left: 10px;
   }
 </style>
@@ -49,132 +49,104 @@
         Dịch vụ đã chọn:
       </div>
     </div>
-    <div class="row card-body card-content" style="padding-left: 10%; text-align: left; margin-top: -10px; margin-bottom: -10px;">
+    <div class="row card-body card-content"
+      style="padding-left: 10%; text-align: left; margin-top: -10px; margin-bottom: -10px;">
       <div class="col-md-12">
         {% for item, value in list_dich_vu %}
-          <p></p>
-          <div class="item-row">
-            <div class="item-info">
-              <span>{{ item }} x <span class="quantity">{{ value }}</span></span>
-            </div>
-            <form method="post" class="quantity-form">
-              {% csrf_token %}
-              <input type="hidden" name="item" value="{{ item }}">
-              <button class="quantity-button increase-quantity">&#9650;</button>
-            </form>
-            <form method="post" class="quantity-form">
-              {% csrf_token %}
-              <input type="hidden" name="item" value="{{ item }}">
-              <button class="quantity-button decrease-quantity">&#9660;</button>
-            </form>
-            <form method="post" class="delete-form">
-              {% csrf_token %}
-              <input type="hidden" name="item" value="{{ item }}">
-              <button class="delete-button"><i class="fas fa-trash"></i></button>
-            </form>
+        <p></p>
+        <div class="item-row">
+          <div class="item-info">
+            <span class="item-text">{{ item }}</span>
+            <span>x</span>
+            <span class="quantity">{{ value }}</span>
           </div>
+          <!-- <form method="post" name = "tang " class="quantity-form">
+            {% csrf_token %}
+            <input type="hidden" name="item" value="{{ item }}">
+            <button class="quantity-button increase-quantity">&#9650;</button>
+          </form> -->
+          <!-- <form method="post" class="quantity-form">
+            {% csrf_token %}
+            <input type="hidden" name="item" value="{{ item }}">
+            <button class="quantity-button decrease-quantity">&#9660;</button>
+          </form> -->
+          <form method="post" name="{{ item }}" class="delete-form">
+            {% csrf_token %}
+            {% if messages %}
+            <div class="messages">
+              {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+              {% endfor %}
+            </div>
+            {% endif %}
+
+            <input type="hidden" name="item" value="{{ item }}">
+            <button class="delete-button"><i class="fas fa-trash"></i></button>
+          </form>
+        </div>
         {% endfor %}
       </div>
     </div>
 
-    
-  
 
-    
-    <div
-      class="row card-body card-content"
-      style="
+
+
+
+    <div class="row card-body card-content" style="
         padding-left: 10%;
         text-align: left;
         padding-right: 10%;
         margin-top: -10px;
         margin-bottom: -10px;
-      "
-    >
+      ">
       <div class="col-md-7">TỔNG</div>
-      <div
-        class="col-md-5 align-right"
-        style="padding-right: 10%; padding-left: 13.5%"
-      >
-      {{ total }}
+      <div class="col-md-5 align-right" style="padding-right: 10%; padding-left: 13.5%">
+        {{ total }}
       </div>
     </div>
-    <div
-      class="row card-body card-content line text-center"
-      style="color: #fff5cc"
-    >
+    <div class="row card-body card-content line text-center" style="color: #fff5cc">
       <div class="col-md-12">--------------------------------------------</div>
     </div>
-    <div
-      class="row card-body card-content payment"
-      style="
+    <div class="row card-body card-content payment" style="
         padding-left: 10%;
         text-align: left;
         padding-right: 10%;
         margin-top: -10px;
         margin-bottom: -10px;
-      "
-    >
-      <button
-        
-        type="button"
-        class="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
-        style="
+      ">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="
           background-color: #e3cfff;
           border-color: #e3cfff;
           color: #060606;
           text-align: left;
-        "
-      >
+        ">
         Thanh toán qua ví MoMo
       </button>
     </div>
 
     <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content" style="background-color: #e3cfff">
           <div class="modal-header">
-            <h5
-              class="modal-title"
-              id="exampleModalLabel"
-              style="
+            <h5 class="modal-title" id="exampleModalLabel" style="
                 color: #512968;
                 margin-left: auto;
                 font-weight: bold;
                 text-transform: uppercase;
-              "
-            >
+              ">
               Momo payment
             </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <img
-              src="{% static 'img/momoQR.jpg'%}"
-              style="width: 300px; height: 300px"
-            />
+            <img src="{% static 'img/momoQR.jpg'%}" style="width: 300px; height: 300px" />
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-              style="background-color: #512968; color: #e3cfff"
-            >
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+              style="background-color: #512968; color: #e3cfff">
               Close
             </button>
             <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
@@ -182,28 +154,63 @@
         </div>
       </div>
     </div>
-    <div
-      class="row card-body card-content payment"
-      style="
-        padding-left: 10%;
-        text-align: left;
-        padding-right: 10%;
-        margin-top: -10px;
-        margin-bottom: -10px;
-      "
-    >
-      <div class="col-md-12">Thanh toán qua ngân hàng</div>
+    <div class="row card-body card-content payment" style="
+    padding-left: 10%;
+    text-align: left;
+    padding-right: 10%;
+    margin-top: -10px;
+    margin-bottom: -10px;
+  ">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bankModal" style="
+      background-color: #e3cfff;
+      border-color: #e3cfff;
+      color: #060606;
+      text-align: left;
+    ">
+        Thanh toán qua ngân hàng
+      </button>
     </div>
-    <div
-      class="row card-body card-content payment"
-      style="
+
+    <!-- Bank Modal -->
+    <div class="modal fade" id="bankModal" tabindex="-1" aria-labelledby="bankModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content" style="background-color: #e3cfff">
+          <div class="modal-header">
+            <h5 class="modal-title" id="bankModalLabel" style="
+            color: #512968;
+            margin-left: auto;
+            font-weight: bold;
+            text-transform: uppercase;
+          ">
+              Bank Transfer
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Add bank transfer instructions or information here -->
+            <p>Chức năng chưa được hỗ trợ</p>
+            <p>Bank name: Tarotalk</p>
+            <p>Account number: Cảm ơn bạn tin đùng Tarotalk</p>
+            <p>Account holder: Tarotalk</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+              style="background-color: #512968; color: #e3cfff">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row card-body card-content payment" style="
         padding-left: 10%;
         text-align: left;
         padding-right: 10%;
         margin-top: -10px;
         margin-bottom: -10px;
-      "
-    >
+      ">
       <div class="col-md-12">
         <label>
           <input type="checkbox" id="termsCheckbox" />
@@ -214,12 +221,7 @@
     </div>
     <div class="row card-body card-content">
       <div class="col-md-12">
-        <button
-          type="button"
-          id="confirmButton"
-          class="btn btn-checkout"
-          style="background-color: #e3cfff"
-        >
+        <button type="button" id="confirmButton" class="btn btn-checkout" style="background-color: #e3cfff">
           Xác nhận
         </button>
       </div>

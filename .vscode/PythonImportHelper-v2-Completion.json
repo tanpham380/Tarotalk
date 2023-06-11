@@ -520,6 +520,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -1135,6 +1151,14 @@
     },
     {
         "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "messages",
         "importPath": "django.contrib",
         "description": "django.contrib",
         "isExtraImport": true,
@@ -1794,6 +1818,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "Tarot.migrations.0028_giao_dich_is_delete",
+        "description": "Tarot.migrations.0028_giao_dich_is_delete",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Tarot', '0027_alter_giao_dich_date'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='giao_dich',\n            name='is_delete',\n            field=models.BooleanField(default=False),\n        ),",
+        "detail": "Tarot.migrations.0028_giao_dich_is_delete",
+        "documentation": {}
+    },
+    {
         "label": "get_star_range",
         "kind": 2,
         "importPath": "Tarot.templatetags.custom_tags",
@@ -1852,7 +1885,7 @@
         "kind": 6,
         "importPath": "Tarot.models",
         "description": "Tarot.models",
-        "peekOfCode": "class giao_dich (models.Model ):\n    id = models.AutoField(primary_key=True)\n    user_id = models.ForeignKey(User, on_delete=models.CASCADE , related_name='user_id'  )\n    name = models.CharField(max_length=255,null=True  )\n    price = models.IntegerField(null=True)\n    date  = models.DateTimeField(null=True)\n    user_use = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_use', null=False)\n    is_paid = models.BooleanField(default=False)\n    def __str__(self): \n        return self.name + ' ' + 'giao dịch số ' + str(self.id) +'| ' +'User sử dụng dịch vụ'+\" \" + str(self.user_use.username) + ' '     + \"được cung cấp bởi \"    + str(self.user_id.username)",
+        "peekOfCode": "class giao_dich (models.Model ):\n    id = models.AutoField(primary_key=True)\n    user_id = models.ForeignKey(User, on_delete=models.CASCADE , related_name='user_id'  )\n    name = models.CharField(max_length=255,null=True  )\n    price = models.IntegerField(null=True)\n    date  = models.DateTimeField(null=True)\n    user_use = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_use', null=False)\n    is_paid = models.BooleanField(default=False)\n    is_delete = models.BooleanField(default=False)\n    def __str__(self):",
         "detail": "Tarot.models",
         "documentation": {}
     },
@@ -1915,7 +1948,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class chooseSlot(View):\n    def get (self, request):\n        return render(request, \"ChooseSlot.html\")\n    def post (self, request):\n        pass\nimport locale\nimport collections\nfrom collections import Counter\nclass checkout(LoginRequiredMixin, View):\n    login_url = '/login/'",
+        "peekOfCode": "class chooseSlot(View):\n    def get (self, request):\n        return render(request, \"ChooseSlot.html\")\n    def post (self, request):\n        pass\nimport locale\nimport collections\nfrom collections import Counter\nfrom django.contrib import messages\nclass checkout(LoginRequiredMixin, View):",
         "detail": "Tarot.views",
         "documentation": {}
     },
@@ -1924,7 +1957,7 @@
         "kind": 6,
         "importPath": "Tarot.views",
         "description": "Tarot.views",
-        "peekOfCode": "class checkout(LoginRequiredMixin, View):\n    login_url = '/login/'\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        list_dich_vu = giao_dich.objects.filter(user_id=user,user_use = request.user, is_paid = False)\n        total = 0\n        giao_dich_counts = Counter()\n        for item in list_dich_vu:\n            total += item.price\n            giao_dich_counts[item.name] += 1",
+        "peekOfCode": "class checkout(LoginRequiredMixin, View):\n    login_url = '/login/'\n    def get(self, request, user_id):\n        user = User.objects.get(id=user_id)\n        list_dich_vu = giao_dich.objects.filter(user_id=user,user_use = request.user, is_paid = False, is_delete = False)\n        total = 0\n        giao_dich_counts = Counter()\n        for item in list_dich_vu:\n            total += item.price\n            giao_dich_counts[item.name] += 1",
         "detail": "Tarot.views",
         "documentation": {}
     },
